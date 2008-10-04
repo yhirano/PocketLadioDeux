@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscPocketCompactLibrary2", "..\MiscPocketCompactLibrary2\MiscPocketCompactLibrary2\MiscPocketCompactLibrary2.csproj", "{93D90D99-BE73-4211-8EC8-E7A5943650AC}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "PocketLadioDeuxCab", "PocketLadioDeuxCab\PocketLadioDeuxCab.vddproj", "{8084D54D-F2A6-48C3-A6F9-FF48883F5C98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocketLadioDeux", "PocketLadioDeux\PocketLadioDeux.csproj", "{724323CE-3378-4915-ADD8-418B9A799BE0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120} = {F3EB0E15-01C6-46DA-AA37-1C51A55AF120}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlinePluginInterface", "HeadlinePluginInterface\HeadlinePluginInterface.csproj", "{6099ECFD-C7A9-45AC-8214-D7BBBF537431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLadioHeadlinePlugin", "NetLadioHeadlinePlugin\NetLadioHeadlinePlugin.csproj", "{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93D90D99-BE73-4211-8EC8-E7A5943650AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D90D99-BE73-4211-8EC8-E7A5943650AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D90D99-BE73-4211-8EC8-E7A5943650AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D90D99-BE73-4211-8EC8-E7A5943650AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8084D54D-F2A6-48C3-A6F9-FF48883F5C98}.Debug|Any CPU.ActiveCfg = Debug
+		{8084D54D-F2A6-48C3-A6F9-FF48883F5C98}.Release|Any CPU.ActiveCfg = Release
+		{724323CE-3378-4915-ADD8-418B9A799BE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724323CE-3378-4915-ADD8-418B9A799BE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724323CE-3378-4915-ADD8-418B9A799BE0}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{724323CE-3378-4915-ADD8-418B9A799BE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724323CE-3378-4915-ADD8-418B9A799BE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724323CE-3378-4915-ADD8-418B9A799BE0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6099ECFD-C7A9-45AC-8214-D7BBBF537431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6099ECFD-C7A9-45AC-8214-D7BBBF537431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6099ECFD-C7A9-45AC-8214-D7BBBF537431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6099ECFD-C7A9-45AC-8214-D7BBBF537431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
