@@ -153,6 +153,10 @@
       <Project>{6099ECFD-C7A9-45AC-8214-D7BBBF537431}</Project>
       <Name>HeadlinePluginInterface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NetLadioHeadlinePlugin\NetLadioHeadlinePlugin.csproj">
+      <Project>{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}</Project>
+      <Name>NetLadioHeadlinePlugin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using MiscPocketCompactLibrary2.Net;
 
@@ -7,7 +8,7 @@ namespace PocketLadioDeux.HeadlinePluginInterface
     /// <summary>
     /// ヘッドラインインターフェース
     /// </summary>
-    public abstract class HeadlineBase
+    public abstract class HeadlineBase : IComparer<IChannel>
     {
         /// <summary>
         /// ヘッドライン名を取得・設定する
@@ -218,5 +219,27 @@ namespace PocketLadioDeux.HeadlinePluginInterface
         /// StreamはCloseしないでください。
         /// </summary>
         public abstract void Load(Stream stream);
+
+        /// <summary>
+        /// ヘッドライン内の番組を比較する。
+        /// フィルターでソート処理を実装する場合は、オーバーライドして番組を比較できるようにしてください。
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public virtual int Compare(IChannel x, IChannel y)
+        {
+            if (x == null)
+            {
+                if (y == null) { return 0; }
+                else { return -1; }
+            }
+            else
+            {
+                // 比較しない
+                return 1;
+            }
+
+        }
     }
 }

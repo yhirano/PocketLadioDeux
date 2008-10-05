@@ -10,7 +10,7 @@ using PocketLadioDeux.HeadlinePluginInterface;
 
 namespace PocketLadioDeux.NetLadioHeadlinePlugin
 {
-    public sealed class Headline : HeadlineBase
+    public sealed class Headline : HeadlineBase, IComparer<IChannel>
     {
         /// <summary>
         /// ねとらじのヘッドラインのURL DAT v2
@@ -20,15 +20,24 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 設定
         /// </summary>
-        private UserSetting setting = new UserSetting();
+        private UserSetting _setting;
 
         /// <summary>
         /// 設定を取得・設定する
         /// </summary>
         internal UserSetting Setting
         {
-            get { return setting; }
-            set { setting = value; }
+            get { return _setting; }
+            set
+            {
+                _setting = value;
+                // フィルタ条件が変わった場合、フィルタのキャッシュを削除する
+                _setting.FilterChangedEventHandler += delegate
+                {
+                    channelsMatchesToFilterCache = null;
+                    channelsUnmatchesToFilterCache = null;
+                };
+            }
         }
 
         /// <summary>
@@ -36,8 +45,8 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// </summary>
         public override string Name
         {
-            get { return setting.Name; }
-            set { setting.Name = value; }
+            get { return Setting.Name; }
+            set { Setting.Name = value; }
         }
 
         public override string Kind
@@ -82,163 +91,12 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         }
                     }
 
-                    #region ソート
-
-                    switch (setting.SortKind)
+                    // ソート
+                    if (Setting.SortKind != UserSetting.SortKinds.None)
                     {
-                        case UserSetting.SortKinds.Nam:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Nam.CompareTo(y.Nam);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Nam.CompareTo(y.Nam);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Tims:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Tims.CompareTo(y.Tims);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Tims.CompareTo(y.Tims);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Cln:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Cln.CompareTo(y.Cln);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Cln.CompareTo(y.Cln);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Clns:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Clns.CompareTo(y.Clns);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Clns.CompareTo(y.Clns);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Bit:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Bit.CompareTo(y.Bit);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Bit.CompareTo(y.Bit);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.None:
-                        default:
-                            break;
+                        matched.Sort(Compare);
+                        unmatched.Sort(Compare);
                     }
-
-                    // 降順の場合
-                    if (setting.SortKind != UserSetting.SortKinds.None && setting.SortScending == UserSetting.SortScendings.Descending)
-                    {
-                        matched.Reverse();
-                        unmatched.Reverse();
-                    }
-
-                    #endregion // ソート
 
                     channelsMatchesToFilterCache = matched.ToArray();
                     channelsUnmatchesToFilterCache = unmatched.ToArray();
@@ -275,163 +133,12 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         }
                     }
 
-                    #region ソート
-
-                    switch (setting.SortKind)
+                    // ソート
+                    if (Setting.SortKind != UserSetting.SortKinds.None)
                     {
-                        case UserSetting.SortKinds.Nam:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Nam.CompareTo(y.Nam);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Nam.CompareTo(y.Nam);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Tims:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Tims.CompareTo(y.Tims);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Tims.CompareTo(y.Tims);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Cln:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Cln.CompareTo(y.Cln);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Cln.CompareTo(y.Cln);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Clns:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Clns.CompareTo(y.Clns);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Clns.CompareTo(y.Clns);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.Bit:
-                            matched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Bit.CompareTo(y.Bit);
-                                    }
-                                });
-                            unmatched.Sort(
-                                delegate(Channel x, Channel y)
-                                {
-                                    if (x == null)
-                                    {
-                                        if (y == null) { return 0; }
-                                        else { return -1; }
-                                    }
-                                    else
-                                    {
-                                        return x.Bit.CompareTo(y.Bit);
-                                    }
-                                });
-                            break;
-                        case UserSetting.SortKinds.None:
-                        default:
-                            break;
+                        matched.Sort(Compare);
+                        unmatched.Sort(Compare);
                     }
-
-                    // 降順の場合
-                    if (setting.SortKind != UserSetting.SortKinds.None && setting.SortScending == UserSetting.SortScendings.Descending)
-                    {
-                        matched.Reverse();
-                        unmatched.Reverse();
-                    }
-
-                    #endregion // ソート
 
                     channelsMatchesToFilterCache = matched.ToArray();
                     channelsUnmatchesToFilterCache = unmatched.ToArray();
@@ -441,17 +148,55 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             }
         }
 
+        public override int Compare(IChannel _x, IChannel _y)
+        {
+            if (_x == null)
+            {
+                if (_y == null) { return 0; }
+                else { return -1; }
+            }
+
+            Channel x = _x as Channel;
+            Channel y = _y as Channel;
+            if (x == null || y == null)
+            {
+                throw new ArgumentException();
+            }
+
+            switch (Setting.SortKind)
+            {
+                case UserSetting.SortKinds.Nam:
+                    return x.Nam.CompareTo(y.Nam)
+                        // 逆順の場合はCompareToの結果を反転させる
+                        * ((Setting.SortScending == UserSetting.SortScendings.Descending) ? -1 : 1);
+                case UserSetting.SortKinds.Tims:
+                    return x.Tims.CompareTo(y.Tims)
+                        // 逆順の場合はCompareToの結果を反転させる
+                        * ((Setting.SortScending == UserSetting.SortScendings.Descending) ? -1 : 1);
+                case UserSetting.SortKinds.Cln:
+                    return x.Cln.CompareTo(y.Cln)
+                        // 逆順の場合はCompareToの結果を反転させる
+                        * ((Setting.SortScending == UserSetting.SortScendings.Descending) ? -1 : 1);
+                case UserSetting.SortKinds.Clns:
+                    return x.Clns.CompareTo(y.Clns)
+                        // 逆順の場合はCompareToの結果を反転させる
+                        * ((Setting.SortScending == UserSetting.SortScendings.Descending) ? -1 : 1);
+                case UserSetting.SortKinds.Bit:
+                    return x.Bit.CompareTo(y.Bit)
+                        // 逆順の場合はCompareToの結果を反転させる
+                        * ((Setting.SortScending == UserSetting.SortScendings.Descending) ? -1 : 1);
+                case UserSetting.SortKinds.None:
+                default:
+                    return 1;
+            }
+        }
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
         public Headline()
         {
-            // フィルタ条件が変わった場合、フィルタのキャッシュを削除する
-            setting.FilterChangedEventHandler += delegate
-            {
-                channelsMatchesToFilterCache = null;
-                channelsUnmatchesToFilterCache = null;
-            };
+            Setting = new UserSetting();
         }
 
         #region dat v2解析用正規表現
@@ -485,6 +230,9 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         protected override void FetchHeadline(HttpConnection connectionSetting)
         {
             channels.Clear();
+            // フィルターのクリア
+            channelsMatchesToFilterCache = null;
+            channelsUnmatchesToFilterCache = null;
 
             Stream st = null;
             StreamReader sr = null;
@@ -686,7 +434,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                     {
                         if (channel != null)
                         {
-                            channel.DislpayFormat = setting.DisplayFormat;
+                            channel.DislpayFormat = Setting.DisplayFormat;
                             channels.Add(channel);
                             OnChannelAdded(channel);
                             channel = null;
@@ -725,7 +473,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             #region 単語フィルター処理
 
             // 一致単語フィルター・除外フィルターが存在する場合
-            if (setting.FilterMatchWords.Length > 0 && setting.FilterExcludeWords.Length > 0)
+            if (Setting.FilterMatchWords.Length > 0 && Setting.FilterExcludeWords.Length > 0)
             {
                 if (IsMatchFilterMatchWords(channel) == false || IsMatchFilterExcludeWords(channel) == true)
                 {
@@ -733,7 +481,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                 }
             }
             // 一致単語フィルターのみが存在する場合
-            else if (setting.FilterMatchWords.Length > 0 && setting.FilterExcludeWords.Length <= 0)
+            else if (Setting.FilterMatchWords.Length > 0 && Setting.FilterExcludeWords.Length <= 0)
             {
                 if (IsMatchFilterMatchWords(channel) == false)
                 {
@@ -741,7 +489,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                 }
             }
             // 除外フィルターのみが存在する場合
-            else if (setting.FilterMatchWords.Length <= 0 && setting.FilterExcludeWords.Length > 0)
+            else if (Setting.FilterMatchWords.Length <= 0 && Setting.FilterExcludeWords.Length > 0)
             {
                 if (IsMatchFilterExcludeWords(channel) == true)
                 {
@@ -760,9 +508,9 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             #region 最低ビットレートフィルター処理
 
             // 最低ビットレートフィルターが存在する場合
-            if (setting.IsFilteringAboveBitrate == true)
+            if (Setting.IsFilteringAboveBitrate == true)
             {
-                if (0 < _channel.Bit && _channel.Bit < setting.FilteringAboveBitrate)
+                if (0 < _channel.Bit && _channel.Bit < Setting.FilteringAboveBitrate)
                 {
                     return false;
                 }
@@ -773,9 +521,9 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             #region 最大ビットレートフィルター処理
 
             // 最大ビットレートフィルターが存在する場合
-            if (setting.IsFilteringBelowBitrate == true)
+            if (Setting.IsFilteringBelowBitrate == true)
             {
-                if (_channel.Bit > setting.FilteringBelowBitrate)
+                if (_channel.Bit > Setting.FilteringBelowBitrate)
                 {
                     return false;
                 }
@@ -793,7 +541,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <returns>番組が一致単語フィルターに合致したらtrue、それ以外はfalse</returns>
         private bool IsMatchFilterMatchWords(IChannel channel)
         {
-            foreach (string filter in setting.FilterMatchWords)
+            foreach (string filter in Setting.FilterMatchWords)
             {
                 foreach (string filted in channel.FilteredWords)
                 {
@@ -813,7 +561,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <returns>番組が除外単語フィルターに合致したらtrue、それ以外はfalse</returns>
         private bool IsMatchFilterExcludeWords(IChannel channel)
         {
-            foreach (string filter in setting.FilterExcludeWords)
+            foreach (string filter in Setting.FilterExcludeWords)
             {
                 foreach (string filted in channel.FilteredWords)
                 {
@@ -842,7 +590,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         public override void Save(Stream stream)
         {
             XmlSerializer sr = new XmlSerializer(typeof(UserSetting));
-            sr.Serialize(stream, setting);
+            sr.Serialize(stream, Setting);
         }
 
         public override void Load(Stream stream)
@@ -851,7 +599,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             UserSetting setting = sr.Deserialize(stream) as UserSetting;
             if (setting != null)
             {
-                this.setting = setting;
+                Setting = setting;
             }
         }
     }

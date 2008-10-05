@@ -349,7 +349,41 @@ namespace PocketLadioDeux
         {
             ListViewItem item = new ListViewItem(channel.Display);
             item.Tag = channel;
-            headlineListView.Items.Add(item);
+            // フィルターを使用する場合
+            if (filterCheckBox.Checked == true)
+            {
+                // 番組がリストビューに1つもない場合は番組を追加
+                if (headlineListView.Items.Count == 0)
+                {
+                    headlineListView.Items.Add(item);
+                }
+                // 番組をソートしながらリストビューに追加する
+                else
+                {
+                    bool isAddedItem = false; // リストに追加されたか
+                    // ソートとしながら追加
+                    for (int i = 0; i < headlineListView.Items.Count; ++i)
+                    {
+                        int compResult = selectedHeadline.Compare(channel, (IChannel)headlineListView.Items[i].Tag);
+                        if (compResult == -1)
+                        {
+                            headlineListView.Items.Insert(i, item);
+                            isAddedItem = true;
+                            break;
+                        }
+                    }
+                    // 末尾に追加するアイテムだったっぽいので
+                    if (isAddedItem == false)
+                    {
+                        headlineListView.Items.Add(item);
+                    }
+                }
+            }
+            // フィルターを使用しない場合
+            else
+            {
+                headlineListView.Items.Add(item);
+            }
             return item;
         }
 
@@ -358,11 +392,8 @@ namespace PocketLadioDeux
             // ステータスバーの更新
             if (selectedHeadline != null)
             {
-                IChannel[] channels = (filterCheckBox.Checked == true) ?
-                    selectedHeadline.ChannelsMatchesToFilterA : selectedHeadline.ChannelsA;
-
                 mainStatusBar.Text = string.Format("{0}CHs / {1}",
-                    channels.Length.ToString(),
+                    headlineListView.Items.Count.ToString(),
                     (selectedHeadline.CheckTime != DateTime.MinValue) ? selectedHeadline.CheckTime.ToString("G") : string.Empty);
             }
             else
