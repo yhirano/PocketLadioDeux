@@ -112,7 +112,7 @@ namespace PocketLadioDeux
                     // 例外によってメッセージを切り替える
                     if (e.Exception is System.Net.WebException)
                     {
-                        message = string.Format(messagesResource.GetString("CanNotFetchChannels"), e.Headline);
+                        message = string.Format(messagesResource.GetString("CanNotFetchChannels"), e.Headline.Name);
                     }
                     else if (e.Exception is OutOfMemoryException)
                     {
@@ -120,41 +120,57 @@ namespace PocketLadioDeux
                     }
                     else if (e.Exception is IOException)
                     {
-                        message = string.Format(messagesResource.GetString("ExceptIOErrorFetchChannels"), e.Headline);
+                        message = string.Format(messagesResource.GetString("ExceptIOErrorFetchChannels"), e.Headline.Name);
                     }
                     else if (e.Exception is UriFormatException)
                     {
-                        message = string.Format(messagesResource.GetString("HeadlineUrlInvalid"), e.Headline);
+                        message = string.Format(messagesResource.GetString("HeadlineUrlInvalid"), e.Headline.Name);
                     }
                     else if (e.Exception is System.Net.Sockets.SocketException)
                     {
-                        message = string.Format(messagesResource.GetString("CanNotFetchChannels"), e.Headline);
+                        message = string.Format(messagesResource.GetString("CanNotFetchChannels"), e.Headline.Name);
                     }
                     else if (e.Exception is NotSupportedException)
                     {
-                        message = string.Format(messagesResource.GetString("HeadlineUrlInvalid"), e.Headline);
+                        message = string.Format(messagesResource.GetString("HeadlineUrlInvalid"), e.Headline.Name);
                     }
                     else if (e.Exception is System.Xml.XmlException)
                     {
-                        message = string.Format(messagesResource.GetString("ExceptXmlErrorFetchChannels"), e.Headline);
+                        message = string.Format(messagesResource.GetString("ExceptXmlErrorFetchChannels"), e.Headline.Name);
                     }
                     else if (e.Exception is ArgumentException)
                     {
-                        message = string.Format(messagesResource.GetString("HeadlineUrlInvalid"), e.Headline);
+                        message = string.Format(messagesResource.GetString("HeadlineUrlInvalid"), e.Headline.Name);
                     }
                     else
                     {
-                        message = string.Format(messagesResource.GetString("ExceptFetchChannels"), e.Headline);
+                        message = string.Format(messagesResource.GetString("ExceptFetchChannels"), e.Headline.Name);
                     }
 
                     MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+
+                    // 例外を発生させたヘッドラインが、選択しているヘッドラインと同一の場合、
+                    // ステータスバーの更新をし、Updateボタンを有効にする。
+                    if ((HeadlineBase)sender == selectedHeadline)
+                    {
+                        UpdateMainStatusBar();
+                        updateButton.Enabled = true;
+                    }
                 });
             HeadlineManager.FetchChannelsAsyncCancelEventHandler += new EventHandler<FetchChannelsAsyncCancelEventArgs>(
                 delegate(object sender, FetchChannelsAsyncCancelEventArgs e)
                 {
                     string caption = messagesResource.GetString("Warning");
-                    string message = string.Format(messagesResource.GetString("CancelFetchChannels"), e.Headline);
+                    string message = string.Format(messagesResource.GetString("CancelFetchChannels"), e.Headline.Name);
                     MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+
+                    // 取得をキャンセルしたヘッドラインが、選択しているヘッドラインと同一の場合、
+                    // ステータスバーの更新をし、Updateボタンを有効にする。
+                    if ((HeadlineBase)sender == selectedHeadline)
+                    {
+                        UpdateMainStatusBar();
+                        updateButton.Enabled = true;
+                    }
                 });
 
             channelAddedEventHandler = new EventHandler<ChannelAddedEventArgs>(
@@ -189,6 +205,8 @@ namespace PocketLadioDeux
             channelFetchedEventHandler = new EventHandler(
                 delegate(object sender, EventArgs e)
                 {
+                    // 取得を終了したヘッドラインが、選択しているヘッドラインと同一の場合、
+                    // ステータスバーの更新をし、Updateボタンを有効にする。
                     if (InvokeRequired == true)
                     {
                         Invoke(
@@ -504,7 +522,8 @@ namespace PocketLadioDeux
             {
                 for (int i = 0; i < headlineListComboBox.Items.Count; ++i)
                 {
-                    if (HeadlineManager.Headlines[i] != ((HeadlineCombo)headlineListComboBox.Items[i]).Headline)
+                    if (HeadlineManager.Headlines[i] != ((HeadlineCombo)headlineListComboBox.Items[i]).Headline
+                        || HeadlineManager.Headlines[i].Name != ((HeadlineCombo)headlineListComboBox.Items[i]).Headline.Name)
                     {
                         updateHeadlineListComboBox = true;
                         break;
