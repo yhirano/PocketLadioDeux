@@ -125,9 +125,13 @@ namespace PocketLadioDeux
         /// <summary>
         /// 例外に出力するログファイルを取得する
         /// </summary>
-        public static string ExceptionLogFile
+        public static string ExceptionLogFilePath
         {
-            get { return "PocketLadioDeuxExceptionLog.log"; }
+            get
+            {
+                return Path.GetDirectoryName(AssemblyUtility.GetLocation(Assembly.GetExecutingAssembly()))
+                    + @"\" + "PocketLadioDeuxExceptionLog.log";
+            }
         }
 
         #endregion
