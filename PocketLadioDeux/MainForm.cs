@@ -332,8 +332,12 @@ namespace PocketLadioDeux
 
         private void UpdateHeadlineList()
         {
-            IChannel[] channels = (filterCheckBox.Checked == true) ?
-                selectedHeadline.ChannelsMatchesToFilterA : selectedHeadline.ChannelsA;
+            IChannel[] channels = null;
+            if (selectedHeadline != null)
+            {
+                channels = (filterCheckBox.Checked == true) ?
+                    selectedHeadline.ChannelsMatchesToFilterA : selectedHeadline.ChannelsA;
+            }
 
             headlineListView.BeginUpdate();
 
@@ -344,7 +348,7 @@ namespace PocketLadioDeux
 
             headlineListView.Items.Clear();
 
-            if (selectedHeadline != null)
+            if (selectedHeadline != null && channels != null)
             {
                 foreach (IChannel channel in channels)
                 {
