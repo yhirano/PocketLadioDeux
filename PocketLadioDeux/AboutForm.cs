@@ -22,6 +22,16 @@ namespace PocketLadioDeux
             applicationNameLabel.Text = AssemblyUtility.GetTitle(Assembly.GetExecutingAssembly());
             versionNumberLabel.Text = AssemblyUtility.GetVersion(Assembly.GetExecutingAssembly()).ToString();
             copyrightLabel.Text = AssemblyUtility.GetCopyright(Assembly.GetExecutingAssembly());
+
+            // プラグインのバージョンを表示
+            pluginListBox.BeginUpdate();
+            pluginListBox.Items.Clear();
+            foreach (HeadlinePlugin plugin in HeadlinePluginManager.Plugins)
+            {
+                Assembly asm = Assembly.LoadFrom(plugin.Location);
+                pluginListBox.Items.Add(string.Format("{0} / {1}", plugin.Kind, AssemblyUtility.GetVersion(asm).ToString()));
+            }
+            pluginListBox.EndUpdate();
         }
     }
 }

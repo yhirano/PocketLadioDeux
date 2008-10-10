@@ -34,6 +34,8 @@
             this.versionNumberLabel = new System.Windows.Forms.Label();
             this.applicationNameLabel = new System.Windows.Forms.Label();
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
+            this.pulginLabel = new System.Windows.Forms.Label();
+            this.pluginListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // iconPictureBox
@@ -57,11 +59,23 @@
             resources.ApplyResources(this.applicationNameLabel, "applicationNameLabel");
             this.applicationNameLabel.Name = "applicationNameLabel";
             // 
+            // pulginLabel
+            // 
+            resources.ApplyResources(this.pulginLabel, "pulginLabel");
+            this.pulginLabel.Name = "pulginLabel";
+            // 
+            // pluginListBox
+            // 
+            resources.ApplyResources(this.pluginListBox, "pluginListBox");
+            this.pluginListBox.Name = "pluginListBox";
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.pluginListBox);
+            this.Controls.Add(this.pulginLabel);
             this.Controls.Add(this.iconPictureBox);
             this.Controls.Add(this.copyrightLabel);
             this.Controls.Add(this.versionNumberLabel);
@@ -80,5 +94,7 @@
         private System.Windows.Forms.Label versionNumberLabel;
         private System.Windows.Forms.Label applicationNameLabel;
         private System.Windows.Forms.MainMenu mainMenu1;
+        private System.Windows.Forms.Label pulginLabel;
+        private System.Windows.Forms.ListBox pluginListBox;
     }
 }
