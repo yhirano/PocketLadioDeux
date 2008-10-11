@@ -45,7 +45,8 @@ namespace PocketLadioDeux
             headlineSettingFiles[headline].ClassName = headline.GetType().FullName;
             string filePath;
             Random rand = new Random(DateTime.Now.Second);
-            do{
+            do
+            {
                 filePath = rand.Next().ToString() + ".conf";
             } while (File.Exists(PocketLadioDeuxInfo.HeadlineSettingDirectoryPath + @"\" + filePath));
             headlineSettingFiles[headline].FilePath = filePath;
@@ -83,6 +84,13 @@ namespace PocketLadioDeux
         }
 
         /// <summary>
+        /// 現在動作しているヘッドラインから番組を非同期で取得しているBackgroundWorkerのリスト
+        /// </summary>
+        private static Dictionary<HeadlineBase, BackgroundWorker> fetchingChannelBackgroundWorkers = new Dictionary<HeadlineBase, BackgroundWorker>();
+
+        private static object fetchingChannelBackgroundWorkersLock = new object();
+
+        /// <summary>
         /// ヘッドラインから番組の情報を非同期で取得する
         /// </summary>
         /// <param name="headline">ヘッドライン</param>
@@ -96,10 +104,41 @@ namespace PocketLadioDeux
             connectionSetting.ProxySetting = UserSettingAdapter.Setting.ProxySetting;
 
             BackgroundWorker bg = new BackgroundWorker();
-            bg.DoWork += new DoWorkEventHandler(delegate(object sender, DoWorkEventArgs e) { headline.FetchHeadlineA(connectionSetting); });
+            bg.WorkerSupportsCancellation = true;
+            EventHandler<ChannelAddedEventArgs> cancelEventHandler = null;
+            bg.DoWork += new DoWorkEventHandler(
+                delegate(object sender, DoWorkEventArgs e)
+                {
+                    // 番組の取得をキャンセルするための処理
+                    cancelEventHandler = new EventHandler<ChannelAddedEventArgs>(
+                        delegate
+                        {
+                            if (bg.CancellationPending == true)
+                            {
+                                e.Cancel = true;
+                                // 番組の取得をキャンセルフラグを立てる
+                                headline.FetchCancel = true;
+                            }
+                        });
+                    headline.ChannelAddedEventHandler += cancelEventHandler;
+
+                    // 番組の取得を開始
+                    headline.FetchHeadlineA(connectionSetting);
+                });
             bg.RunWorkerCompleted += new RunWorkerCompletedEventHandler(
                 delegate(object sender, RunWorkerCompletedEventArgs e)
                 {
+                    // ヘッドラインから番組取得キャンセルのためのイベントを削除
+                    headline.ChannelAddedEventHandler -= cancelEventHandler;
+                    // 非同期動作中のBackgroundWorkerリストからこのBackgroundWorkerを削除
+                    lock (fetchingChannelBackgroundWorkersLock)
+                    {
+                        if (fetchingChannelBackgroundWorkers.ContainsKey(headline) == true && fetchingChannelBackgroundWorkers[headline] == (BackgroundWorker)sender)
+                        {
+                            fetchingChannelBackgroundWorkers.Remove(headline);
+                        }
+                    }
+
                     if (e.Error != null)
                     {
                         OnFetchChannelsAsyncExceptionEvent(headline, e.Error);
@@ -109,6 +148,13 @@ namespace PocketLadioDeux
                         OnFetchChannelsAsyncCancelEvent(headline);
                     }
                 });
+
+            // 非同期動作中のBackgroundWorkerリストにこのBackgroundWorkerを追加
+            lock (fetchingChannelBackgroundWorkersLock)
+            {
+                fetchingChannelBackgroundWorkers.Add(headline, bg);
+            }
+
             bg.RunWorkerAsync();
         }
 
@@ -145,6 +191,44 @@ namespace PocketLadioDeux
             {
                 FetchChannelsAsyncCancelEventHandler(null, new FetchChannelsAsyncCancelEventArgs(headline));
             }
+        }
+
+        /// <summary>
+        /// 指定の非同期で動作している番組取得処理をキャンセルする
+        /// </summary>
+        /// <param name="headline"></param>
+        public static void CancelFetchChannelsAsync(HeadlineBase headline)
+        {
+            lock (fetchingChannelBackgroundWorkersLock)
+            {
+                if (fetchingChannelBackgroundWorkers.ContainsKey(headline) == true)
+                {
+                    fetchingChannelBackgroundWorkers[headline].CancelAsync();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 非同期で動作している番組取得処理すべてをキャンセルする
+        /// </summary>
+        public static void CancelFetchChannelsAsync()
+        {
+            lock (fetchingChannelBackgroundWorkersLock)
+            {
+                foreach (KeyValuePair<HeadlineBase, BackgroundWorker> pair in fetchingChannelBackgroundWorkers)
+                {
+                    pair.Value.CancelAsync();
+                }
+            }
+        }
+
+        /// <summary>
+        /// 非同期で動作している番組取得処理が存在するかを取得する
+        /// </summary>
+        /// <returns>非同期で動作している番組取得処理が存在する場合はtrue、それ以外はfalse</returns>
+        public static bool IsExistBusyFetchChannelAsync()
+        {
+            return fetchingChannelBackgroundWorkers.Count != 0;
         }
 
         /// <summary>

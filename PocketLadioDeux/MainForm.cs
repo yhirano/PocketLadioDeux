@@ -151,10 +151,11 @@ namespace PocketLadioDeux
 
                     // 例外を発生させたヘッドラインが、選択しているヘッドラインと同一の場合、
                     // ステータスバーの更新をし、Updateボタンを有効にする。
-                    if ((HeadlineBase)sender == selectedHeadline)
+                    if (e.Headline == selectedHeadline)
                     {
                         UpdateMainStatusBar();
                         updateButton.Enabled = true;
+                        cancelButton.Enabled = false;
                     }
                 });
             HeadlineManager.FetchChannelsAsyncCancelEventHandler += new EventHandler<FetchChannelsAsyncCancelEventArgs>(
@@ -166,10 +167,11 @@ namespace PocketLadioDeux
 
                     // 取得をキャンセルしたヘッドラインが、選択しているヘッドラインと同一の場合、
                     // ステータスバーの更新をし、Updateボタンを有効にする。
-                    if ((HeadlineBase)sender == selectedHeadline)
+                    if (e.Headline == selectedHeadline)
                     {
                         UpdateMainStatusBar();
                         updateButton.Enabled = true;
+                        cancelButton.Enabled = false;
                     }
                 });
 
@@ -216,6 +218,7 @@ namespace PocketLadioDeux
                                 {
                                     UpdateMainStatusBar();
                                     updateButton.Enabled = true;
+                                    cancelButton.Enabled = false;
                                 }
                             });
                     }
@@ -225,6 +228,7 @@ namespace PocketLadioDeux
                         {
                             UpdateMainStatusBar();
                             updateButton.Enabled = true;
+                            cancelButton.Enabled = false;
                         }
                     }
                 });
@@ -587,10 +591,16 @@ namespace PocketLadioDeux
             }
 
             // ヘッドラインが未選択の場合はUpdateボタンを押せないようにする
-            // ヘッドラインが取得中の場合はUpdateボタンを押せないようにする
-            if (selectedHeadline == null || selectedHeadline.IsFetching == true)
+            if (selectedHeadline == null)
             {
                 updateButton.Enabled = false;
+                cancelButton.Enabled = false;
+            }
+            // ヘッドラインが取得中の場合はUpdateボタンを押せないようにする
+            else if (selectedHeadline.IsFetching == true)
+            {
+                updateButton.Enabled = false;
+                cancelButton.Enabled = true;
             }
             else
             {
@@ -700,6 +710,7 @@ namespace PocketLadioDeux
         {
             headlineListView.Items.Clear();
             updateButton.Enabled = false;
+            cancelButton.Enabled = true;
 
             HeadlineManager.FetchChannelsAsync(selectedHeadline);
         }
@@ -750,6 +761,14 @@ namespace PocketLadioDeux
             if (selectedChannel != null)
             {
                 selectedChannel.ShowPropertyForm();
+            }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            if (selectedHeadline != null && selectedHeadline.IsFetching == true)
+            {
+                HeadlineManager.CancelFetchChannelsAsync(selectedHeadline);
             }
         }
     }

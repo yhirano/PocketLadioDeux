@@ -29,6 +29,20 @@ namespace PocketLadioDeux
 
                 Application.Run(new MainForm());
 
+                #region 番組取得のスレッドを終了する
+
+                // ヘッドライン取得処理の中止
+                HeadlineManager.CancelFetchChannelsAsync();
+
+                // スレッドが中止されるまで待つ
+                // 1秒待ってスレッドが中止されないようなら、スレッドの中止を待たずにここを抜ける
+                for (int i = 0; HeadlineManager.IsExistBusyFetchChannelAsync() == true && i < 10; ++i)
+                {
+                    System.Threading.Thread.Sleep(100);
+                }
+
+                #endregion // 番組取得のスレッドを終了する
+
                 // ヘッドラインを保存する
                 HeadlineManager.Save();
 
@@ -38,7 +52,7 @@ namespace PocketLadioDeux
             catch (Exception ex)
             {
                 #region 例外ログを書き出す
-                
+
                 Log exceptionLog = new Log(PocketLadioDeuxInfo.ExceptionLogFilePath);
                 StringBuilder error = new StringBuilder();
 

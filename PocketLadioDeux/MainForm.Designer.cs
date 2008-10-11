@@ -41,6 +41,7 @@
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.exitMenuItem = new System.Windows.Forms.MenuItem();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.headlineListView = new System.Windows.Forms.ListView();
             this.channelColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.headlineListViewContextMenu = new System.Windows.Forms.ContextMenu();
@@ -67,7 +68,6 @@
             // 
             // menuItem
             // 
-            resources.ApplyResources(this.menuItem, "menuItem");
             this.menuItem.MenuItems.Add(this.addRemoveHeadlineMenuItem);
             this.menuItem.MenuItems.Add(this.headlineSettingMenuItem);
             this.menuItem.MenuItems.Add(this.menuItem2);
@@ -76,6 +76,7 @@
             this.menuItem.MenuItems.Add(this.aboutMenuItem);
             this.menuItem.MenuItems.Add(this.menuItem1);
             this.menuItem.MenuItems.Add(this.exitMenuItem);
+            resources.ApplyResources(this.menuItem, "menuItem");
             this.menuItem.Popup += new System.EventHandler(this.menuItem_Popup);
             // 
             // addRemoveHeadlineMenuItem
@@ -116,12 +117,19 @@
             // 
             // topPanel
             // 
-            resources.ApplyResources(this.topPanel, "topPanel");
+            this.topPanel.Controls.Add(this.cancelButton);
             this.topPanel.Controls.Add(this.headlineListView);
             this.topPanel.Controls.Add(this.filterCheckBox);
             this.topPanel.Controls.Add(this.headlineListComboBox);
             this.topPanel.Controls.Add(this.updateButton);
+            resources.ApplyResources(this.topPanel, "topPanel");
             this.topPanel.Name = "topPanel";
+            // 
+            // cancelButton
+            // 
+            resources.ApplyResources(this.cancelButton, "cancelButton");
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // headlineListView
             // 
@@ -178,11 +186,11 @@
             // 
             // bottomPanel
             // 
-            resources.ApplyResources(this.bottomPanel, "bottomPanel");
             this.bottomPanel.Controls.Add(this.infomationLabel);
             this.bottomPanel.Controls.Add(this.propertyButton);
             this.bottomPanel.Controls.Add(this.webButton);
             this.bottomPanel.Controls.Add(this.playButton);
+            resources.ApplyResources(this.bottomPanel, "bottomPanel");
             this.bottomPanel.Name = "bottomPanel";
             // 
             // infomationLabel
@@ -268,6 +276,7 @@
         private System.Windows.Forms.MenuItem playMenuItem;
         private System.Windows.Forms.MenuItem webMenuItem;
         private System.Windows.Forms.MenuItem propertyMenuItem;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
 

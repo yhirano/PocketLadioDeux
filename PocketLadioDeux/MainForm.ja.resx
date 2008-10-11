@@ -135,6 +135,9 @@
   <data name="menuItem.Text" xml:space="preserve">
     <value>メニュー</value>
   </data>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
   <data name="channelColumnHeader.Text" xml:space="preserve">
     <value>番組</value>
   </data>
