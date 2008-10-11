@@ -451,6 +451,15 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             }
             finally
             {
+                // フィルターのクリア
+                /* 
+                 * 本メソッドの先頭でもフィルターキャッシュをクリアしているが、本メソッドの実行中にフィルターを
+                 * 使用した場合に、フィルターキャッシュの整合性がとれなくなるため、本メソッドの終了時に
+                 * フィルターのキャッシュを削除してしまう。
+                 */ 
+                channelsMatchesToFilterCache = null;
+                channelsUnmatchesToFilterCache = null;
+
                 if (sr != null)
                 {
                     sr.Close();
