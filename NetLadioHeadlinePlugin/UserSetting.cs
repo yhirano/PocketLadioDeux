@@ -30,7 +30,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ヘッドラインの表示方法を取得・設定する
         /// </summary>
-        internal string DisplayFormat
+        public string DisplayFormat
         {
             get { return displayFormat; }
             set
@@ -47,7 +47,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 一致単語フィルターを取得・設定する
         /// </summary>
-        internal string[] FilterMatchWords
+        public string[] FilterMatchWords
         {
             get { return filterMatchWords; }
             set
@@ -65,7 +65,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 除外単語フィルターを取得・設定する
         /// </summary>
-        internal string[] FilterExcludeWords
+        public string[] FilterExcludeWords
         {
             get { return filterExcludeWords; }
             set
@@ -83,7 +83,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ビットレート（～以下）フィルターを使用するかを取得・設定する
         /// </summary>
-        internal bool IsFilteringBelowBitrate
+        public bool IsFilteringBelowBitrate
         {
             get { return isFilteringBelowBitrate; }
             set
@@ -104,7 +104,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ビットレート（～以下）フィルターを取得・設定する
         /// </summary>
-        internal int FilteringBelowBitrate
+        public int FilteringBelowBitrate
         {
             get
             {
@@ -136,7 +136,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ビットレート（～以上）フィルターを使用するかを取得・設定する
         /// </summary>
-        internal bool IsFilteringAboveBitrate
+        public bool IsFilteringAboveBitrate
         {
             get { return isFilteringAboveBitrate; }
             set
@@ -157,7 +157,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ビットレート（～以上）フィルターを取得・設定する
         /// </summary>
-        internal int FilteringAboveBitrate
+        public int FilteringAboveBitrate
         {
             get
             {
@@ -197,7 +197,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ソートの種類を取得・設定する
         /// </summary>
-        internal SortKinds SortKind
+        public SortKinds SortKind
         {
             get { return sortKind; }
             set
@@ -226,7 +226,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ソートの昇順・降順を取得・設定する
         /// </summary>
-        internal SortScendings SortScending
+        public SortScendings SortScending
         {
             get { return sortScending; }
             set

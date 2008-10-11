@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using OpenNETCF.ComponentModel;
 using MiscPocketCompactLibrary2.Net;
 
 namespace PocketLadioDeux.HeadlinePluginInterface
@@ -145,6 +146,8 @@ namespace PocketLadioDeux.HeadlinePluginInterface
                 finally
                 {
                     isFetching = false;
+                    // ヘッドラインのキャンセルフラグを元に戻す
+                    fetchCancel = false;
                 }
             }
         }
@@ -152,7 +155,21 @@ namespace PocketLadioDeux.HeadlinePluginInterface
         /// <summary>
         /// ヘッドラインをネットから取得する
         /// </summary>
+        /// <param name="connectionSetting">ネットへの接続の設定</param>
         protected abstract void FetchHeadline(HttpConnection connectionSetting);
+
+        /// <summary>
+        /// ヘッドラインの取得をキャンセルする場合はこの値がtrueになる
+        /// </summary>
+        protected bool fetchCancel = false;
+
+        /// <summary>
+        /// ヘッドラインの取得をキャンセルする場合はこの値がtrueにする
+        /// </summary>
+        public bool FetchCancel
+        {
+            set { fetchCancel = value; }
+        }
 
         /// <summary>
         /// 指定の番組がフィルターにマッチするか

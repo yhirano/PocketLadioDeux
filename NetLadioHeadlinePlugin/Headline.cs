@@ -5,6 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Xml.Serialization;
+using OpenNETCF.ComponentModel;
 using MiscPocketCompactLibrary2.Net;
 using PocketLadioDeux.HeadlinePluginInterface;
 
@@ -245,6 +246,11 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                 string line;
                 while ((line = sr.ReadLine()) != null)
                 {
+                    if (fetchCancel == true)
+                    {
+                        return;
+                    }
+
                     // Url取得
                     Match urlMatch = urlRegex.Match(line);
                     if (urlMatch.Success)
