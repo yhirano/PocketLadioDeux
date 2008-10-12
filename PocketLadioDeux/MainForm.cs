@@ -291,21 +291,59 @@ namespace PocketLadioDeux
         }
 
         /// <summary>
+        /// コンボボックスのテキスト表示内容
+        /// </summary>
+        private List<string> headlineComboBoxTexts = new List<string>();
+
+        /// <summary>
         /// ヘッドラインコンボボックスの内容を更新する
         /// </summary>
         private void UpdateHeadlineListComboBox()
         {
+            #region ヘッドラインを更新する必要があるかをチェック
+
+            // ヘッドラインの数がコンボボックス項目数と一致しない場合は更新の必要あり
+            if (HeadlineManager.Headlines.Length == headlineListComboBox.Items.Count)
+            {
+                bool isUpdate = false;
+                for (int i = 0; i < headlineListComboBox.Items.Count; ++i)
+                {
+                    // コンボボックスのヘッドラインと、所持しているヘッドラインが異なる場合には更新の必要あり
+                    if (HeadlineManager.Headlines[i] != ((HeadlineCombo)headlineListComboBox.Items[i]).Headline)
+                    {
+                        isUpdate = true;
+                        break;
+                    }
+                    // コンボボックスのテキスト表示内容と、所持しているヘッドラインのテキスト表示内容が異なる場合には更新の必要あり
+                    if (((HeadlineCombo)headlineListComboBox.Items[i]).Display != headlineComboBoxTexts[i])
+                    {
+                        isUpdate = true;
+                        break;
+                    }
+                }
+                // 更新の必要がない場合はここで終了
+                if (isUpdate == false)
+                {
+                    return;
+                }
+            }
+
+            #endregion // ヘッドラインを更新する必要があるかをチェック
+
             // 選択されているヘッドラインを取得
             HeadlineCombo selectedHeadlineCombo = (HeadlineCombo)headlineListComboBox.SelectedItem;
             HeadlineBase selected = (selectedHeadlineCombo != null) ? selectedHeadlineCombo.Headline : null;
 
             headlineListComboBox.BeginUpdate();
-
+            headlineComboBoxTexts.Clear();
             // コンボボックスの内容を生成
             headlineListComboBox.Items.Clear();
+
             foreach (HeadlineBase headline in HeadlineManager.Headlines)
             {
-                headlineListComboBox.Items.Add(new HeadlineCombo(headline));
+                HeadlineCombo combo = new HeadlineCombo(headline);
+                headlineListComboBox.Items.Add(combo);
+                headlineComboBoxTexts.Add(combo.Display);
             }
 
             // コンボボックスの選択を復元
@@ -522,32 +560,7 @@ namespace PocketLadioDeux
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            #region ヘッドラインコンボボックスのアップデート
-            // ヘッドラインコンボボックスとヘッドラインマネージャが持つヘッドラインが異なる場合はヘッドラインコンボボックスをアップデートする
-            // または、ヘッドラインが選択されていない場合もヘッドラインコンボボックスをアップデートする
-            bool updateHeadlineListComboBox = false;
-            if (selectedHeadline != null && headlineListComboBox.Items.Count == HeadlineManager.Headlines.Length)
-            {
-                for (int i = 0; i < headlineListComboBox.Items.Count; ++i)
-                {
-                    if (HeadlineManager.Headlines[i] != ((HeadlineCombo)headlineListComboBox.Items[i]).Headline
-                        || HeadlineManager.Headlines[i].Name != ((HeadlineCombo)headlineListComboBox.Items[i]).Headline.Name)
-                    {
-                        updateHeadlineListComboBox = true;
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                updateHeadlineListComboBox = true;
-            }
-
-            if (updateHeadlineListComboBox == true)
-            {
-                UpdateHeadlineListComboBox();
-            }
-            #endregion // ヘッドラインコンボボックスのアップデート
+            UpdateHeadlineListComboBox();
         }
 
         /// <summary>

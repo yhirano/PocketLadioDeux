@@ -120,9 +120,6 @@
   <metadata name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="menuItem.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="addRemoveHeadlineMenuItem.Text" xml:space="preserve">
     <value>&amp;Add/Remove Headline</value>
   </data>
@@ -146,6 +143,9 @@
   </data>
   <data name="exitMenuItem.Text" xml:space="preserve">
     <value>E&amp;xit</value>
+  </data>
+  <data name="menuItem.Text" xml:space="preserve">
+    <value>Menu</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cancelButton.Enabled" type="System.Boolean, mscorlib">
@@ -192,6 +192,15 @@
   <metadata name="headlineListViewContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>131, 17</value>
   </metadata>
+  <data name="playMenuItem.Text" xml:space="preserve">
+    <value>Play</value>
+  </data>
+  <data name="webMenuItem.Text" xml:space="preserve">
+    <value>Access to web site</value>
+  </data>
+  <data name="propertyMenuItem.Text" xml:space="preserve">
+    <value>Property</value>
+  </data>
   <data name="headlineListView.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 51</value>
   </data>
@@ -227,6 +236,9 @@
   </data>
   <data name="filterCheckBox.Text" xml:space="preserve">
     <value>&amp;Filter</value>
+  </data>
+  <data name="headlineListComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="headlineListComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -296,84 +308,6 @@
   </data>
   <data name="&gt;&gt;topPanel.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="playMenuItem.Text" xml:space="preserve">
-    <value>Play</value>
-  </data>
-  <data name="webMenuItem.Text" xml:space="preserve">
-    <value>Access to web site</value>
-  </data>
-  <data name="propertyMenuItem.Text" xml:space="preserve">
-    <value>Property</value>
-  </data>
-  <data name="&gt;&gt;infomationLabel.Name" xml:space="preserve">
-    <value>infomationLabel</value>
-  </data>
-  <data name="&gt;&gt;infomationLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infomationLabel.Parent" xml:space="preserve">
-    <value>bottomPanel</value>
-  </data>
-  <data name="&gt;&gt;infomationLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;propertyButton.Name" xml:space="preserve">
-    <value>propertyButton</value>
-  </data>
-  <data name="&gt;&gt;propertyButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;propertyButton.Parent" xml:space="preserve">
-    <value>bottomPanel</value>
-  </data>
-  <data name="&gt;&gt;propertyButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;webButton.Name" xml:space="preserve">
-    <value>webButton</value>
-  </data>
-  <data name="&gt;&gt;webButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;webButton.Parent" xml:space="preserve">
-    <value>bottomPanel</value>
-  </data>
-  <data name="&gt;&gt;webButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;playButton.Name" xml:space="preserve">
-    <value>playButton</value>
-  </data>
-  <data name="&gt;&gt;playButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;playButton.Parent" xml:space="preserve">
-    <value>bottomPanel</value>
-  </data>
-  <data name="&gt;&gt;playButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="bottomPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="bottomPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 180</value>
-  </data>
-  <data name="bottomPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 66</value>
-  </data>
-  <data name="&gt;&gt;bottomPanel.Name" xml:space="preserve">
-    <value>bottomPanel</value>
-  </data>
-  <data name="&gt;&gt;bottomPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;bottomPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;bottomPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="infomationLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -485,6 +419,27 @@
   </data>
   <data name="&gt;&gt;playButton.ZOrder" xml:space="preserve">
     <value>3</value>
+  </data>
+  <data name="bottomPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="bottomPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 180</value>
+  </data>
+  <data name="bottomPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 66</value>
+  </data>
+  <data name="&gt;&gt;bottomPanel.Name" xml:space="preserve">
+    <value>bottomPanel</value>
+  </data>
+  <data name="&gt;&gt;bottomPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;bottomPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;bottomPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="mainSplitter.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
