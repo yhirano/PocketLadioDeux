@@ -112,6 +112,15 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin {
         }
         
         /// <summary>
+        ///   NetLadio に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NetLadio {
+            get {
+                return ResourceManager.GetString("NetLadio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Start time に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Tims {

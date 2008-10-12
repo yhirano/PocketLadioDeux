@@ -21,7 +21,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// メッセージ表示用のリソース
         /// </summary>
-        ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.NetLadioHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.NetLadioHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
 
         public SettingForm(Headline headline)
         {
@@ -36,12 +36,12 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             filterListView.Items.Clear();
             foreach (string word in headline.Setting.FilterMatchWords)
             {
-                ListViewItem item = new ListViewItem(new string[] { messagesResource.GetString("Include"), word });
+                ListViewItem item = new ListViewItem(new string[] { word, messagesResource.GetString("Include") });
                 filterListView.Items.Add(item);
             }
             foreach (string word in headline.Setting.FilterExcludeWords)
             {
-                ListViewItem item = new ListViewItem(new string[] { messagesResource.GetString("Exclude"), word });
+                ListViewItem item = new ListViewItem(new string[] { word, messagesResource.GetString("Exclude") });
                 filterListView.Items.Add(item);
             }
             for (int i = 0; i < filterListView.Columns.Count; ++i)

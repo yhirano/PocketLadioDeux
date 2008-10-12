@@ -135,6 +135,9 @@
   <data name="Nam" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="NetLadio" xml:space="preserve">
+    <value>NetLadio</value>
+  </data>
   <data name="Tims" xml:space="preserve">
     <value>Start time</value>
   </data>

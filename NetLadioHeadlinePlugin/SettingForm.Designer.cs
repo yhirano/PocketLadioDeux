@@ -92,20 +92,20 @@
             // 
             // baseTabControl
             // 
-            resources.ApplyResources(this.baseTabControl, "baseTabControl");
             this.baseTabControl.Controls.Add(this.generalTabPage);
             this.baseTabControl.Controls.Add(this.filter1TabPage);
             this.baseTabControl.Controls.Add(this.filter2TabPage);
+            resources.ApplyResources(this.baseTabControl, "baseTabControl");
             this.baseTabControl.Name = "baseTabControl";
             this.baseTabControl.SelectedIndex = 0;
             // 
             // generalTabPage
             // 
-            resources.ApplyResources(this.generalTabPage, "generalTabPage");
             this.generalTabPage.Controls.Add(this.displayFormatTextBox2);
             this.generalTabPage.Controls.Add(this.displayFormatLabel);
             this.generalTabPage.Controls.Add(this.nameTextBox2);
             this.generalTabPage.Controls.Add(this.nameLabel);
+            resources.ApplyResources(this.generalTabPage, "generalTabPage");
             this.generalTabPage.Name = "generalTabPage";
             // 
             // displayFormatTextBox2
@@ -143,7 +143,6 @@
             // 
             // insertMenuItem
             // 
-            resources.ApplyResources(this.insertMenuItem, "insertMenuItem");
             this.insertMenuItem.MenuItems.Add(this.nameFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.genreFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.clnFormatMenuItem);
@@ -152,6 +151,7 @@
             this.insertMenuItem.MenuItems.Add(this.timesFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.bitFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.playurlFormatMenuItem);
+            resources.ApplyResources(this.insertMenuItem, "insertMenuItem");
             // 
             // nameFormatMenuItem
             // 
@@ -232,7 +232,6 @@
             // 
             // filter1TabPage
             // 
-            resources.ApplyResources(this.filter1TabPage, "filter1TabPage");
             this.filter1TabPage.Controls.Add(this.removeButton);
             this.filter1TabPage.Controls.Add(this.filterListView);
             this.filter1TabPage.Controls.Add(this.filterListLabel);
@@ -240,6 +239,7 @@
             this.filter1TabPage.Controls.Add(this.includeButton);
             this.filter1TabPage.Controls.Add(this.addFilterTextBox2);
             this.filter1TabPage.Controls.Add(this.addFilterLabel);
+            resources.ApplyResources(this.filter1TabPage, "filter1TabPage");
             this.filter1TabPage.Name = "filter1TabPage";
             // 
             // removeButton
@@ -251,8 +251,8 @@
             // filterListView
             // 
             resources.ApplyResources(this.filterListView, "filterListView");
-            this.filterListView.Columns.Add(this.typeColumnHeader);
             this.filterListView.Columns.Add(this.wordColumnHeader);
+            this.filterListView.Columns.Add(this.typeColumnHeader);
             this.filterListView.ContextMenu = this.filterListContextMenu;
             this.filterListView.Name = "filterListView";
             this.filterListView.View = System.Windows.Forms.View.Details;
@@ -328,7 +328,6 @@
             // 
             // filter2TabPage
             // 
-            resources.ApplyResources(this.filter2TabPage, "filter2TabPage");
             this.filter2TabPage.Controls.Add(this.sortScendingPanel);
             this.filter2TabPage.Controls.Add(this.sortLabel);
             this.filter2TabPage.Controls.Add(this.sortComboBox);
@@ -338,6 +337,7 @@
             this.filter2TabPage.Controls.Add(this.aboveBitrateNumericUpDown);
             this.filter2TabPage.Controls.Add(this.filteringBelowBitrateCheckBox);
             this.filter2TabPage.Controls.Add(this.filteringAboveBitrateCheckBox);
+            resources.ApplyResources(this.filter2TabPage, "filter2TabPage");
             this.filter2TabPage.Name = "filter2TabPage";
             // 
             // sortScendingPanel

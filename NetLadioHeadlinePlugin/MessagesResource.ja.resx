@@ -135,6 +135,9 @@
   <data name="Nam" xml:space="preserve">
     <value>番組名</value>
   </data>
+  <data name="NetLadio" xml:space="preserve">
+    <value>ねとらじ</value>
+  </data>
   <data name="Tims" xml:space="preserve">
     <value>放送開始時刻</value>
   </data>

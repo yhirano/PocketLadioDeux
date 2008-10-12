@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Resources;
+using System.Reflection;
 using System.Xml.Serialization;
 using OpenNETCF.ComponentModel;
 using MiscPocketCompactLibrary2.Net;
@@ -17,6 +19,11 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// ねとらじのヘッドラインのURL DAT v2
         /// </summary>
         private const string NETLADIO_HEADLINE_DAT_V2_URL = "http://yp.ladio.livedoor.jp/stats/list.v2.dat";
+
+        /// <summary>
+        /// メッセージ表示用のリソース
+        /// </summary>
+        private readonly ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.NetLadioHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
 
         /// <summary>
         /// 設定
@@ -52,7 +59,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
 
         public override string Kind
         {
-            get { return "ねとらじ"; }
+            get { return messagesResource.GetString("NetLadio"); }
         }
 
         /// <summary>
