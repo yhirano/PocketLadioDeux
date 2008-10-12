@@ -124,6 +124,7 @@
             this.topPanel.Controls.Add(this.updateButton);
             resources.ApplyResources(this.topPanel, "topPanel");
             this.topPanel.Name = "topPanel";
+            this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
             // cancelButton
             // 
@@ -239,7 +240,6 @@
             this.Menu = this.mainMenu;
             this.Name = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.MainForm_Closing);
             this.topPanel.ResumeLayout(false);

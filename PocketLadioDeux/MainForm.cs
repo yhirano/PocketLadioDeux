@@ -479,6 +479,7 @@ namespace PocketLadioDeux
             {
                 // メッセージボックスにファイルパスを設定するように表示する
                 MessageBox.Show(messagesResource.GetString("PleaseSettingPath"), messagesResource.GetString("Infomation"), MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
+
                 SettingForm settingForm = new SettingForm();
                 settingForm.ShowDialog();
                 settingForm.Dispose();
@@ -728,25 +729,6 @@ namespace PocketLadioDeux
             HeadlineManager.FetchChannelsAsync(selectedHeadline);
         }
 
-        private void MainForm_Paint(object sender, PaintEventArgs e)
-        {
-            // ヘッドラインリストのフォントサイズを変える
-            if (UserSettingAdapter.Setting.HeadlineListFontSize == UserSetting.HeadlineListFontSizes.DefaultSize)
-            {
-                if (headlineListView.Font.Size != PocketLadioDeuxInfo.HeadlineListDefaultFontSize)
-                {
-                    headlineListView.Font = new Font(headlineListView.Font.Name, PocketLadioDeuxInfo.HeadlineListDefaultFontSize, headlineListView.Font.Style);
-                }
-            }
-            else
-            {
-                if (headlineListView.Font.Size != (int)UserSettingAdapter.Setting.HeadlineListFontSize)
-                {
-                    headlineListView.Font = new Font(headlineListView.Font.Name, (int)UserSettingAdapter.Setting.HeadlineListFontSize, headlineListView.Font.Style);
-                }
-            }
-        }
-
         private void headlineListView_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
@@ -782,6 +764,25 @@ namespace PocketLadioDeux
             if (selectedHeadline != null && selectedHeadline.IsFetching == true)
             {
                 HeadlineManager.CancelFetchChannelsAsync(selectedHeadline);
+            }
+        }
+
+        private void topPanel_Paint(object sender, PaintEventArgs e)
+        {
+            // ヘッドラインリストのフォントサイズを変える
+            if (UserSettingAdapter.Setting.HeadlineListFontSize == UserSetting.HeadlineListFontSizes.DefaultSize)
+            {
+                if (headlineListView.Font.Size != PocketLadioDeuxInfo.HeadlineListDefaultFontSize)
+                {
+                    headlineListView.Font = new Font(headlineListView.Font.Name, PocketLadioDeuxInfo.HeadlineListDefaultFontSize, headlineListView.Font.Style);
+                }
+            }
+            else
+            {
+                if (headlineListView.Font.Size != (int)UserSettingAdapter.Setting.HeadlineListFontSize)
+                {
+                    headlineListView.Font = new Font(headlineListView.Font.Name, (int)UserSettingAdapter.Setting.HeadlineListFontSize, headlineListView.Font.Style);
+                }
             }
         }
     }
