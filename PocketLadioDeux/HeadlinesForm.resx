@@ -150,7 +150,7 @@
     <value>Top, Right</value>
   </data>
   <data name="kindComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 26</value>
+    <value>149, 27</value>
   </data>
   <data name="kindComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 22</value>
@@ -175,7 +175,7 @@
     <value>Top, Right</value>
   </data>
   <data name="addButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 54</value>
+    <value>165, 55</value>
   </data>
   <data name="addButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -202,7 +202,7 @@
     <value>Top, Left, Right</value>
   </data>
   <data name="headlinesLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 77</value>
+    <value>3, 78</value>
   </data>
   <data name="headlinesLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 20</value>
@@ -276,6 +276,15 @@
   <metadata name="nameContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="nameCutMenuItem.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="nameCopyMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="namePasteMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
   <data name="nameTextBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 27</value>
   </data>
@@ -297,20 +306,11 @@
   <data name="&gt;&gt;nameTextBox2.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="nameCutMenuItem.Text" xml:space="preserve">
-    <value>Cut</value>
-  </data>
-  <data name="nameCopyMenuItem.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="namePasteMenuItem.Text" xml:space="preserve">
-    <value>Paste</value>
-  </data>
   <data name="upButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
   <data name="upButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>213, 100</value>
+    <value>213, 101</value>
   </data>
   <data name="upButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 32</value>
@@ -370,10 +370,10 @@
     <value>180</value>
   </data>
   <data name="headlineListView.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 100</value>
+    <value>3, 101</value>
   </data>
   <data name="headlineListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 139</value>
+    <value>204, 138</value>
   </data>
   <data name="headlineListView.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
