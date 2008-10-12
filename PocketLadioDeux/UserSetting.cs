@@ -91,7 +91,7 @@ namespace PocketLadioDeux
         /// <summary>
         /// メインフォームのスプリッターの位置
         /// </summary>
-        private int topPanelHeight = 180;
+        private int topPanelHeight = 200;
 
         /// <summary>
         /// メインフォームのスプリッターの位置を取得・設定する
