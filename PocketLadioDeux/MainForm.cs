@@ -484,15 +484,31 @@ namespace PocketLadioDeux
                 settingForm.ShowDialog();
                 settingForm.Dispose();
 
-                // ねとらじプラグインが見つかった場合は、ねとらじのヘッドラインを作成する
                 foreach (HeadlinePlugin plugin in HeadlinePluginManager.Plugins)
                 {
-                    if (plugin.ClassName == "PocketLadioDeux.NetLadioHeadlinePlugin.Headline")
+                    switch (plugin.ClassName)
                     {
-                        HeadlineBase headline = plugin.CreateInstance();
-                        headline.Name = "ねとらじ";
-                        HeadlineManager.AddHeadline(headline);
-                        break;
+                        // ねとらじプラグインが見つかった場合は、ねとらじのヘッドラインを作成する
+                        case "PocketLadioDeux.NetLadioHeadlinePlugin.Headline":
+                            {
+                                HeadlineBase headline = plugin.CreateInstance();
+                                headline.Name = "ねとらじ";
+                                HeadlineManager.AddHeadline(headline);
+                            }
+                            break;
+                        case "PocketLadioDeux.ShoutCastHeadlinePlugin.Headline":
+                            {
+                                HeadlineBase headline = plugin.CreateInstance();
+                                if (headline is PocketLadioDeux.ShoutCastHeadlinePlugin.Headline)
+                                {
+                                    headline.Name = "Jazz";
+                                    ((PocketLadioDeux.ShoutCastHeadlinePlugin.Headline)headline).Setting.SearchWord = "Jazz";
+                                    HeadlineManager.AddHeadline(headline);
+                                }
+                            }
+                            break;
+                        default:
+                            break;
                     }
                 }
             }

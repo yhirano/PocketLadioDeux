@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeadlinePluginInterface", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLadioHeadlinePlugin", "NetLadioHeadlinePlugin\NetLadioHeadlinePlugin.csproj", "{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoutCastHeadlinePlugin", "ShoutCastHeadlinePlugin\ShoutCastHeadlinePlugin.csproj", "{EA759359-F44F-48B6-B03E-7A9F59410C13}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA759359-F44F-48B6-B03E-7A9F59410C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA759359-F44F-48B6-B03E-7A9F59410C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA759359-F44F-48B6-B03E-7A9F59410C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA759359-F44F-48B6-B03E-7A9F59410C13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

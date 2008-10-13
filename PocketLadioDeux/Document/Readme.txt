@@ -4,7 +4,7 @@ PocketLadio::Deux
 
 【主な機能】
 PocketLadio::DeuxはMicrosoft Windows Mobile 5.0 Pocket PC上で動作する「ねとらじ」
-のヘッドラインをインターネットより取得、表示するツールです。
+「SHOUTcast」のヘッドラインをインターネットより取得、表示するツールです。
 
 ねとらじ
 http://live.ladio.livedoor.com/
@@ -27,7 +27,6 @@ ZIPファイルを解凍し、PocketLadioDeuxab.CABをインストールしてください。
 【アンインストール】
 [スタート]-[設定]-[システム]タブ-[プログラムの削除]から[garage.uraroji.com 
 PocketLadio Deux]を選択して削除してください。
-
 
 
 【使い方】
@@ -67,6 +66,19 @@ Filterチェックボックスであらかじめ設定したフィルター条件に一致する番組のみを表
 [[BIT]]     - ビットレート
 [[PLAYURL]] - 番組の放送URL
 
+・SHOUTcast設定
+トップ画面から[メニュー]->[ヘッドラインの設定]->[(ヘッドライン名) - SHOUTcast]
+を選択すると、SHOUTcastの設定を行うことができます。
+[表示フォーマット]はトップ画面での番組の表示方法を設定します。
+[検索ワード]はSHOUTcastの番組の検索キーワードを指定します。
+
+・SHOUTcast設定 表示フォーマット
+[[TITLE]]         - 番組のタイトル
+[[GENRE]]         - 番組のジャンル
+[[PLAYING]]       - 現在演奏中の曲
+[[LISTENER]]      - リスナ数
+[[BIT]]           - ビットレート
+
 
 【ライセンス】
 本ソフトウェアは使用にあたり無料で使用することができますが、本ソフトウェアの使
@@ -80,6 +92,7 @@ Version 0.4
 ・ヘッドラインリストのフォントサイズの設定が有効になっていなかったのを修正
 ・UIの修正
 ・[ねとらじ] UIの修正
+・[SHOUTcast] SHOUTcastに対応
 
 Version 0.3
 ・フィルターを有効にしたままPocketLadio::Deuxを終了すると、PocketLadio::Deuxの

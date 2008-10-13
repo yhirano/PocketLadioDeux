@@ -33,10 +33,10 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 設定を取得・設定する
         /// </summary>
-        internal UserSetting Setting
+        public UserSetting Setting
         {
             get { return _setting; }
-            set
+            internal set
             {
                 _setting = value;
                 // フィルタ条件が変わった場合、フィルタのキャッシュを削除する

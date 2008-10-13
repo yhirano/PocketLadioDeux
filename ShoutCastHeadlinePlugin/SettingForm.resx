@@ -1,0 +1,1092 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="generalTabPage.Text" xml:space="preserve">
+    <value>General</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="filteringBelowBitrateCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;copyDisplayFormatMenuItem.Name" xml:space="preserve">
+    <value>copyDisplayFormatMenuItem</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="filteringBelowBitrateCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 57</value>
+  </data>
+  <data name="&gt;&gt;nameTextBox2.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
+  </data>
+  <data name="excludeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="searchWordTextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 21</value>
+  </data>
+  <data name="includeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>79, 54</value>
+  </data>
+  <data name="&gt;&gt;filter1TabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="removeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 219</value>
+  </data>
+  <data name="removeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="&gt;&gt;mainMenu1.Name" xml:space="preserve">
+    <value>mainMenu1</value>
+  </data>
+  <data name="copyNameMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;addFilterTextBox2.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="baseTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 268</value>
+  </data>
+  <data name="&gt;&gt;sortScendingPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="displayFormatTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 74</value>
+  </data>
+  <data name="&gt;&gt;searchWordTextBox2.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;addFilterTextBox2.Parent" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="displayFormatTextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="cutNameMenuItem.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="addFilterLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;listenerFormatMenuItem.Name" xml:space="preserve">
+    <value>listenerFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;genreFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="menuItem1.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="&gt;&gt;excludeButton.Name" xml:space="preserve">
+    <value>excludeButton</value>
+  </data>
+  <data name="cutAddFilterMenuItem.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="&gt;&gt;copyNameMenuItem.Name" xml:space="preserve">
+    <value>copyNameMenuItem</value>
+  </data>
+  <data name="&gt;&gt;wordColumnHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;shoutCastTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeButton.Parent" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <data name="&gt;&gt;belowBitrateNumericUpDown.Name" xml:space="preserve">
+    <value>belowBitrateNumericUpDown</value>
+  </data>
+  <data name="sortComboBox.Items2" xml:space="preserve">
+    <value>Listener</value>
+  </data>
+  <data name="&gt;&gt;belowKbpsLabel.Parent" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="&gt;&gt;copySearchWordMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;removeButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;aboveBitrateNumericUpDown.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;addFilterContextMenu.Name" xml:space="preserve">
+    <value>addFilterContextMenu</value>
+  </data>
+  <data name="&gt;&gt;removeButton.Name" xml:space="preserve">
+    <value>removeButton</value>
+  </data>
+  <data name="addFilterTextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;copySearchWordMenuItem.Name" xml:space="preserve">
+    <value>copySearchWordMenuItem</value>
+  </data>
+  <data name="&gt;&gt;insertMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wordColumnHeader.Width" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="displayFormatLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;searchWordLabel.Parent" xml:space="preserve">
+    <value>shoutCastTabPage</value>
+  </data>
+  <data name="&gt;&gt;sortLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;filter1TabPage.Parent" xml:space="preserve">
+    <value>baseTabControl</value>
+  </data>
+  <data name="&gt;&gt;titleFormatMenuItem.Name" xml:space="preserve">
+    <value>titleFormatMenuItem</value>
+  </data>
+  <data name="searchWordTextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="addFilterLabel.Text" xml:space="preserve">
+    <value>Add filter</value>
+  </data>
+  <data name="&gt;&gt;listenerFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wordColumnHeader.Text" xml:space="preserve">
+    <value>Word</value>
+  </data>
+  <data name="&gt;&gt;cutSearchWordMenuItem.Name" xml:space="preserve">
+    <value>cutSearchWordMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pasteSearchWordMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sortAscendingRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;generalTabPage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;shoutCastTabPage.Name" xml:space="preserve">
+    <value>shoutCastTabPage</value>
+  </data>
+  <data name="searchWordLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="removeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="sortAscendingRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="searchWordLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="filteringAboveBitrateCheckBox.Text" xml:space="preserve">
+    <value>Filtering above bitrate</value>
+  </data>
+  <data name="&gt;&gt;copyAddFilterMenuItem.Name" xml:space="preserve">
+    <value>copyAddFilterMenuItem</value>
+  </data>
+  <data name="aboveBitrateNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;generalTabPage.Parent" xml:space="preserve">
+    <value>baseTabControl</value>
+  </data>
+  <data name="&gt;&gt;pasteDisplayFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="includeButton.Text" xml:space="preserve">
+    <value>&amp;Include</value>
+  </data>
+  <data name="&gt;&gt;nameContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sortLabel.Parent" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="&gt;&gt;addFilterTextBox2.Name" xml:space="preserve">
+    <value>addFilterTextBox2</value>
+  </data>
+  <data name="&gt;&gt;cutSearchWordMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sortScendingPanel.Parent" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="filterListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 100</value>
+  </data>
+  <data name="&gt;&gt;cutAddFilterMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sortScendingPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 146</value>
+  </data>
+  <data name="&gt;&gt;addFilterContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sortComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;filterListLabel.Parent" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <data name="filter2TabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;filter2TabPage.Name" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="&gt;&gt;menuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nameTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 27</value>
+  </data>
+  <data name="addFilterTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 27</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="sortDescendingRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;pasteAddFilterMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;includeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sortAscendingRadioButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;addFilterLabel.Name" xml:space="preserve">
+    <value>addFilterLabel</value>
+  </data>
+  <data name="belowBitrateNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="&gt;&gt;sortComboBox.Name" xml:space="preserve">
+    <value>sortComboBox</value>
+  </data>
+  <data name="&gt;&gt;playingFormatMenuItem.Name" xml:space="preserve">
+    <value>playingFormatMenuItem</value>
+  </data>
+  <data name="copyAddFilterMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;filterListLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="insertMenuItem.Text" xml:space="preserve">
+    <value>Insert</value>
+  </data>
+  <data name="&gt;&gt;aboveKbpsLabel.Name" xml:space="preserve">
+    <value>aboveKbpsLabel</value>
+  </data>
+  <data name="nameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="sortDescendingRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 20</value>
+  </data>
+  <data name="&gt;&gt;excludeButton.Parent" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <data name="&gt;&gt;aboveKbpsLabel.Parent" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="&gt;&gt;nameTextBox2.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="filterListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 113</value>
+  </data>
+  <data name="excludeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;cutDisplayFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nameTextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="filteringBelowBitrateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="&gt;&gt;copyNameMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem1.Name" xml:space="preserve">
+    <value>menuItem1</value>
+  </data>
+  <data name="generalTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="belowKbpsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="belowBitrateNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;sortAscendingRadioButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="listenerFormatMenuItem.Text" xml:space="preserve">
+    <value>[[LISTENER]]</value>
+  </data>
+  <data name="sortLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 20</value>
+  </data>
+  <data name="&gt;&gt;cutDisplayFormatMenuItem.Name" xml:space="preserve">
+    <value>cutDisplayFormatMenuItem</value>
+  </data>
+  <data name="nameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 20</value>
+  </data>
+  <data name="&gt;&gt;addFilterLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;generalTabPage.Name" xml:space="preserve">
+    <value>generalTabPage</value>
+  </data>
+  <data name="&gt;&gt;displayFormatTextBox2.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;belowBitrateNumericUpDown.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingForm</value>
+  </data>
+  <data name="&gt;&gt;belowKbpsLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="filterListLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 20</value>
+  </data>
+  <data name="addFilterLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="&gt;&gt;bitFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="shoutCastTabPage.Text" xml:space="preserve">
+    <value>SHOUTcast</value>
+  </data>
+  <data name="pasteNameMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="&gt;&gt;bitFormatMenuItem.Name" xml:space="preserve">
+    <value>bitFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;belowKbpsLabel.Name" xml:space="preserve">
+    <value>belowKbpsLabel</value>
+  </data>
+  <data name="&gt;&gt;sortAscendingRadioButton.Parent" xml:space="preserve">
+    <value>sortScendingPanel</value>
+  </data>
+  <data name="belowKbpsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 85</value>
+  </data>
+  <data name="&gt;&gt;cutNameMenuItem.Name" xml:space="preserve">
+    <value>cutNameMenuItem</value>
+  </data>
+  <data name="&gt;&gt;displayFormatContextMenu.Name" xml:space="preserve">
+    <value>displayFormatContextMenu</value>
+  </data>
+  <data name="&gt;&gt;displayFormatTextBox2.Name" xml:space="preserve">
+    <value>displayFormatTextBox2</value>
+  </data>
+  <data name="aboveKbpsLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="belowKbpsLabel.Text" xml:space="preserve">
+    <value>KBps</value>
+  </data>
+  <data name="filteringBelowBitrateCheckBox.Text" xml:space="preserve">
+    <value>Filtering below bitrate</value>
+  </data>
+  <data name="&gt;&gt;displayFormatTextBox2.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
+  </data>
+  <data name="&gt;&gt;searchWordTextBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;sortDescendingRadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="filteringBelowBitrateCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;addFilterLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;displayFormatLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sortScendingPanel.Name" xml:space="preserve">
+    <value>sortScendingPanel</value>
+  </data>
+  <data name="&gt;&gt;mainMenu1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MainMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sortComboBox.Parent" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="sortComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="shoutCastTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 242</value>
+  </data>
+  <data name="generalTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 245</value>
+  </data>
+  <data name="&gt;&gt;filter1TabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="filter1TabPage.Text" xml:space="preserve">
+    <value>Filter1</value>
+  </data>
+  <data name="removeMenuItem.Text" xml:space="preserve">
+    <value>&amp;Remove</value>
+  </data>
+  <data name="&gt;&gt;shoutCastTabPage.Parent" xml:space="preserve">
+    <value>baseTabControl</value>
+  </data>
+  <data name="&gt;&gt;sortComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sortAscendingRadioButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 20</value>
+  </data>
+  <data name="filter2TabPage.Text" xml:space="preserve">
+    <value>Filter2</value>
+  </data>
+  <data name="filterListLabel.Text" xml:space="preserve">
+    <value>Filter list</value>
+  </data>
+  <data name="&gt;&gt;searchWordTextBox2.Parent" xml:space="preserve">
+    <value>shoutCastTabPage</value>
+  </data>
+  <data name="&gt;&gt;removeMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="playingFormatMenuItem.Text" xml:space="preserve">
+    <value>[[PLAYING]]</value>
+  </data>
+  <data name="&gt;&gt;includeButton.Name" xml:space="preserve">
+    <value>includeButton</value>
+  </data>
+  <data name="sortAscendingRadioButton.Text" xml:space="preserve">
+    <value>Ascending</value>
+  </data>
+  <data name="searchWordTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 27</value>
+  </data>
+  <data name="&gt;&gt;filterListLabel.Name" xml:space="preserve">
+    <value>filterListLabel</value>
+  </data>
+  <data name="&gt;&gt;includeButton.Parent" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <data name="includeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="sortComboBox.Items" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="&gt;&gt;aboveKbpsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="shoutCastTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="baseTabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;cutNameMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;genreFormatMenuItem.Name" xml:space="preserve">
+    <value>genreFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pasteNameMenuItem.Name" xml:space="preserve">
+    <value>pasteNameMenuItem</value>
+  </data>
+  <data name="&gt;&gt;nameLabel.Name" xml:space="preserve">
+    <value>nameLabel</value>
+  </data>
+  <data name="&gt;&gt;baseTabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchWordContextMenu.Name" xml:space="preserve">
+    <value>searchWordContextMenu</value>
+  </data>
+  <data name="&gt;&gt;pasteDisplayFormatMenuItem.Name" xml:space="preserve">
+    <value>pasteDisplayFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;copyAddFilterMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;displayFormatLabel.Name" xml:space="preserve">
+    <value>displayFormatLabel</value>
+  </data>
+  <data name="sortLabel.Text" xml:space="preserve">
+    <value>Sort</value>
+  </data>
+  <data name="nameTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="pasteDisplayFormatMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="addFilterTextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 21</value>
+  </data>
+  <data name="aboveKbpsLabel.Text" xml:space="preserve">
+    <value>KBps</value>
+  </data>
+  <data name="pasteSearchWordMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="filter1TabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 242</value>
+  </data>
+  <data name="sortScendingPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 56</value>
+  </data>
+  <data name="aboveKbpsLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 31</value>
+  </data>
+  <data name="&gt;&gt;sortDescendingRadioButton.Parent" xml:space="preserve">
+    <value>sortScendingPanel</value>
+  </data>
+  <data name="titleFormatMenuItem.Text" xml:space="preserve">
+    <value>[[TITLE]]</value>
+  </data>
+  <data name="filter2TabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 242</value>
+  </data>
+  <data name="&gt;&gt;aboveKbpsLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;typeColumnHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;sortAscendingRadioButton.Name" xml:space="preserve">
+    <value>sortAscendingRadioButton</value>
+  </data>
+  <data name="copySearchWordMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;baseTabControl.Name" xml:space="preserve">
+    <value>baseTabControl</value>
+  </data>
+  <data name="&gt;&gt;displayFormatLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;searchWordContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;baseTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="displayFormatTextBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 21</value>
+  </data>
+  <data name="&gt;&gt;filterListView.Name" xml:space="preserve">
+    <value>filterListView</value>
+  </data>
+  <data name="searchWordLabel.Text" xml:space="preserve">
+    <value>Search word</value>
+  </data>
+  <data name="&gt;&gt;removeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="removeButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;filterListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nameContextMenu.Name" xml:space="preserve">
+    <value>nameContextMenu</value>
+  </data>
+  <data name="&gt;&gt;addFilterLabel.Parent" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <data name="&gt;&gt;displayFormatContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pasteAddFilterMenuItem.Name" xml:space="preserve">
+    <value>pasteAddFilterMenuItem</value>
+  </data>
+  <data name="&gt;&gt;belowBitrateNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filterListContextMenu.Name" xml:space="preserve">
+    <value>filterListContextMenu</value>
+  </data>
+  <data name="nameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="removeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;insertMenuItem.Name" xml:space="preserve">
+    <value>insertMenuItem</value>
+  </data>
+  <data name="&gt;&gt;aboveBitrateNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="genreFormatMenuItem.Text" xml:space="preserve">
+    <value>[[GENRE]]</value>
+  </data>
+  <data name="&gt;&gt;nameLabel.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
+  </data>
+  <data name="cutDisplayFormatMenuItem.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="&gt;&gt;nameTextBox2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="displayFormatTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;pasteNameMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filter2TabPage.Parent" xml:space="preserve">
+    <value>baseTabControl</value>
+  </data>
+  <data name="&gt;&gt;sortComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="includeButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;playingFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="includeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 20</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>240, 268</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="addFilterLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="sortDescendingRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;filter2TabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;displayFormatLabel.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
+  </data>
+  <data name="displayFormatLabel.Text" xml:space="preserve">
+    <value>Display format</value>
+  </data>
+  <data name="addFilterTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="sortComboBox.Items1" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="excludeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 54</value>
+  </data>
+  <data name="&gt;&gt;generalTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="displayFormatLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 51</value>
+  </data>
+  <data name="excludeButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="nameTextBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;belowKbpsLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;nameTextBox2.Name" xml:space="preserve">
+    <value>nameTextBox2</value>
+  </data>
+  <data name="&gt;&gt;nameLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="filteringAboveBitrateCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="cutSearchWordMenuItem.Text" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="filteringAboveBitrateCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="excludeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;searchWordLabel.Name" xml:space="preserve">
+    <value>searchWordLabel</value>
+  </data>
+  <data name="pasteAddFilterMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="filterListView.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;sortDescendingRadioButton.Name" xml:space="preserve">
+    <value>sortDescendingRadioButton</value>
+  </data>
+  <data name="&gt;&gt;titleFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;excludeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;includeButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="excludeButton.Text" xml:space="preserve">
+    <value>&amp;Exclude</value>
+  </data>
+  <data name="includeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="aboveKbpsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="typeColumnHeader.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="sortComboBox.Items3" xml:space="preserve">
+    <value>Bitrate</value>
+  </data>
+  <data name="aboveBitrateNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="searchWordLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="searchWordTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="typeColumnHeader.Text" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="&gt;&gt;displayFormatTextBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;typeColumnHeader.Name" xml:space="preserve">
+    <value>typeColumnHeader</value>
+  </data>
+  <data name="filter1TabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="filteringAboveBitrateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="&gt;&gt;baseTabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;wordColumnHeader.Name" xml:space="preserve">
+    <value>wordColumnHeader</value>
+  </data>
+  <data name="sortAscendingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="sortScendingPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="filterListLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 77</value>
+  </data>
+  <data name="&gt;&gt;sortLabel.Name" xml:space="preserve">
+    <value>sortLabel</value>
+  </data>
+  <data name="sortLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 120</value>
+  </data>
+  <data name="&gt;&gt;filterListLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filter2TabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="removeButton.Text" xml:space="preserve">
+    <value>&amp;Remove</value>
+  </data>
+  <data name="belowBitrateNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 83</value>
+  </data>
+  <data name="&gt;&gt;filter1TabPage.Name" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <data name="&gt;&gt;cutAddFilterMenuItem.Name" xml:space="preserve">
+    <value>cutAddFilterMenuItem</value>
+  </data>
+  <data name="&gt;&gt;copyDisplayFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;belowBitrateNumericUpDown.Parent" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="nameLabel.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="filterListView.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="belowKbpsLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 20</value>
+  </data>
+  <data name="sortDescendingRadioButton.Text" xml:space="preserve">
+    <value>Descending</value>
+  </data>
+  <data name="&gt;&gt;pasteSearchWordMenuItem.Name" xml:space="preserve">
+    <value>pasteSearchWordMenuItem</value>
+  </data>
+  <data name="&gt;&gt;searchWordLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="filteringAboveBitrateCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="baseTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="aboveBitrateNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 29</value>
+  </data>
+  <data name="&gt;&gt;aboveBitrateNumericUpDown.Name" xml:space="preserve">
+    <value>aboveBitrateNumericUpDown</value>
+  </data>
+  <data name="baseTabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="sortComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 118</value>
+  </data>
+  <data name="displayFormatLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 20</value>
+  </data>
+  <data name="&gt;&gt;sortLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;shoutCastTabPage.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;removeMenuItem.Name" xml:space="preserve">
+    <value>removeMenuItem</value>
+  </data>
+  <data name="&gt;&gt;searchWordLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sortComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 22</value>
+  </data>
+  <data name="sortDescendingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 29</value>
+  </data>
+  <data name="&gt;&gt;sortDescendingRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addFilterTextBox2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;filterListView.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="copyDisplayFormatMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="&gt;&gt;searchWordTextBox2.Name" xml:space="preserve">
+    <value>searchWordTextBox2</value>
+  </data>
+  <data name="&gt;&gt;sortScendingPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;excludeButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;filterListContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filterListView.Parent" xml:space="preserve">
+    <value>filter1TabPage</value>
+  </data>
+  <data name="&gt;&gt;aboveBitrateNumericUpDown.Parent" xml:space="preserve">
+    <value>filter2TabPage</value>
+  </data>
+  <data name="bitFormatMenuItem.Text" xml:space="preserve">
+    <value>[[BIT]]</value>
+  </data>
+  <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
+    <value>Pocket_PC</value>
+  </metadata>
+  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="addFilterContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>304, 17</value>
+  </metadata>
+  <metadata name="filterListContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>703, 17</value>
+  </metadata>
+  <metadata name="mainMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="searchWordContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>882, 17</value>
+  </metadata>
+  <metadata name="nameContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>123, 14</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="displayFormatContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>487, 17</value>
+  </metadata>
+</root>
