@@ -550,18 +550,16 @@ namespace PocketLadioDeux
         private void menuItem_Popup(object sender, EventArgs e)
         {
             #region ヘッドラインの設定のメニューを生成する
+
             headlineSettingMenuItem.MenuItems.Clear();
             foreach (HeadlineBase headline in HeadlineManager.Headlines)
             {
                 MenuItem headlineMenuItem = new MenuItem();
                 headlineMenuItem.Text = string.Format("{0} - {1}", headline.Name, headline.Kind);
-                headlineMenuItem.Click += new EventHandler(
-                    delegate
-                    {
-                        headline.ShowSettingForm();
-                    });
+                headlineMenuItem.Click += CreateShowSettingFormEventHandler(headline);
                 headlineSettingMenuItem.MenuItems.Add(headlineMenuItem);
             }
+
             #endregion // ヘッドラインの設定のメニューを生成する
 
             // メニューの有効・無効を切り替える
@@ -573,6 +571,20 @@ namespace PocketLadioDeux
             {
                 headlineSettingMenuItem.Enabled = false;
             }
+        }
+
+        /// <summary>
+        /// 指定のヘッドラインの設定フォームを表示するためのEventHandlerを生成する
+        /// </summary>
+        /// <param name="headline">ヘッドライン</param>
+        /// <returns>設定フォームを表示するためのEventHandler</returns>
+        private EventHandler CreateShowSettingFormEventHandler(HeadlineBase headline)
+        {
+            return new EventHandler(
+                delegate
+                {
+                    headline.ShowSettingForm();
+                });
         }
 
         private void MainForm_Activated(object sender, EventArgs e)
