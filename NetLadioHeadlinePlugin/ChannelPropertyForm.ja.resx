@@ -123,12 +123,6 @@
   <data name="contentColumnHeader.Text" xml:space="preserve">
     <value>内容</value>
   </data>
-  <data name="playButton.Text" xml:space="preserve">
-    <value>再生</value>
-  </data>
-  <data name="webButton.Text" xml:space="preserve">
-    <value>ウェブ</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>プロパティ</value>
   </data>
