@@ -4,10 +4,17 @@ PocketLadio::Deux
 
 【主な機能】
 PocketLadio::DeuxはMicrosoft Windows Mobile 5.0 Pocket PC上で動作する「ねとらじ」
-「SHOUTcast」のヘッドラインをインターネットより取得、表示するツールです。
+「Podcast」「SHOUTcast」「Icecast」のヘッドラインをインターネットより取得、表示
+するツールです。
 
 ねとらじ
 http://live.ladio.livedoor.com/
+
+SHOUTcast
+http://www.shoutcast.com/
+
+Icecast
+http://dir.xiph.org/index.php
 
 
 【必要環境】
@@ -66,6 +73,17 @@ Filterチェックボックスであらかじめ設定したフィルター条件に一致する番組のみを表
 [[BIT]]     - ビットレート
 [[PLAYURL]] - 番組の放送URL
 
+・Podcast設定
+トップ画面から[メニュー]->[ヘッドラインの設定]->[(ヘッドライン名) - Podcast]を
+選択すると、Podcastの設定を行うことができます。
+[表示フォーマット]はトップ画面での番組の表示方法を設定します。
+
+・Podcast設定 表示フォーマット
+[[TITLE]]       - 番組のタイトル
+[[DESCRIPTION]] - 番組の詳細
+[[CATEGORY]]    - 番組のカテゴリ
+[[AUTHOR]]      - 番組の著者
+
 ・SHOUTcast設定
 トップ画面から[メニュー]->[ヘッドラインの設定]->[(ヘッドライン名) - SHOUTcast]
 を選択すると、SHOUTcastの設定を行うことができます。
@@ -85,7 +103,7 @@ Filterチェックボックスであらかじめ設定したフィルター条件に一致する番組のみを表
 [表示フォーマット]はトップ画面での番組の表示方法を設定します。
 [検索ワード]はIcecastの番組の検索キーワードを指定します。
 
-・SHOUTcast設定 表示フォーマット
+・Icecast設定 表示フォーマット
 [[SERVERNAME]]  - サーバー名
 [[SERVERTYPE]]  - ストリーミングの種類
 [[GENRE]]       - 番組のジャンル
@@ -107,6 +125,7 @@ Version 0.4
 　面が表示されていなかったのを修正
 ・UIの修正
 ・[ねとらじ] UIの修正
+・[Podcast] Podcastに対応
 ・[SHOUTcast] SHOUTcastに対応
 ・[Icecast] Icecastに対応
 

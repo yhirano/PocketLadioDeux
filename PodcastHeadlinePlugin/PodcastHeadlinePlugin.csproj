@@ -4,16 +4,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{724323CE-3378-4915-ADD8-418B9A799BE0}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{1B0D7917-799F-481B-9883-4723007D97E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PocketLadioDeux</RootNamespace>
-    <AssemblyName>PocketLadioDeux</AssemblyName>
+    <RootNamespace>PocketLadioDeux.PodcastHeadlinePlugin</RootNamespace>
+    <AssemblyName>PodcastHeadlinePlugin</AssemblyName>
     <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PlatformFamilyName>PocketPC</PlatformFamilyName>
     <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
     <OSVersion>5.1</OSVersion>
-    <DeployDirSuffix>PocketLadioDeux</DeployDirSuffix>
+    <DeployDirSuffix>PodcastHeadlinePlugin</DeployDirSuffix>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <NativePlatformName>Windows Mobile 5.0 Pocket PC SDK</NativePlatformName>
     <FormFactorID>
@@ -45,18 +45,14 @@
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FileDialog, Version=2.0.0.32772, Culture=neutral, PublicKeyToken=f5f24295a8529a9c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Library\FileDialog.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="OpenNETCF, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Library\OpenNETCF.dll</HintPath>
+      <HintPath>..\PocketLadioDeux\Library\OpenNETCF.dll</HintPath>
     </Reference>
     <Reference Include="OpenNETCF.Windows.Forms, Version=2.2.0.0, Culture=neutral, PublicKeyToken=e60dbea84bb431b7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Library\OpenNETCF.Windows.Forms.dll</HintPath>
+      <HintPath>..\PocketLadioDeux\Library\OpenNETCF.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -65,84 +61,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutForm.cs">
+    <Compile Include="Channel.cs" />
+    <Compile Include="ChannelPropertyForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AboutForm.designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
+    <Compile Include="ChannelPropertyForm.Designer.cs">
+      <DependentUpon>ChannelPropertyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FetchChannelsAsyncCancelEventArgs.cs" />
-    <Compile Include="FetchChannelsAsyncExceptionEventArgs.cs" />
-    <Compile Include="HeadlineManager.cs" />
-    <Compile Include="HeadlinePlugin.cs" />
-    <Compile Include="HeadlinePluginManager.cs" />
-    <Compile Include="HeadlineSettingFilePathStore.cs" />
-    <Compile Include="HeadlinesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HeadlinesForm.Designer.cs">
-      <DependentUpon>HeadlinesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Headline.cs" />
     <Compile Include="MessagesResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MessagesResource.resx</DependentUpon>
     </Compile>
-    <Compile Include="PocketLadioDeuxInfo.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AboutForm.ja.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HeadlinesForm.ja.resx">
-      <DependentUpon>HeadlinesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HeadlinesForm.resx">
-      <DependentUpon>HeadlinesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.ja.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MessagesResource.ja.resx" />
-    <EmbeddedResource Include="MessagesResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>MessagesResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingForm.ja.resx">
-      <DependentUpon>SettingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SettingForm.resx">
-      <DependentUpon>SettingForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SettingForm.designer.cs">
+    <Compile Include="SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserSetting.cs" />
-    <Compile Include="UserSettingAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\MiscPocketCompactLibrary2\MiscPocketCompactLibrary2\MiscPocketCompactLibrary2.csproj">
@@ -153,22 +92,25 @@
       <Project>{6099ECFD-C7A9-45AC-8214-D7BBBF537431}</Project>
       <Name>HeadlinePluginInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IcecastHeadlinePlugin\IcecastHeadlinePlugin.csproj">
-      <Project>{B617F701-D4B9-4FB6-BB30-F915E5DDFE97}</Project>
-      <Name>IcecastHeadlinePlugin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NetLadioHeadlinePlugin\NetLadioHeadlinePlugin.csproj">
-      <Project>{F3EB0E15-01C6-46DA-AA37-1C51A55AF120}</Project>
-      <Name>NetLadioHeadlinePlugin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PodcastHeadlinePlugin\PodcastHeadlinePlugin.csproj">
-      <Project>{1B0D7917-799F-481B-9883-4723007D97E2}</Project>
-      <Name>PodcastHeadlinePlugin</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ShoutCastHeadlinePlugin\ShoutCastHeadlinePlugin.csproj">
-      <Project>{EA759359-F44F-48B6-B03E-7A9F59410C13}</Project>
-      <Name>ShoutCastHeadlinePlugin</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ChannelPropertyForm.ja.resx">
+      <DependentUpon>ChannelPropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChannelPropertyForm.resx">
+      <DependentUpon>ChannelPropertyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessagesResource.ja.resx" />
+    <EmbeddedResource Include="MessagesResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessagesResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.ja.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
