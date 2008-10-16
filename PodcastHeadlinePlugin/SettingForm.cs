@@ -73,7 +73,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
 
         internal void ShowDialogAndFocusRssUrl()
         {
-            baseTabControl.SelectedIndex = 2;
+            baseTabControl.SelectedIndex = 1;
             rssUrlTextBox2.Focus();
             ShowDialog();
         }
@@ -82,7 +82,10 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         {
             nameTextBox2.Text = headline.Name;
             displayFormatTextBox2.Text = headline.Setting.DisplayFormat;
-            rssUrlTextBox2.Text = headline.Setting.RssUrl.ToString();
+            if (headline.Setting.RssUrl != null)
+            {
+                rssUrlTextBox2.Text = headline.Setting.RssUrl.ToString();
+            }
             UpdateFilterListView();
             // ソート種類を読み込む
             switch (headline.Setting.SortKind)

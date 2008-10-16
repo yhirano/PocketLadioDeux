@@ -196,7 +196,13 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         public Headline()
         {
             Setting = new UserSetting();
+        }
 
+        public override void CreatedHeadlineByManual()
+        {
+            base.CreatedHeadlineByManual();
+
+            // RSS URLを入力するように促す
             MessageBox.Show(messagesResource.GetString("PleaseInputRssUrl"), messagesResource.GetString("Infomation"), MessageBoxButtons.OK,
                 MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             SettingForm settingForm = new SettingForm(this);

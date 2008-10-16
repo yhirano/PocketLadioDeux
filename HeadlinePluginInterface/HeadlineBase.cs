@@ -121,6 +121,16 @@ namespace PocketLadioDeux.HeadlinePluginInterface
             };
         }
 
+        /// <summary>
+        /// 手動でヘッドラインが作成された後に実行されるメソッド。
+        /// 手動でヘッドラインが作成された後に何らかの処理をする場合は、
+        /// オーバーライドして処理を実装してください。
+        /// </summary>
+        public virtual void CreatedHeadlineByManual()
+        {
+            ;
+        }
+
         private object fetchHeadlineLock = new object();
 
         /// <summary>
@@ -241,9 +251,14 @@ namespace PocketLadioDeux.HeadlinePluginInterface
         /// ヘッドライン内の番組を比較する。
         /// フィルターでソート処理を実装する場合は、オーバーライドして番組を比較できるようにしてください。
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <returns></returns>
+        /// <param name="x">番組1</param>
+        /// <param name="y">番組2</param>
+        /// <returns>
+        /// 2 つの比較対照値の構文上の関係を示す 32 ビット符号付き整数。
+        /// 0より小の場合、番組1が番組2より小さい。
+        /// 0の場合、番組1と番組2は等しい。
+        /// 0より大の場合、番組1が番組2より大きい。
+        /// </returns>
         public virtual int Compare(IChannel x, IChannel y)
         {
             if (x == null)
@@ -256,7 +271,6 @@ namespace PocketLadioDeux.HeadlinePluginInterface
                 // 比較しない
                 return 1;
             }
-
         }
     }
 }
