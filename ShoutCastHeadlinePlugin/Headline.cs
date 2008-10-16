@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
-using System.Resources;
-using System.Reflection;
 using System.Xml.Serialization;
-using OpenNETCF.ComponentModel;
 using MiscPocketCompactLibrary2.Net;
 using PocketLadioDeux.HeadlinePluginInterface;
 
@@ -19,11 +16,6 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// SHOUTcastのURL
         /// </summary>
         private const string SHOUTCAST_URL = "http://www.shoutcast.com/directory/search_results.jsp";
-
-        /// <summary>
-        /// メッセージ表示用のリソース
-        /// </summary>
-        private readonly ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.ShoutCastHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
 
         /// <summary>
         /// 設定
