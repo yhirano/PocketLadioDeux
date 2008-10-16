@@ -199,7 +199,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
             {
                 // 番組
                 Channel channel = null;
-                // itemタグの中にいるか
+                // Entryタグの中にいるか
                 bool inEntry = false;
 
                 st = connectionSetting.CreateStream(new Uri(Headline.ICECAST_URL));

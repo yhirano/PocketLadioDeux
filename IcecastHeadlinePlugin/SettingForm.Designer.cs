@@ -42,8 +42,8 @@
             this.insertMenuItem = new System.Windows.Forms.MenuItem();
             this.serverNameFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.serverTypeFormatMenuItem = new System.Windows.Forms.MenuItem();
-            this.currentSongFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.genreFormatMenuItem = new System.Windows.Forms.MenuItem();
+            this.currentSongFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.bitFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.displayFormatLabel = new System.Windows.Forms.Label();
             this.nameTextBox2 = new OpenNETCF.Windows.Forms.TextBox2();
@@ -157,15 +157,15 @@
             resources.ApplyResources(this.serverTypeFormatMenuItem, "serverTypeFormatMenuItem");
             this.serverTypeFormatMenuItem.Click += new System.EventHandler(this.serverTypeFormatMenuItem_Click);
             // 
-            // currentSongFormatMenuItem
-            // 
-            resources.ApplyResources(this.currentSongFormatMenuItem, "currentSongFormatMenuItem");
-            this.currentSongFormatMenuItem.Click += new System.EventHandler(this.currentSongFormatMenuItem_Click);
-            // 
             // genreFormatMenuItem
             // 
             resources.ApplyResources(this.genreFormatMenuItem, "genreFormatMenuItem");
             this.genreFormatMenuItem.Click += new System.EventHandler(this.genreFormatMenuItem_Click);
+            // 
+            // currentSongFormatMenuItem
+            // 
+            resources.ApplyResources(this.currentSongFormatMenuItem, "currentSongFormatMenuItem");
+            this.currentSongFormatMenuItem.Click += new System.EventHandler(this.currentSongFormatMenuItem_Click);
             // 
             // bitFormatMenuItem
             // 

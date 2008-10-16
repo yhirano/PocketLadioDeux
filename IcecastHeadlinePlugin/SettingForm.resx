@@ -634,7 +634,7 @@
     <value>172, 22</value>
   </data>
   <data name="sortComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;sortComboBox.Name" xml:space="preserve">
     <value>sortComboBox</value>
@@ -703,7 +703,7 @@
     <value>80, 22</value>
   </data>
   <data name="belowBitrateNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;belowBitrateNumericUpDown.Name" xml:space="preserve">
     <value>belowBitrateNumericUpDown</value>
@@ -724,7 +724,7 @@
     <value>80, 22</value>
   </data>
   <data name="aboveBitrateNumericUpDown.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;aboveBitrateNumericUpDown.Name" xml:space="preserve">
     <value>aboveBitrateNumericUpDown</value>
@@ -748,7 +748,7 @@
     <value>234, 20</value>
   </data>
   <data name="filteringBelowBitrateCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="filteringBelowBitrateCheckBox.Text" xml:space="preserve">
     <value>Filtering below bitrate</value>
@@ -763,7 +763,7 @@
     <value>234, 20</value>
   </data>
   <data name="filteringAboveBitrateCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="filteringAboveBitrateCheckBox.Text" xml:space="preserve">
     <value>Filtering above bitrate</value>
@@ -885,16 +885,16 @@
   <data name="&gt;&gt;serverTypeFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;currentSongFormatMenuItem.Name" xml:space="preserve">
-    <value>currentSongFormatMenuItem</value>
-  </data>
-  <data name="&gt;&gt;currentSongFormatMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;genreFormatMenuItem.Name" xml:space="preserve">
     <value>genreFormatMenuItem</value>
   </data>
   <data name="&gt;&gt;genreFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;currentSongFormatMenuItem.Name" xml:space="preserve">
+    <value>currentSongFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;currentSongFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bitFormatMenuItem.Name" xml:space="preserve">

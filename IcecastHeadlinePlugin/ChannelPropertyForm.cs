@@ -21,7 +21,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// メッセージ表示用のリソース
         /// </summary>
-        ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.IcecastHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.IcecastHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
 
         /// <summary>
         /// コンストラクタ

@@ -54,7 +54,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// 表示フォーマットを設定する
         /// </summary>
-        public string DislpayFormat
+        internal string DislpayFormat
         {
             set { dislpayFormat = value; }
         }
@@ -81,7 +81,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// タイトル
         /// </summary>
-        public string Title
+        internal string Title
         {
             get { return title; }
             set { title = value; }
@@ -95,7 +95,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// 現在演奏中の曲
         /// </summary>
-        public string Playing
+        internal string Playing
         {
             get { return playing; }
             set { playing = value; }
@@ -109,7 +109,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// リスナ数
         /// </summary>
-        public int Listener
+        internal int Listener
         {
             get { return listener; }
             set { listener = value; }
@@ -118,7 +118,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// リスナ数が不明
         /// </summary>
-        public const int UNKNOWN_LISTENER_NUM = -1;
+        internal const int UNKNOWN_LISTENER_NUM = -1;
 
         /// <summary>
         /// ジャンル
@@ -128,7 +128,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// ジャンル
         /// </summary>
-        public string Genre
+        internal string Genre
         {
             get { return genre; }
             set { genre = value; }
@@ -142,7 +142,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// ビットレート
         /// </summary>
-        public int Bitrate
+        internal int Bitrate
         {
             get { return bitRate; }
             set { bitRate = value; }
@@ -151,7 +151,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// ビットレートが不明
         /// </summary>
-        public const int UNKNOWN_BITRATE = -1;
+        internal const int UNKNOWN_BITRATE = -1;
 
         /// <summary>
         /// フィルタリング対象のワードを取得する。

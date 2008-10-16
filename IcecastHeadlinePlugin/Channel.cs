@@ -39,7 +39,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// 表示フォーマットを設定する
         /// </summary>
-        public string DislpayFormat
+        internal string DislpayFormat
         {
             set { dislpayFormat = value; }
         }
@@ -63,7 +63,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// サーバー名
         /// </summary>
-        public string ServerName
+        internal string ServerName
         {
             get { return serverName; }
             set { serverName = value; }
@@ -77,7 +77,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// Url
         /// </summary>
-        public Uri ListenUrl
+        internal Uri ListenUrl
         {
             get { return listenUrl; }
             set { listenUrl = value; }
@@ -91,7 +91,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// ストリーミングの種類
         /// </summary>
-        public string ServerType
+        internal string ServerType
         {
             get { return serverType; }
             set { serverType = value; }
@@ -105,7 +105,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// ビットレート
         /// </summary>
-        public int Bitrate
+        internal int Bitrate
         {
             get { return bitrate; }
             set { bitrate = value; }
@@ -114,7 +114,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// ビットレートが不明
         /// </summary>
-        public const int UNKNOWN_BITRATE = -1;
+        internal const int UNKNOWN_BITRATE = -1;
 
         /// <summary>
         /// チャンネル数
@@ -124,7 +124,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// チャンネル数
         /// </summary>
-        public string Channels
+        internal string Channels
         {
             get { return channels; }
             set { channels = value; }
@@ -138,7 +138,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// サンプリングレート
         /// </summary>
-        public int SampleRate
+        internal int SampleRate
         {
             get { return sampleRate; }
             set { sampleRate = value; }
@@ -147,7 +147,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// サンプリングレートが不明
         /// </summary>
-        public const int UNKNOWN_SAMPLE_RATE = -1;
+        internal const int UNKNOWN_SAMPLE_RATE = -1;
 
         /// <summary>
         /// ジャンル
@@ -157,7 +157,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// ジャンル
         /// </summary>
-        public string Genre
+        internal string Genre
         {
             get { return genre; }
             set { genre = value; }
@@ -171,7 +171,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// 現在の音楽
         /// </summary>
-        public string CurrentSong
+        internal string CurrentSong
         {
             get { return currentSong; }
             set { currentSong = value; }

@@ -33,10 +33,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         public string DisplayFormat
         {
             get { return displayFormat; }
-            set
-            {
-                displayFormat = value;
-            }
+            set { displayFormat = value; }
         }
 
         /// <summary>
@@ -242,7 +239,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// フィルタ条件が変更になった場合に発生するイベント
         /// </summary>
-        [field : NonSerializedAttribute()]
+        [field: NonSerializedAttribute()]
         internal event EventHandler FilterChangedEventHandler;
 
         /// <summary>

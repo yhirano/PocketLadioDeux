@@ -56,7 +56,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 表示フォーマットを設定する
         /// </summary>
-        public string DislpayFormat
+        internal string DislpayFormat
         {
             set { dislpayFormat = value; }
         }
@@ -126,8 +126,8 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// </summary>
         public int Tim
         {
-            set { tim = value; }
             get { return tim; }
+            internal set { tim = value; }
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         public DateTime Tims
         {
             set { tims = value; }
-            get { return tims; }
+            internal get { return tims; }
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 現リスナ数を取得・設定する
         /// </summary>
-        public int Cln
+        internal int Cln
         {
             get { return cln; }
             set { cln = value; }
@@ -171,7 +171,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 延べリスナ数を取得・設定する
         /// </summary>
-        public int Clns
+        internal int Clns
         {
             get { return clns; }
             set { clns = value; }
@@ -185,7 +185,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 配信サーバホスト名を設定する
         /// </summary>
-        public string Srv
+        internal string Srv
         {
             set { srv = value; }
         }
@@ -198,7 +198,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 配信サーバポート番号を設定する
         /// </summary>
-        public string Prt
+        internal string Prt
         {
             set { prt = value; }
         }
@@ -211,7 +211,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 配信サーバの種類を取得・設定する
         /// </summary>
-        public string Typ
+        internal string Typ
         {
             get { return typ; }
             set { typ = value; }
@@ -225,7 +225,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ビットレートを取得・設定する
         /// </summary>
-        public int Bit
+        internal int Bit
         {
             get { return bit; }
             set { bit = value; }

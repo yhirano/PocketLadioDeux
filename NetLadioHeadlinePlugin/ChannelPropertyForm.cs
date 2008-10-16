@@ -22,7 +22,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// メッセージ表示用のリソース
         /// </summary>
-        ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.NetLadioHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
+        private readonly ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.NetLadioHeadlinePlugin.MessagesResource", Assembly.GetExecutingAssembly());
 
         /// <summary>
         /// コンストラクタ
