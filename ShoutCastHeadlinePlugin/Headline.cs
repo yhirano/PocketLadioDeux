@@ -322,6 +322,11 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
 
                 for (int i = 0; i < lines.Length; ++i)
                 {
+                    if (fetchCancel == true)
+                    {
+                        return;
+                    }
+
                     // 空行の場合
                     Match emptyMath = emptyRegex.Match(lines[i]);
                     if (lines[i] == string.Empty || emptyMath.Success)

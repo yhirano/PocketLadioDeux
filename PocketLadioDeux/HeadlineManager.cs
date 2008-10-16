@@ -116,8 +116,8 @@ namespace PocketLadioDeux
                             if (bg.CancellationPending == true)
                             {
                                 e.Cancel = true;
-                                // 番組の取得をキャンセルフラグを立てる
-                                headline.FetchCancel = true;
+                                // 番組の取得をキャンセル
+                                headline.FetchCancel();
                             }
                         });
                     headline.ChannelAddedEventHandler += cancelEventHandler;

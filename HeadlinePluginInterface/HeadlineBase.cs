@@ -174,11 +174,11 @@ namespace PocketLadioDeux.HeadlinePluginInterface
         protected bool fetchCancel = false;
 
         /// <summary>
-        /// ヘッドラインの取得をキャンセルする場合はこの値がtrueにする
+        /// ヘッドラインの取得をキャンセルする
         /// </summary>
-        public bool FetchCancel
+        public void FetchCancel()
         {
-            set { fetchCancel = value; }
+            fetchCancel = true;
         }
 
         /// <summary>

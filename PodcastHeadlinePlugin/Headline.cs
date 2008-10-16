@@ -233,6 +233,11 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
 
                 while (reader.Read())
                 {
+                    if (fetchCancel == true)
+                    {
+                        return;
+                    }
+
                     if (reader.NodeType == XmlNodeType.Element)
                     {
                         if (reader.LocalName == "item")
