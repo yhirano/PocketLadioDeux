@@ -73,11 +73,24 @@ Filterチェックボックスであらかじめ設定したフィルター条件に一致する番組のみを表
 [検索ワード]はSHOUTcastの番組の検索キーワードを指定します。
 
 ・SHOUTcast設定 表示フォーマット
-[[TITLE]]         - 番組のタイトル
-[[PLAYING]]       - 現在演奏中の曲
-[[LISTENER]]      - リスナ数
-[[GENRE]]         - 番組のジャンル
-[[BIT]]           - ビットレート
+[[TITLE]]    - 番組のタイトル
+[[PLAYING]]  - 現在演奏中の曲
+[[LISTENER]] - リスナ数
+[[GENRE]]    - 番組のジャンル
+[[BIT]]      - ビットレート
+
+・Icecast設定
+トップ画面から[メニュー]->[ヘッドラインの設定]->[(ヘッドライン名) - Icecast]を
+選択すると、Icecastの設定を行うことができます。
+[表示フォーマット]はトップ画面での番組の表示方法を設定します。
+[検索ワード]はIcecastの番組の検索キーワードを指定します。
+
+・SHOUTcast設定 表示フォーマット
+[[SERVERNAME]]  - サーバー名
+[[SERVERTYPE]]  - ストリーミングの種類
+[[GENRE]]       - 番組のジャンル
+[[CURRENTSONG]] - 現在演奏中の曲
+[[BIT]]         - ビットレート
 
 
 【ライセンス】
@@ -95,6 +108,7 @@ Version 0.4
 ・UIの修正
 ・[ねとらじ] UIの修正
 ・[SHOUTcast] SHOUTcastに対応
+・[Icecast] Icecastに対応
 
 Version 0.3
 ・フィルターを有効にしたままPocketLadio::Deuxを終了すると、PocketLadio::Deuxの
