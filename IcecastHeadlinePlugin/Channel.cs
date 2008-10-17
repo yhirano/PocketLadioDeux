@@ -34,14 +34,14 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// 表示フォーマット
         /// </summary>
-        private string dislpayFormat;
+        private string dislpayFormat = string.Empty;
 
         /// <summary>
         /// 表示フォーマットを設定する
         /// </summary>
         internal string DislpayFormat
         {
-            set { dislpayFormat = value; }
+            set { dislpayFormat = (value != null) ? value : string.Empty; }
         }
 
         public Uri PlayUrl
@@ -58,7 +58,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// サーバー名
         /// </summary>
-        private string serverName;
+        private string serverName = string.Empty;
 
         /// <summary>
         /// サーバー名
@@ -66,7 +66,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         internal string ServerName
         {
             get { return serverName; }
-            set { serverName = value; }
+            set { serverName = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// ストリーミングの種類
         /// </summary>
-        private string serverType;
+        private string serverType = string.Empty;
 
         /// <summary>
         /// ストリーミングの種類
@@ -94,7 +94,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         internal string ServerType
         {
             get { return serverType; }
-            set { serverType = value; }
+            set { serverType = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// チャンネル数
         /// </summary>
-        private string channels;
+        private string channels = string.Empty;
 
         /// <summary>
         /// チャンネル数
@@ -127,7 +127,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         internal string Channels
         {
             get { return channels; }
-            set { channels = value; }
+            set { channels = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         /// <summary>
         /// ジャンル
         /// </summary>
-        private string genre;
+        private string genre = string.Empty;
 
         /// <summary>
         /// ジャンル
@@ -160,13 +160,13 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         internal string Genre
         {
             get { return genre; }
-            set { genre = value; }
+            set { genre = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
         /// 現在の音楽
         /// </summary>
-        private string currentSong;
+        private string currentSong = string.Empty;
 
         /// <summary>
         /// 現在の音楽
@@ -174,7 +174,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         internal string CurrentSong
         {
             get { return currentSong; }
-            set { currentSong = value; }
+            set { currentSong = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>

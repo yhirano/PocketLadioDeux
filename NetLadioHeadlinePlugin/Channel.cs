@@ -27,7 +27,8 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// </summary>
         public string Display
         {
-            get {
+            get
+            {
                 if (dislpayFormat != string.Empty)
                 {
                     string result = dislpayFormat.Replace("[[NAME]]", Nam)
@@ -51,14 +52,14 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// 表示フォーマット
         /// </summary>
-        private string dislpayFormat;
+        private string dislpayFormat = string.Empty;
 
         /// <summary>
         /// 表示フォーマットを設定する
         /// </summary>
         internal string DislpayFormat
         {
-            set { dislpayFormat = value; }
+            set { dislpayFormat = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         internal string Gnl
         {
             get { return gnl; }
-            set { gnl = value; }
+            set { gnl = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         internal string Nam
         {
             get { return nam; }
-            set { nam = value; }
+            set { nam = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         internal string Tit
         {
             get { return tit; }
-            set { tit = value; }
+            set { tit = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// </summary>
         internal string Mnt
         {
-            set { mnt = value; }
+            set { mnt = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -187,7 +188,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// </summary>
         internal string Srv
         {
-            set { srv = value; }
+            set { srv = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -200,7 +201,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// </summary>
         internal string Prt
         {
-            set { prt = value; }
+            set { prt = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -214,7 +215,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         internal string Typ
         {
             get { return typ; }
-            set { typ = value; }
+            set { typ = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -260,7 +261,8 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// </summary>
         public string[] FilteredWords
         {
-            get {
+            get
+            {
                 if (PlayUrl != null)
                 {
                     return new string[] { Nam, Gnl, PlayUrl.ToString() };

@@ -11,7 +11,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ヘッドライン名
         /// </summary>
-        private string name;
+        private string name = string.Empty;
 
         /// <summary>
         /// ヘッドライン名を取得・設定する
@@ -19,7 +19,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         public string Name
         {
             get { return name; }
-            set { name = value; }
+            set { name = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         public string DisplayFormat
         {
             get { return displayFormat; }
-            set { displayFormat = value; }
+            set { displayFormat = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>

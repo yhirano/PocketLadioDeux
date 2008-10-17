@@ -18,7 +18,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         public string Name
         {
             get { return name; }
-            set { name = value; }
+            set { name = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
         public string DisplayFormat
         {
             get { return displayFormat; }
-            set { displayFormat = value; }
+            set { displayFormat = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
