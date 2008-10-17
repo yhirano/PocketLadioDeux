@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace PocketLadioDeux.PodcastHeadlinePlugin
 {
@@ -10,7 +11,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         /// <summary>
         /// ヘッドライン名
         /// </summary>
-        private string name;
+        private string name = string.Empty;
 
         /// <summary>
         /// ヘッドライン名を取得・設定する
@@ -18,7 +19,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         public string Name
         {
             get { return name; }
-            set { name = value; }
+            set { name = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -32,7 +33,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         public string DisplayFormat
         {
             get { return displayFormat; }
-            set { displayFormat = value; }
+            set { displayFormat = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -43,10 +44,32 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         /// <summary>
         /// RSSのURLを取得・設定する
         /// </summary>
+        [XmlIgnore()]
         public Uri RssUrl
         {
             get { return rssUrl; }
             set { rssUrl = value; }
+        }
+
+        /// <summary>
+        /// XmlSerializerでRssUrlがSerialize/Deserializeできないため、
+        /// RssUrlのXmlSerializerを使用するインターフェースとして用意
+        /// </summary>
+        public string RssUrlString
+        {
+            get { return rssUrl.ToString(); }
+            set
+            {
+                if (value != null)
+                {
+                    try
+                    {
+                        rssUrl = new Uri(value);
+
+                    }
+                    catch (UriFormatException) { ; }
+                }
+            }
         }
 
         /// <summary>

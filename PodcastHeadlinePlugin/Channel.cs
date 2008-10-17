@@ -33,14 +33,14 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         /// <summary>
         /// 表示フォーマット
         /// </summary>
-        private string dislpayFormat;
+        private string dislpayFormat = string.Empty;
 
         /// <summary>
         /// 表示フォーマットを設定する
         /// </summary>
         internal string DislpayFormat
         {
-            set { dislpayFormat = value; }
+            set { dislpayFormat = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         /// <summary>
         /// 番組のタイトル
         /// </summary>
-        private string title;
+        private string title = string.Empty;
 
         /// <summary>
         /// 番組のタイトル
@@ -76,13 +76,13 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         internal string Title
         {
             get { return title; }
-            set { title = value; }
+            set { title = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
         /// 番組の詳細
         /// </summary>
-        private string description;
+        private string description = string.Empty;
 
         /// <summary>
         /// 番組の詳細
@@ -90,7 +90,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         internal string Description
         {
             get { return description; }
-            set { description = value; }
+            set { description = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         internal string Category
         {
             get { return category; }
-            set { category = value; }
+            set { category = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         internal string Author
         {
             get { return author; }
-            set { author = value; }
+            set { author = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -146,7 +146,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         internal string Length
         {
             get { return length; }
-            set { length = value; }
+            set { length = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
         internal string Type
         {
             get { return type; }
-            set { type = value; }
+            set { type = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -219,12 +219,27 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
             {
                 channel.WebSiteUrl = null;
             }
-            channel.Description = (string)(channel.Description.Clone());
+            if (Description != null)
+            {
+                channel.Description = (string)(Description.Clone());
+            }
             channel.Date = Date;
-            channel.Category = (string)(Category.Clone());
-            channel.Author = (string)(Author.Clone());
-            channel.Length = (string)(Length.Clone());
-            channel.Type = (string)(Type.Clone());
+            if (Category != null)
+            {
+                channel.Category = (string)(Category.Clone());
+            }
+            if (Author != null)
+            {
+                channel.Author = (string)(Author.Clone());
+            }
+            if (Length != null)
+            {
+                channel.Length = (string)(Length.Clone());
+            }
+            if (Type != null)
+            {
+                channel.Type = (string)(Type.Clone());
+            }
 
             return channel;
         }
