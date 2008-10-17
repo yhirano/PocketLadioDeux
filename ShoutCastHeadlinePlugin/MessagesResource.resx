@@ -120,6 +120,9 @@
   <data name="Bitrate" xml:space="preserve">
     <value>Bitrate</value>
   </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
   <data name="Cluster" xml:space="preserve">
     <value>Cluster</value>
   </data>

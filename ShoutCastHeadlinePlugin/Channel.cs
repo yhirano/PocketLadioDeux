@@ -31,10 +31,12 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             {
                 if (dislpayFormat != string.Empty)
                 {
-                    string result = dislpayFormat.Replace("[[TITLE]]", Title)
+                    string result = dislpayFormat.Replace("[[RANK]]", Rank)
+                        .Replace("[[TITLE]]", Title)
                         .Replace("[[PLAYING]]", Playing)
                         .Replace("[[LISTENER]]", ((Listener != Channel.UNKNOWN_LISTENER_NUM) ? Listener.ToString() : "na"))
-                        .Replace("[[GENRE]]", Genre)
+                        .Replace("[[LISTENERTOTAL]]", ((ListenerTotal != Channel.UNKNOWN_LISTENER_NUM) ? ListenerTotal.ToString() : "na"))
+                        .Replace("[[CATEGORY]]", Category)
                         .Replace("[[BIT]]", ((Bitrate != Channel.UNKNOWN_BITRATE) ? Bitrate.ToString() : "na"));
 
                     return result;
@@ -60,23 +62,54 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         }
 
         /// <summary>
-        /// 番組の放送URL
-        /// </summary>
-        private Uri playUrl;
-
-        /// <summary>
         /// 番組の放送URLを取得・設定する
         /// </summary>
         public Uri PlayUrl
         {
-            get { return playUrl; }
-            internal set { playUrl = value; }
+            get
+            {
+                try
+                {
+                    return new Uri(Headline.SHOUTCAST_URL + path);
+                }
+                catch (UriFormatException)
+                {
+                    return null;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 再生URLへのパス
+        /// </summary>
+        private string path = string.Empty;
+
+        /// <summary>
+        /// 再生URLへのパス
+        /// </summary>
+        internal string Path
+        {
+            set { path = value; }
+        }
+
+        /// <summary>
+        /// ランク
+        /// </summary>
+        private string rank = string.Empty;
+
+        /// <summary>
+        /// ランク
+        /// </summary>
+        internal string Rank
+        {
+            get { return rank; }
+            set { rank = value; }
         }
 
         /// <summary>
         /// タイトル
         /// </summary>
-        private string title = string.Empty;
+        private string title;
 
         /// <summary>
         /// タイトル
@@ -90,7 +123,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// 現在演奏中の曲
         /// </summary>
-        private string playing = string.Empty;
+        private string playing;
 
         /// <summary>
         /// 現在演奏中の曲
@@ -121,17 +154,31 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         internal const int UNKNOWN_LISTENER_NUM = -1;
 
         /// <summary>
-        /// ジャンル
+        /// 述べリスナ数
         /// </summary>
-        private string genre = string.Empty;
+        private int listenerTotal = UNKNOWN_LISTENER_NUM;
 
         /// <summary>
-        /// ジャンル
+        /// 述べリスナ数
         /// </summary>
-        internal string Genre
+        internal int ListenerTotal
         {
-            get { return genre; }
-            set { genre = value; }
+            get { return listenerTotal; }
+            set { listenerTotal = value; }
+        }
+
+        /// <summary>
+        /// カテゴリ
+        /// </summary>
+        private string category;
+
+        /// <summary>
+        /// カテゴリ
+        /// </summary>
+        internal string Category
+        {
+            get { return category; }
+            set { category = value; }
         }
 
         /// <summary>
@@ -163,11 +210,11 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             {
                 if (PlayUrl != null)
                 {
-                    return new string[] { Title, Genre, PlayUrl.ToString() };
+                    return new string[] { Title, Category, PlayUrl.ToString() };
                 }
                 else
                 {
-                    return new string[] { Title, Genre };
+                    return new string[] { Title, Category };
                 }
             }
         }

@@ -40,10 +40,11 @@
             this.pasteDisplayFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.insertMenuItem = new System.Windows.Forms.MenuItem();
+            this.rankFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.titleFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.playingFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.listenerFormatMenuItem = new System.Windows.Forms.MenuItem();
-            this.genreFormatMenuItem = new System.Windows.Forms.MenuItem();
+            this.categoryFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.bitFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.displayFormatLabel = new System.Windows.Forms.Label();
             this.nameTextBox2 = new OpenNETCF.Windows.Forms.TextBox2();
@@ -53,7 +54,13 @@
             this.pasteNameMenuItem = new System.Windows.Forms.MenuItem();
             this.nameLabel = new System.Windows.Forms.Label();
             this.shoutCastTabPage = new System.Windows.Forms.TabPage();
+            this.numOfFetchComboBox = new System.Windows.Forms.ComboBox();
+            this.numOfFetchLabel = new System.Windows.Forms.Label();
             this.searchWordTextBox2 = new OpenNETCF.Windows.Forms.TextBox2();
+            this.searchWordContextMenu = new System.Windows.Forms.ContextMenu();
+            this.cutSearchWordMenuItem = new System.Windows.Forms.MenuItem();
+            this.copySearchWordMenuItem = new System.Windows.Forms.MenuItem();
+            this.pasteSearchWordMenuItem = new System.Windows.Forms.MenuItem();
             this.searchWordLabel = new System.Windows.Forms.Label();
             this.filter1TabPage = new System.Windows.Forms.TabPage();
             this.removeButton = new System.Windows.Forms.Button();
@@ -83,10 +90,7 @@
             this.aboveBitrateNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.filteringBelowBitrateCheckBox = new System.Windows.Forms.CheckBox();
             this.filteringAboveBitrateCheckBox = new System.Windows.Forms.CheckBox();
-            this.searchWordContextMenu = new System.Windows.Forms.ContextMenu();
-            this.cutSearchWordMenuItem = new System.Windows.Forms.MenuItem();
-            this.copySearchWordMenuItem = new System.Windows.Forms.MenuItem();
-            this.pasteSearchWordMenuItem = new System.Windows.Forms.MenuItem();
+            this.listenerTotalFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.baseTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.shoutCastTabPage.SuspendLayout();
@@ -149,12 +153,19 @@
             // 
             // insertMenuItem
             // 
+            this.insertMenuItem.MenuItems.Add(this.rankFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.titleFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.playingFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.listenerFormatMenuItem);
-            this.insertMenuItem.MenuItems.Add(this.genreFormatMenuItem);
+            this.insertMenuItem.MenuItems.Add(this.listenerTotalFormatMenuItem);
+            this.insertMenuItem.MenuItems.Add(this.categoryFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.bitFormatMenuItem);
             resources.ApplyResources(this.insertMenuItem, "insertMenuItem");
+            // 
+            // rankFormatMenuItem
+            // 
+            resources.ApplyResources(this.rankFormatMenuItem, "rankFormatMenuItem");
+            this.rankFormatMenuItem.Click += new System.EventHandler(this.rankFormatMenuItem_Click);
             // 
             // titleFormatMenuItem
             // 
@@ -171,10 +182,10 @@
             resources.ApplyResources(this.listenerFormatMenuItem, "listenerFormatMenuItem");
             this.listenerFormatMenuItem.Click += new System.EventHandler(this.listenerFormatMenuItem_Click);
             // 
-            // genreFormatMenuItem
+            // categoryFormatMenuItem
             // 
-            resources.ApplyResources(this.genreFormatMenuItem, "genreFormatMenuItem");
-            this.genreFormatMenuItem.Click += new System.EventHandler(this.genreFormatMenuItem_Click);
+            resources.ApplyResources(this.categoryFormatMenuItem, "categoryFormatMenuItem");
+            this.categoryFormatMenuItem.Click += new System.EventHandler(this.categoryFormatMenuItem_Click);
             // 
             // bitFormatMenuItem
             // 
@@ -220,16 +231,55 @@
             // 
             // shoutCastTabPage
             // 
+            this.shoutCastTabPage.Controls.Add(this.numOfFetchComboBox);
+            this.shoutCastTabPage.Controls.Add(this.numOfFetchLabel);
             this.shoutCastTabPage.Controls.Add(this.searchWordTextBox2);
             this.shoutCastTabPage.Controls.Add(this.searchWordLabel);
             resources.ApplyResources(this.shoutCastTabPage, "shoutCastTabPage");
             this.shoutCastTabPage.Name = "shoutCastTabPage";
+            // 
+            // numOfFetchComboBox
+            // 
+            this.numOfFetchComboBox.Items.Add(resources.GetString("numOfFetchComboBox.Items"));
+            this.numOfFetchComboBox.Items.Add(resources.GetString("numOfFetchComboBox.Items1"));
+            this.numOfFetchComboBox.Items.Add(resources.GetString("numOfFetchComboBox.Items2"));
+            this.numOfFetchComboBox.Items.Add(resources.GetString("numOfFetchComboBox.Items3"));
+            this.numOfFetchComboBox.Items.Add(resources.GetString("numOfFetchComboBox.Items4"));
+            this.numOfFetchComboBox.Items.Add(resources.GetString("numOfFetchComboBox.Items5"));
+            resources.ApplyResources(this.numOfFetchComboBox, "numOfFetchComboBox");
+            this.numOfFetchComboBox.Name = "numOfFetchComboBox";
+            // 
+            // numOfFetchLabel
+            // 
+            resources.ApplyResources(this.numOfFetchLabel, "numOfFetchLabel");
+            this.numOfFetchLabel.Name = "numOfFetchLabel";
             // 
             // searchWordTextBox2
             // 
             resources.ApplyResources(this.searchWordTextBox2, "searchWordTextBox2");
             this.searchWordTextBox2.ContextMenu = this.searchWordContextMenu;
             this.searchWordTextBox2.Name = "searchWordTextBox2";
+            // 
+            // searchWordContextMenu
+            // 
+            this.searchWordContextMenu.MenuItems.Add(this.cutSearchWordMenuItem);
+            this.searchWordContextMenu.MenuItems.Add(this.copySearchWordMenuItem);
+            this.searchWordContextMenu.MenuItems.Add(this.pasteSearchWordMenuItem);
+            // 
+            // cutSearchWordMenuItem
+            // 
+            resources.ApplyResources(this.cutSearchWordMenuItem, "cutSearchWordMenuItem");
+            this.cutSearchWordMenuItem.Click += new System.EventHandler(this.cutSearchWordMenuItem_Click);
+            // 
+            // copySearchWordMenuItem
+            // 
+            resources.ApplyResources(this.copySearchWordMenuItem, "copySearchWordMenuItem");
+            this.copySearchWordMenuItem.Click += new System.EventHandler(this.copySearchWordMenuItem_Click);
+            // 
+            // pasteSearchWordMenuItem
+            // 
+            resources.ApplyResources(this.pasteSearchWordMenuItem, "pasteSearchWordMenuItem");
+            this.pasteSearchWordMenuItem.Click += new System.EventHandler(this.pasteSearchWordMenuItem_Click);
             // 
             // searchWordLabel
             // 
@@ -418,26 +468,10 @@
             resources.ApplyResources(this.filteringAboveBitrateCheckBox, "filteringAboveBitrateCheckBox");
             this.filteringAboveBitrateCheckBox.Name = "filteringAboveBitrateCheckBox";
             // 
-            // searchWordContextMenu
+            // listenerTotalFormatMenuItem
             // 
-            this.searchWordContextMenu.MenuItems.Add(this.cutSearchWordMenuItem);
-            this.searchWordContextMenu.MenuItems.Add(this.copySearchWordMenuItem);
-            this.searchWordContextMenu.MenuItems.Add(this.pasteSearchWordMenuItem);
-            // 
-            // cutSearchWordMenuItem
-            // 
-            resources.ApplyResources(this.cutSearchWordMenuItem, "cutSearchWordMenuItem");
-            this.cutSearchWordMenuItem.Click += new System.EventHandler(this.cutSearchWordMenuItem_Click);
-            // 
-            // copySearchWordMenuItem
-            // 
-            resources.ApplyResources(this.copySearchWordMenuItem, "copySearchWordMenuItem");
-            this.copySearchWordMenuItem.Click += new System.EventHandler(this.copySearchWordMenuItem_Click);
-            // 
-            // pasteSearchWordMenuItem
-            // 
-            resources.ApplyResources(this.pasteSearchWordMenuItem, "pasteSearchWordMenuItem");
-            this.pasteSearchWordMenuItem.Click += new System.EventHandler(this.pasteSearchWordMenuItem_Click);
+            resources.ApplyResources(this.listenerTotalFormatMenuItem, "listenerTotalFormatMenuItem");
+            this.listenerTotalFormatMenuItem.Click += new System.EventHandler(this.listenerTotalFormatMenuItem_Click);
             // 
             // SettingForm
             // 
@@ -503,7 +537,7 @@
         private System.Windows.Forms.MenuItem pasteDisplayFormatMenuItem;
         private System.Windows.Forms.MenuItem insertMenuItem;
         private System.Windows.Forms.MenuItem playingFormatMenuItem;
-        private System.Windows.Forms.MenuItem genreFormatMenuItem;
+        private System.Windows.Forms.MenuItem categoryFormatMenuItem;
         private System.Windows.Forms.MenuItem listenerFormatMenuItem;
         private System.Windows.Forms.MenuItem titleFormatMenuItem;
         private System.Windows.Forms.MenuItem bitFormatMenuItem;
@@ -517,5 +551,9 @@
         private System.Windows.Forms.MenuItem cutSearchWordMenuItem;
         private System.Windows.Forms.MenuItem copySearchWordMenuItem;
         private System.Windows.Forms.MenuItem pasteSearchWordMenuItem;
+        private System.Windows.Forms.ComboBox numOfFetchComboBox;
+        private System.Windows.Forms.Label numOfFetchLabel;
+        private System.Windows.Forms.MenuItem rankFormatMenuItem;
+        private System.Windows.Forms.MenuItem listenerTotalFormatMenuItem;
     }
 }

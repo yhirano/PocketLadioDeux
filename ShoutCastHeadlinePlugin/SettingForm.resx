@@ -139,6 +139,9 @@
   <data name="menuItem1.Text" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="rankFormatMenuItem.Text" xml:space="preserve">
+    <value>[[RANK]]</value>
+  </data>
   <data name="titleFormatMenuItem.Text" xml:space="preserve">
     <value>[[TITLE]]</value>
   </data>
@@ -148,8 +151,11 @@
   <data name="listenerFormatMenuItem.Text" xml:space="preserve">
     <value>[[LISTENER]]</value>
   </data>
-  <data name="genreFormatMenuItem.Text" xml:space="preserve">
-    <value>[[GENRE]]</value>
+  <data name="listenerTotalFormatMenuItem.Text" xml:space="preserve">
+    <value>[[LISTENERTOTAL]]</value>
+  </data>
+  <data name="categoryFormatMenuItem.Text" xml:space="preserve">
+    <value>[[CATEGORY]]</value>
   </data>
   <data name="bitFormatMenuItem.Text" xml:space="preserve">
     <value>[[BIT]]</value>
@@ -285,6 +291,69 @@
   <data name="&gt;&gt;generalTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="numOfFetchComboBox.Items" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="numOfFetchComboBox.Items1" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="numOfFetchComboBox.Items2" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="numOfFetchComboBox.Items3" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="numOfFetchComboBox.Items4" xml:space="preserve">
+    <value>50</value>
+  </data>
+  <data name="numOfFetchComboBox.Items5" xml:space="preserve">
+    <value>100</value>
+  </data>
+  <data name="numOfFetchComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 77</value>
+  </data>
+  <data name="numOfFetchComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 22</value>
+  </data>
+  <data name="numOfFetchComboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchComboBox.Name" xml:space="preserve">
+    <value>numOfFetchComboBox</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchComboBox.Parent" xml:space="preserve">
+    <value>shoutCastTabPage</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchComboBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="numOfFetchLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="numOfFetchLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 54</value>
+  </data>
+  <data name="numOfFetchLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 20</value>
+  </data>
+  <data name="numOfFetchLabel.Text" xml:space="preserve">
+    <value>Number of fetched channels</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchLabel.Name" xml:space="preserve">
+    <value>numOfFetchLabel</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchLabel.Parent" xml:space="preserve">
+    <value>shoutCastTabPage</value>
+  </data>
+  <data name="&gt;&gt;numOfFetchLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="searchWordTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -304,7 +373,7 @@
     <value>3, 27</value>
   </data>
   <data name="searchWordTextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 21</value>
+    <value>226, 21</value>
   </data>
   <data name="searchWordTextBox2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -319,7 +388,7 @@
     <value>shoutCastTabPage</value>
   </data>
   <data name="&gt;&gt;searchWordTextBox2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="searchWordLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -328,7 +397,7 @@
     <value>3, 4</value>
   </data>
   <data name="searchWordLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 20</value>
+    <value>226, 20</value>
   </data>
   <data name="searchWordLabel.Text" xml:space="preserve">
     <value>Search word</value>
@@ -343,13 +412,13 @@
     <value>shoutCastTabPage</value>
   </data>
   <data name="&gt;&gt;searchWordLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="shoutCastTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="shoutCastTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 245</value>
+    <value>232, 242</value>
   </data>
   <data name="shoutCastTabPage.Text" xml:space="preserve">
     <value>SHOUTcast</value>
@@ -957,6 +1026,12 @@
   <data name="&gt;&gt;insertMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;rankFormatMenuItem.Name" xml:space="preserve">
+    <value>rankFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;rankFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;titleFormatMenuItem.Name" xml:space="preserve">
     <value>titleFormatMenuItem</value>
   </data>
@@ -975,10 +1050,10 @@
   <data name="&gt;&gt;listenerFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;genreFormatMenuItem.Name" xml:space="preserve">
-    <value>genreFormatMenuItem</value>
+  <data name="&gt;&gt;categoryFormatMenuItem.Name" xml:space="preserve">
+    <value>categoryFormatMenuItem</value>
   </data>
-  <data name="&gt;&gt;genreFormatMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;categoryFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;bitFormatMenuItem.Name" xml:space="preserve">
@@ -1009,6 +1084,30 @@
     <value>pasteNameMenuItem</value>
   </data>
   <data name="&gt;&gt;pasteNameMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchWordContextMenu.Name" xml:space="preserve">
+    <value>searchWordContextMenu</value>
+  </data>
+  <data name="&gt;&gt;searchWordContextMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cutSearchWordMenuItem.Name" xml:space="preserve">
+    <value>cutSearchWordMenuItem</value>
+  </data>
+  <data name="&gt;&gt;cutSearchWordMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;copySearchWordMenuItem.Name" xml:space="preserve">
+    <value>copySearchWordMenuItem</value>
+  </data>
+  <data name="&gt;&gt;copySearchWordMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pasteSearchWordMenuItem.Name" xml:space="preserve">
+    <value>pasteSearchWordMenuItem</value>
+  </data>
+  <data name="&gt;&gt;pasteSearchWordMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;wordColumnHeader.Name" xml:space="preserve">
@@ -1059,28 +1158,10 @@
   <data name="&gt;&gt;pasteAddFilterMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;searchWordContextMenu.Name" xml:space="preserve">
-    <value>searchWordContextMenu</value>
+  <data name="&gt;&gt;listenerTotalFormatMenuItem.Name" xml:space="preserve">
+    <value>listenerTotalFormatMenuItem</value>
   </data>
-  <data name="&gt;&gt;searchWordContextMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cutSearchWordMenuItem.Name" xml:space="preserve">
-    <value>cutSearchWordMenuItem</value>
-  </data>
-  <data name="&gt;&gt;cutSearchWordMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;copySearchWordMenuItem.Name" xml:space="preserve">
-    <value>copySearchWordMenuItem</value>
-  </data>
-  <data name="&gt;&gt;copySearchWordMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pasteSearchWordMenuItem.Name" xml:space="preserve">
-    <value>pasteSearchWordMenuItem</value>
-  </data>
-  <data name="&gt;&gt;pasteSearchWordMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;listenerTotalFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

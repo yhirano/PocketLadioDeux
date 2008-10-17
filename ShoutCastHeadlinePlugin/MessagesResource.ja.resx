@@ -120,6 +120,9 @@
   <data name="Bitrate" xml:space="preserve">
     <value>ビットレート</value>
   </data>
+  <data name="Category" xml:space="preserve">
+    <value>カテゴリ</value>
+  </data>
   <data name="Cluster" xml:space="preserve">
     <value>クラスター</value>
   </data>

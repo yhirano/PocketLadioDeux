@@ -76,6 +76,18 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             nameTextBox2.Text = headline.Name;
             displayFormatTextBox2.Text = headline.Setting.DisplayFormat;
             searchWordTextBox2.Text = headline.Setting.SearchWord;
+
+            // numOfFetchComboBoxの位置あわせ
+            numOfFetchComboBox.SelectedIndex = 0;
+            for (int count = 0; count < numOfFetchComboBox.Items.Count; ++count)
+            {
+                numOfFetchComboBox.SelectedIndex = count;
+                if (numOfFetchComboBox.SelectedItem.ToString() == headline.Setting.PerView)
+                {
+                    break;
+                }
+            }
+
             UpdateFilterListView();
             filteringAboveBitrateCheckBox.Checked = headline.Setting.IsFilteringAboveBitrate;
             filteringBelowBitrateCheckBox.Checked = headline.Setting.IsFilteringBelowBitrate;
@@ -117,6 +129,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             headline.Name = nameTextBox2.Text;
             headline.Setting.DisplayFormat = displayFormatTextBox2.Text;
             headline.Setting.SearchWord = searchWordTextBox2.Text;
+            headline.Setting.PerView = numOfFetchComboBox.SelectedItem.ToString().Trim();
             headline.Setting.IsFilteringAboveBitrate = filteringAboveBitrateCheckBox.Checked;
             headline.Setting.IsFilteringBelowBitrate = filteringBelowBitrateCheckBox.Checked;
             headline.Setting.FilteringAboveBitrate = (int)aboveBitrateNumericUpDown.Value;
@@ -255,11 +268,11 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             displayFormatTextBox2.Paste();
         }
 
-        private void genreFormatMenuItem_Click(object sender, EventArgs e)
+        private void categoryFormatMenuItem_Click(object sender, EventArgs e)
         {
             displayFormatTextBox2.Text =
                 displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
-                .Insert(displayFormatTextBox2.SelectionStart, "[[GENRE]]");
+                .Insert(displayFormatTextBox2.SelectionStart, "[[CATEGORY]]");
         }
 
         private void titleFormatMenuItem_Click(object sender, EventArgs e)
@@ -283,11 +296,25 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
                 .Insert(displayFormatTextBox2.SelectionStart, "[[PLAYING]]");
         }
 
+        private void rankFormatMenuItem_Click(object sender, EventArgs e)
+        {
+            displayFormatTextBox2.Text =
+                displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
+                .Insert(displayFormatTextBox2.SelectionStart, "[[RANK]]");
+        }
+
         private void listenerFormatMenuItem_Click(object sender, EventArgs e)
         {
             displayFormatTextBox2.Text =
                 displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
                 .Insert(displayFormatTextBox2.SelectionStart, "[[LISTENER]]");
+        }
+
+        private void listenerTotalFormatMenuItem_Click(object sender, EventArgs e)
+        {
+            displayFormatTextBox2.Text =
+                displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
+                .Insert(displayFormatTextBox2.SelectionStart, "[[LISTENERTOTAL]]");
         }
 
         private void removeMenuItem_Click(object sender, EventArgs e)

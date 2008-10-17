@@ -147,18 +147,20 @@
   <data name="generalTabPage.Text" xml:space="preserve">
     <value>一般</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="searchWordTextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 21</value>
+  <data name="numOfFetchLabel.Text" xml:space="preserve">
+    <value>取得する番組の数</value>
   </data>
-  <data name="searchWordLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 20</value>
+  <data name="cutSearchWordMenuItem.Text" xml:space="preserve">
+    <value>切り取り</value>
+  </data>
+  <data name="copySearchWordMenuItem.Text" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="pasteSearchWordMenuItem.Text" xml:space="preserve">
+    <value>貼り付け</value>
   </data>
   <data name="searchWordLabel.Text" xml:space="preserve">
     <value>検索ワード</value>
-  </data>
-  <data name="shoutCastTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 245</value>
   </data>
   <data name="removeButton.Text" xml:space="preserve">
     <value>削除</value>
@@ -231,15 +233,6 @@
   </data>
   <data name="filter2TabPage.Text" xml:space="preserve">
     <value>フィルター2</value>
-  </data>
-  <data name="cutSearchWordMenuItem.Text" xml:space="preserve">
-    <value>切り取り</value>
-  </data>
-  <data name="copySearchWordMenuItem.Text" xml:space="preserve">
-    <value>コピー</value>
-  </data>
-  <data name="pasteSearchWordMenuItem.Text" xml:space="preserve">
-    <value>貼り付け</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>

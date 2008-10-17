@@ -37,6 +37,20 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         }
 
         /// <summary>
+        /// ヘッドライン取得数
+        /// </summary>
+        private string perView = "10";
+
+        /// <summary>
+        /// ヘッドライン取得数を取得・設定する
+        /// </summary>
+        public string PerView
+        {
+            get { return perView; }
+            set { perView = value; }
+        }
+
+        /// <summary>
         /// ヘッドラインの表示方法
         /// </summary>
         private string displayFormat = "[[TITLE]]";

@@ -37,7 +37,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         private void ChannelPropertyForm_Load(object sender, EventArgs e)
         {
             string[] titleProperty = { messagesResource.GetString("Title"), channel.Title.Trim() };
-            string[] genreProperty = { messagesResource.GetString("Genre"), channel.Genre.Trim() };
+            string[] genreProperty = { messagesResource.GetString("Category"), channel.Category.Trim() };
             string[] clusterProperty = { messagesResource.GetString("Cluster"), ((channel.WebSiteUrl != null) ? channel.WebSiteUrl.ToString().Trim() : string.Empty) };
             string[] playingProperty = { messagesResource.GetString("Playing"), channel.Playing.Trim() };
             string[] listenerPorperty = { messagesResource.GetString("Listener"), ((channel.Listener != Channel.UNKNOWN_LISTENER_NUM)?channel.Listener.ToString(): string.Empty) };

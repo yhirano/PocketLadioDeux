@@ -67,6 +67,15 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin {
         }
         
         /// <summary>
+        ///   Category に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Category {
+            get {
+                return ResourceManager.GetString("Category", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cluster に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string Cluster {
