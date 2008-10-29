@@ -403,7 +403,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
                             Match playingNowMatch = playingNowRegex.Match(lines[lineNumber]);
                             if (playingNowMatch.Success)
                             {
-                                Match playingMatch = playingRegex.Match(playingNowMatch.Groups[1].Value);
+                                Match playingMatch = playingRegex.Match(lines[lineNumber + 1]);
                                 if (playingMatch.Success)
                                 {
                                     channel.Playing = playingMatch.Groups[1].Value;

@@ -51,7 +51,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// 表示フォーマット
         /// </summary>
-        private string dislpayFormat;
+        private string dislpayFormat = string.Empty;
 
         /// <summary>
         /// 表示フォーマットを設定する
@@ -109,7 +109,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// タイトル
         /// </summary>
-        private string title;
+        private string title = string.Empty;
 
         /// <summary>
         /// タイトル
@@ -123,7 +123,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// 現在演奏中の曲
         /// </summary>
-        private string playing;
+        private string playing = string.Empty;
 
         /// <summary>
         /// 現在演奏中の曲
@@ -170,7 +170,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// カテゴリ
         /// </summary>
-        private string category;
+        private string category = string.Empty;
 
         /// <summary>
         /// カテゴリ
