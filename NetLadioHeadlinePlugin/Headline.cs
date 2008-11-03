@@ -235,7 +235,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
 
         #endregion // dat v2解析用正規表現
 
-        protected override void FetchHeadline(HttpConnection connectionSetting)
+        protected override void FetchHeadline()
         {
             channels.Clear();
             // フィルターのクリア

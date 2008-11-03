@@ -38,6 +38,9 @@ namespace PocketLadioDeux
                 throw new ArgumentNullException();
             }
 
+            // 接続の設定
+            headline.ConnectionSetting = connectionSetting;
+
             headlines.Add(headline);
 
             // ヘッドラインの保存先を生成する
@@ -84,6 +87,30 @@ namespace PocketLadioDeux
         }
 
         /// <summary>
+        /// ネットワークへの接続設定
+        /// </summary>
+        private static HttpConnection connectionSetting = CreateHttpConnection();
+
+        /// <summary>
+        /// ネットワークへの接続設定を取得する
+        /// </summary>
+        public static HttpConnection ConnectionSetting
+        {
+            get { return HeadlineManager.connectionSetting; }
+        }
+
+        private static HttpConnection CreateHttpConnection()
+        {
+            // 接続の設定
+            HttpConnection connectionSetting = new HttpConnection();
+            connectionSetting.Timeout = PocketLadioDeuxInfo.WebRequestTimeoutMillSec;
+            connectionSetting.UserAgent = string.Format("{0}/{1}",
+                AssemblyUtility.GetTitle(Assembly.GetExecutingAssembly()), AssemblyUtility.GetVersion(Assembly.GetExecutingAssembly()).ToString());
+            connectionSetting.ProxySetting = UserSettingAdapter.Setting.ProxySetting;
+            return connectionSetting;
+        }
+
+        /// <summary>
         /// 現在動作しているヘッドラインから番組を非同期で取得しているBackgroundWorkerのリスト
         /// </summary>
         private static Dictionary<HeadlineBase, BackgroundWorker> fetchingChannelBackgroundWorkers = new Dictionary<HeadlineBase, BackgroundWorker>();
@@ -96,13 +123,6 @@ namespace PocketLadioDeux
         /// <param name="headline">ヘッドライン</param>
         public static void FetchChannelsAsync(HeadlineBase headline)
         {
-            // 接続の設定
-            HttpConnection connectionSetting = new HttpConnection();
-            connectionSetting.Timeout = PocketLadioDeuxInfo.WebRequestTimeoutMillSec;
-            connectionSetting.UserAgent = string.Format("{0}/{1}",
-                AssemblyUtility.GetTitle(Assembly.GetExecutingAssembly()), AssemblyUtility.GetVersion(Assembly.GetExecutingAssembly()).ToString());
-            connectionSetting.ProxySetting = UserSettingAdapter.Setting.ProxySetting;
-
             BackgroundWorker bg = new BackgroundWorker();
             bg.WorkerSupportsCancellation = true;
             EventHandler<ChannelAddedEventArgs> cancelEventHandler = null;
@@ -123,7 +143,7 @@ namespace PocketLadioDeux
                     headline.ChannelAddedEventHandler += cancelEventHandler;
 
                     // 番組の取得を開始
-                    headline.FetchHeadlineA(connectionSetting);
+                    headline.FetchHeadlineA();
                 });
             bg.RunWorkerCompleted += new RunWorkerCompletedEventHandler(
                 delegate(object sender, RunWorkerCompletedEventArgs e)
@@ -423,6 +443,10 @@ namespace PocketLadioDeux
                                 }
 
                                 headlineSettingFiles[headline] = setting;
+
+                                // 接続の設定
+                                headline.ConnectionSetting = connectionSetting;
+
                                 headlines.Add(headline);
                             }
                         }

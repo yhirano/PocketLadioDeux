@@ -12,6 +12,29 @@ namespace PocketLadioDeux.HeadlinePluginInterface
     public abstract class HeadlineBase : IComparer<IChannel>
     {
         /// <summary>
+        /// ヘッドラインの取得のためのネットワーク設定
+        /// </summary>
+        protected HttpConnection connectionSetting;
+
+        /// <summary>
+        /// ヘッドラインの取得のためのネットワーク設定を設定する
+        /// </summary>
+        public HttpConnection ConnectionSetting
+        {
+            set
+            {
+                if (value != null)
+                {
+                    connectionSetting = value;
+                }
+                else
+                {
+                    connectionSetting = new HttpConnection();
+                }
+            }
+        }
+
+        /// <summary>
         /// ヘッドライン名を取得・設定する
         /// </summary>
         public abstract string Name { get; set; }
@@ -136,8 +159,7 @@ namespace PocketLadioDeux.HeadlinePluginInterface
         /// <summary>
         /// ヘッドラインをネットから取得する
         /// </summary>
-        /// <param name="connectionSetting">ネットへの接続の設定</param>
-        public void FetchHeadlineA(HttpConnection connectionSetting)
+        public void FetchHeadlineA()
         {
             // ヘッドラインをネットから取得中の場合は何もしないで終了
             if (isFetching == true)
@@ -151,7 +173,7 @@ namespace PocketLadioDeux.HeadlinePluginInterface
                 {
                     isFetching = true;
 
-                    FetchHeadline(connectionSetting);
+                    FetchHeadline();
                 }
                 finally
                 {
@@ -165,8 +187,7 @@ namespace PocketLadioDeux.HeadlinePluginInterface
         /// <summary>
         /// ヘッドラインをネットから取得する
         /// </summary>
-        /// <param name="connectionSetting">ネットへの接続の設定</param>
-        protected abstract void FetchHeadline(HttpConnection connectionSetting);
+        protected abstract void FetchHeadline();
 
         /// <summary>
         /// ヘッドラインの取得をキャンセルする場合はこの値がtrueになる

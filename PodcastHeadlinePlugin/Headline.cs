@@ -208,9 +208,58 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
             SettingForm settingForm = new SettingForm(this);
             settingForm.ShowDialogAndFocusRssUrl();
             settingForm.Dispose();
+
+            // ヘッドライン名が空の場合は、自動でPodcastのタイトルを取得する
+            if (Setting.Name == string.Empty)
+            {
+                Stream st = null;
+                XmlReader reader = null;
+                try
+                {
+                    // itemタグの中にいるか
+                    bool inItemFlag = false;
+
+                    st = connectionSetting.CreateStream(Setting.RssUrl);
+                    reader = new XmlTextReader(st);
+
+                    while (reader.Read())
+                    {
+                        if (reader.NodeType == XmlNodeType.Element)
+                        {
+                            if (reader.LocalName == "title" && inItemFlag == false)
+                            {
+                                Setting.Name = reader.ReadString();
+                                break;
+                            }
+                            if (reader.LocalName == "item")
+                            {
+                                inItemFlag = true;
+                            } // End of item
+                        }
+                        else if (reader.NodeType == XmlNodeType.EndElement)
+                        {
+                            if (reader.LocalName == "item")
+                            {
+                                inItemFlag = false;
+                            }
+                        }
+                    }
+                }
+                finally
+                {
+                    if (reader != null)
+                    {
+                        reader.Close();
+                    }
+                    if (st != null)
+                    {
+                        st.Close();
+                    }
+                }
+            }
         }
 
-        protected override void FetchHeadline(HttpConnection connectionSetting)
+        protected override void FetchHeadline()
         {
             channels.Clear();
             // フィルターのクリア
@@ -356,7 +405,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
                                         clonedChannel.Length = enclosure.Length;
                                         clonedChannel.Type = enclosure.Type;
                                         channels.Add(clonedChannel);
-                                        OnChannelAdded(channel);
+                                        OnChannelAdded(clonedChannel);
                                     }
                                 }
                             }
@@ -586,7 +635,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
             /// このEnclosure要素は再生可能なPodcastかを判断する
             /// </summary>
             /// <returns>このEnclosure要素は再生可能なPodcastが再生可能な場合はtrue、それ以外はfalse</returns>
-            public bool IsPodcast()
+            internal bool IsPodcast()
             {
                 if (type == null || type == string.Empty)
                 {

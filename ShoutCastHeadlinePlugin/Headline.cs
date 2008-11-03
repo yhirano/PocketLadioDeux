@@ -267,7 +267,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
 
         #endregion
 
-        protected override void FetchHeadline(HttpConnection connectionSetting)
+        protected override void FetchHeadline()
         {
             channels.Clear();
             // フィルターのクリア

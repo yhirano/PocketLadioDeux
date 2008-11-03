@@ -477,6 +477,9 @@ namespace PocketLadioDeux
             // 初めて起動された場合
             if (UserSettingAdapter.IsSettingCreatedNew == true)
             {
+                // メインフォームのスプリッターの位置を適当に設定する
+                topPanel.Height = Convert.ToInt32(Height * 0.618);
+
                 // メッセージボックスにファイルパスを設定するように表示する
                 MessageBox.Show(messagesResource.GetString("PleaseSettingPath"), messagesResource.GetString("Infomation"), MessageBoxButtons.OK, MessageBoxIcon.None, MessageBoxDefaultButton.Button1);
 

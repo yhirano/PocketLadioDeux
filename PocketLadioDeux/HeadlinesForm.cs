@@ -127,6 +127,7 @@ namespace PocketLadioDeux
             HeadlinePlugin plugin = ((KindCombo)kindComboBox.SelectedItem).Plugin;
             HeadlineBase headline = plugin.CreateInstance();
             headline.Name = nameTextBox2.Text;
+            headline.ConnectionSetting = HeadlineManager.ConnectionSetting;
             headline.CreatedHeadlineByManual();
 
             HeadlineManager.AddHeadline(headline);

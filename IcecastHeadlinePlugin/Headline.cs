@@ -186,7 +186,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
             Setting = new UserSetting();
         }
 
-        protected override void FetchHeadline(HttpConnection connectionSetting)
+        protected override void FetchHeadline()
         {
             channels.Clear();
             // フィルターのクリア
