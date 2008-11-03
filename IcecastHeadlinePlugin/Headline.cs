@@ -288,8 +288,6 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
                         }
                     }
                 }
-
-                OnChannelFetched();
             }
             finally
             {

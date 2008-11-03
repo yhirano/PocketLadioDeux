@@ -454,7 +454,6 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         }
                     }
                 }
-                OnChannelFetched();
             }
             finally
             {

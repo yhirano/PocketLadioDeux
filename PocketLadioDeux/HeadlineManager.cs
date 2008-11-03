@@ -28,6 +28,11 @@ namespace PocketLadioDeux
         }
 
         /// <summary>
+        /// 設定用ファイルパス生成用ランダムシード
+        /// </summary>
+        private static Random rand = new Random(DateTime.Now.Second);
+
+        /// <summary>
         /// ヘッドラインを追加する
         /// </summary>
         /// <param name="headline">ヘッドライン</param>
@@ -47,12 +52,28 @@ namespace PocketLadioDeux
             headlineSettingFiles[headline] = new HeadlineSettingFilePathStore();
             headlineSettingFiles[headline].ClassName = headline.GetType().FullName;
             string filePath;
-            Random rand = new Random(DateTime.Now.Second);
             do
             {
                 filePath = rand.Next().ToString() + ".conf";
-            } while (File.Exists(PocketLadioDeuxInfo.HeadlineSettingDirectoryPath + @"\" + filePath));
+            } while (File.Exists(PocketLadioDeuxInfo.HeadlineSettingDirectoryPath + @"\" + filePath) == true || IsExistHeadlineSettingFilePath(filePath) == true);
             headlineSettingFiles[headline].FilePath = filePath;
+        }
+
+        /// <summary>
+        /// 指定したファイルパスに既に設定用ファイルパスが存在するかを調べる
+        /// </summary>
+        /// <param name="filePath">設定用ファイルパス</param>
+        /// <returns>指定したファイルパスに既に設定用ファイルパスが存在する場合はtrue、それ以外はfalse</returns>
+        private static bool IsExistHeadlineSettingFilePath(string filePath)
+        {
+            foreach (HeadlineSettingFilePathStore store in headlineSettingFiles.Values)
+            {
+                if (store.FilePath == filePath)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         /// <summary>
@@ -175,7 +196,45 @@ namespace PocketLadioDeux
                 fetchingChannelBackgroundWorkers.Add(headline, bg);
             }
 
+            OnFetchChannelsAsync(headline);
+
             bg.RunWorkerAsync();
+
+            OnFetchedChannelsAsync(headline);
+        }
+
+        /// <summary>
+        /// ヘッドラインの番組の取得前に発生するイベント
+        /// </summary>
+        public static event EventHandler<HeadlineEventArgs> FetchChannelsAsyncEventHandler;
+
+        /// <summary>
+        /// FetchChannelsAsyncEventHandlerの処理
+        /// </summary>
+        /// <param name="headline">ヘッドライン</param>
+        private static void OnFetchChannelsAsync(HeadlineBase headline)
+        {
+            if (FetchChannelsAsyncEventHandler != null)
+            {
+                FetchChannelsAsyncEventHandler(null, new HeadlineEventArgs(headline));
+            }
+        }
+
+        /// <summary>
+        /// ヘッドラインの非同期取得処理開始後に発生するイベント
+        /// </summary>
+        public static event EventHandler<HeadlineEventArgs> FetchedChannelsAsyncEventHandler;
+
+        /// <summary>
+        /// FetchedChannelsAsyncEventHandlerの処理
+        /// </summary>
+        /// <param name="headline">ヘッドライン</param>
+        private static void OnFetchedChannelsAsync(HeadlineBase headline)
+        {
+            if (FetchedChannelsAsyncEventHandler != null)
+            {
+                FetchedChannelsAsyncEventHandler(null, new HeadlineEventArgs(headline));
+            }
         }
 
         /// <summary>
@@ -199,7 +258,7 @@ namespace PocketLadioDeux
         /// <summary>
         /// ヘッドラインから番組の情報を取得中にキャンセルされたときに発生するイベント
         /// </summary>
-        public static event EventHandler<FetchChannelsAsyncCancelEventArgs> FetchChannelsAsyncCancelEventHandler;
+        public static event EventHandler<HeadlineEventArgs> FetchChannelsAsyncCancelEventHandler;
 
         /// <summary>
         /// FetchChannelsAsyncCancelEventHandlerの処理
@@ -209,7 +268,7 @@ namespace PocketLadioDeux
         {
             if (FetchChannelsAsyncCancelEventHandler != null)
             {
-                FetchChannelsAsyncCancelEventHandler(null, new FetchChannelsAsyncCancelEventArgs(headline));
+                FetchChannelsAsyncCancelEventHandler(null, new HeadlineEventArgs(headline));
             }
         }
 

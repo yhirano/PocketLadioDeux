@@ -4,9 +4,9 @@ using PocketLadioDeux.HeadlinePluginInterface;
 namespace PocketLadioDeux
 {
     /// <summary>
-    /// ヘッドラインから番組の情報を取得中にキャンセルされたときに発生するイベントのEventArgs
+    /// ヘッドラインイベントのEventArgs
     /// </summary>
-    public class FetchChannelsAsyncCancelEventArgs : EventArgs
+    public class HeadlineEventArgs : EventArgs
     {
         /// <summary>
         /// キャンセルされたヘッドライン
@@ -24,8 +24,8 @@ namespace PocketLadioDeux
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="headline">キャンセルされたヘッドライン</param>
-        public FetchChannelsAsyncCancelEventArgs(HeadlineBase headline)
+        /// <param name="headline">ヘッドライン</param>
+        public HeadlineEventArgs(HeadlineBase headline)
         {
             this.headline = headline;
         }

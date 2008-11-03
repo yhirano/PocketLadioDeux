@@ -71,7 +71,7 @@
     <Compile Include="AboutForm.designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FetchChannelsAsyncCancelEventArgs.cs" />
+    <Compile Include="HeadlineEventArgs.cs" />
     <Compile Include="FetchChannelsAsyncExceptionEventArgs.cs" />
     <Compile Include="HeadlineManager.cs" />
     <Compile Include="HeadlinePlugin.cs" />

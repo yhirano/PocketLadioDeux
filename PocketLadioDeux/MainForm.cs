@@ -103,6 +103,16 @@ namespace PocketLadioDeux
             headlineListComboBox.DisplayMember = "Display";
             headlineListComboBox.ValueMember = "Headline";
 
+            HeadlineManager.FetchChannelsAsyncEventHandler += new EventHandler<HeadlineEventArgs>(
+                delegate(object sender, HeadlineEventArgs e)
+                {
+                    if (selectedHeadline == e.Headline)
+                    {
+                        headlineListView.Items.Clear();
+                        updateButton.Enabled = false;
+                        cancelButton.Enabled = true;
+                    }
+                });
             HeadlineManager.FetchChannelsAsyncExceptionEventHandler += new EventHandler<FetchChannelsAsyncExceptionEventArgs>(
                 delegate(object sender, FetchChannelsAsyncExceptionEventArgs e)
                 {
@@ -158,8 +168,8 @@ namespace PocketLadioDeux
                         cancelButton.Enabled = false;
                     }
                 });
-            HeadlineManager.FetchChannelsAsyncCancelEventHandler += new EventHandler<FetchChannelsAsyncCancelEventArgs>(
-                delegate(object sender, FetchChannelsAsyncCancelEventArgs e)
+            HeadlineManager.FetchChannelsAsyncCancelEventHandler += new EventHandler<HeadlineEventArgs>(
+                delegate(object sender, HeadlineEventArgs e)
                 {
                     string caption = messagesResource.GetString("Warning");
                     string message = string.Format(messagesResource.GetString("CancelFetchChannels"), e.Headline.Name);
@@ -211,16 +221,15 @@ namespace PocketLadioDeux
                     // ステータスバーの更新をし、Updateボタンを有効にする。
                     if (InvokeRequired == true)
                     {
-                        Invoke(
-                            (UpdateButtonEnableDelegate)delegate
+                        Invoke((UpdateButtonEnableDelegate)delegate
+                        {
+                            if ((HeadlineBase)sender == selectedHeadline)
                             {
-                                if ((HeadlineBase)sender == selectedHeadline)
-                                {
-                                    UpdateMainStatusBar();
-                                    updateButton.Enabled = true;
-                                    cancelButton.Enabled = false;
-                                }
-                            });
+                                UpdateMainStatusBar();
+                                updateButton.Enabled = true;
+                                cancelButton.Enabled = false;
+                            }
+                        });
                     }
                     else
                     {
@@ -650,6 +659,7 @@ namespace PocketLadioDeux
             else
             {
                 updateButton.Enabled = true;
+                cancelButton.Enabled = false;
             }
 
             #region コントロールを選択できるようにする
@@ -753,10 +763,6 @@ namespace PocketLadioDeux
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            headlineListView.Items.Clear();
-            updateButton.Enabled = false;
-            cancelButton.Enabled = true;
-
             HeadlineManager.FetchChannelsAsync(selectedHeadline);
         }
 

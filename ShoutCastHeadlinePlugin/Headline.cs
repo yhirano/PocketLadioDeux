@@ -461,8 +461,6 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
                     }
                 }
 
-                OnChannelFetched();
-
                 #endregion
             }
             finally

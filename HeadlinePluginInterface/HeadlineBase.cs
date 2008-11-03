@@ -173,7 +173,11 @@ namespace PocketLadioDeux.HeadlinePluginInterface
                 {
                     isFetching = true;
 
+                    OnChannelFetch();
+
                     FetchHeadline();
+
+                    OnChannelFetched();
                 }
                 finally
                 {
@@ -227,14 +231,30 @@ namespace PocketLadioDeux.HeadlinePluginInterface
         }
 
         /// <summary>
+        /// 番組の取得直前に発生するイベント
+        /// </summary>
+        public event EventHandler ChannelFetchEventHandler;
+
+        /// <summary>
+        /// ChannelFetchEventHandlerイベントの実行
+        /// </summary>
+        private void OnChannelFetch()
+        {
+            if (ChannelFetchEventHandler != null)
+            {
+                ChannelFetchEventHandler(this, EventArgs.Empty);
+            }
+        }
+
+        /// <summary>
         /// 番組の取得が終了した時に発生するイベント
         /// </summary>
-        public virtual event EventHandler ChannelFetchedEventHandler;
+        public event EventHandler ChannelFetchedEventHandler;
 
         /// <summary>
         /// ChannelFetchedEventHandlerイベントの実行
         /// </summary>
-        protected virtual void OnChannelFetched()
+        private void OnChannelFetched()
         {
             if (ChannelFetchedEventHandler != null)
             {

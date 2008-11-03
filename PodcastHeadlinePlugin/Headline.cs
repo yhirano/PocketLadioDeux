@@ -417,8 +417,6 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
                         }
                     }
                 }
-
-                OnChannelFetched();
             }
             finally
             {
