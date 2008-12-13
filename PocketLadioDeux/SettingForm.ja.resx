@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="playlistSaveLabel.Text" xml:space="preserve">
+    <value>（番組が再生されない場合にチェックすると、番組を再生できることがあります）</value>
+  </data>
+  <data name="playlistSaveCheckBox.Text" xml:space="preserve">
+    <value>プレイリストを一旦ローカルに保存する</value>
+  </data>
   <data name="webBrowserPathReference.Text" xml:space="preserve">
     <value>参照</value>
   </data>
@@ -150,21 +156,11 @@
   <data name="generalTabPage.Text" xml:space="preserve">
     <value>一般</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="headlineListFontSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>226, 20</value>
-  </data>
   <data name="headlineListFontSizeLabel.Text" xml:space="preserve">
     <value>ヘッドラインリストのフォントサイズ</value>
   </data>
   <data name="headlineListFontSizeDomainUpDown.Items" xml:space="preserve">
     <value>規定</value>
-  </data>
-  <data name="headlineListFontSizeDomainUpDown.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 27</value>
-  </data>
-  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 242</value>
   </data>
   <data name="viewTabPage.Text" xml:space="preserve">
     <value>表示</value>

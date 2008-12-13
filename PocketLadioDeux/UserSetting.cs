@@ -129,12 +129,26 @@ namespace PocketLadioDeux
         private bool filterEnabled = false;
 
         /// <summary>
-        /// フィルターが有効か
+        /// フィルターが有効かを取得・設定する
         /// </summary>
         public bool FilterEnabled
         {
             get { return filterEnabled; }
             set { filterEnabled = value; }
+        }
+
+        /// <summary>
+        /// プレイリストは一端ローカルに保存するか
+        /// </summary>
+        private bool playlistSave = false;
+
+        /// <summary>
+        /// プレイリストは一端ローカルに保存するかを取得・設定する
+        /// </summary>
+        public bool PlaylistSave
+        {
+            get { return playlistSave; }
+            set { playlistSave = value; }
         }
     }
 }

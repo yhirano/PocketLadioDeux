@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.baseTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
+            this.playlistSaveLabel = new System.Windows.Forms.Label();
+            this.playlistSaveCheckBox = new System.Windows.Forms.CheckBox();
             this.webBrowserPathReference = new System.Windows.Forms.Button();
             this.mediaPlayerPathReferenceButton = new System.Windows.Forms.Button();
             this.webBrowserPathTextBox2 = new OpenNETCF.Windows.Forms.TextBox2();
@@ -85,6 +87,8 @@
             // generalTabPage
             // 
             resources.ApplyResources(this.generalTabPage, "generalTabPage");
+            this.generalTabPage.Controls.Add(this.playlistSaveLabel);
+            this.generalTabPage.Controls.Add(this.playlistSaveCheckBox);
             this.generalTabPage.Controls.Add(this.webBrowserPathReference);
             this.generalTabPage.Controls.Add(this.mediaPlayerPathReferenceButton);
             this.generalTabPage.Controls.Add(this.webBrowserPathTextBox2);
@@ -92,6 +96,16 @@
             this.generalTabPage.Controls.Add(this.mediaPlayerPathLabel);
             this.generalTabPage.Controls.Add(this.webBrowserPathLabel);
             this.generalTabPage.Name = "generalTabPage";
+            // 
+            // playlistSaveLabel
+            // 
+            resources.ApplyResources(this.playlistSaveLabel, "playlistSaveLabel");
+            this.playlistSaveLabel.Name = "playlistSaveLabel";
+            // 
+            // playlistSaveCheckBox
+            // 
+            resources.ApplyResources(this.playlistSaveCheckBox, "playlistSaveCheckBox");
+            this.playlistSaveCheckBox.Name = "playlistSaveCheckBox";
             // 
             // webBrowserPathReference
             // 
@@ -359,5 +373,7 @@
         private System.Windows.Forms.TabPage viewTabPage;
         private System.Windows.Forms.Label headlineListFontSizeLabel;
         private System.Windows.Forms.DomainUpDown headlineListFontSizeDomainUpDown;
+        private System.Windows.Forms.CheckBox playlistSaveCheckBox;
+        private System.Windows.Forms.Label playlistSaveLabel;
     }
 }

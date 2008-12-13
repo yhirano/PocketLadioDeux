@@ -25,6 +25,7 @@ namespace PocketLadioDeux
 
             mediaPlayerPathTextBox2.Text = UserSettingAdapter.Setting.MediaPlayerPath;
             webBrowserPathTextBox2.Text = UserSettingAdapter.Setting.WebBrowserPath;
+            playlistSaveCheckBox.Checked = UserSettingAdapter.Setting.PlaylistSave;
 
             switch (UserSettingAdapter.Setting.HeadlineListFontSize)
             {
@@ -114,6 +115,7 @@ namespace PocketLadioDeux
 
             UserSettingAdapter.Setting.MediaPlayerPath = mediaPlayerPathTextBox2.Text.Trim();
             UserSettingAdapter.Setting.WebBrowserPath = webBrowserPathTextBox2.Text.Trim();
+            UserSettingAdapter.Setting.PlaylistSave = playlistSaveCheckBox.Checked;
 
             switch (headlineListFontSizeDomainUpDown.SelectedIndex)
             {

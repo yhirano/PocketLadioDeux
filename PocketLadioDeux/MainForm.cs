@@ -10,6 +10,7 @@ using System.Resources;
 using System.Reflection;
 using System.Windows.Forms;
 using MiscPocketCompactLibrary2.Reflection;
+using MiscPocketCompactLibrary2.Net;
 using PocketLadioDeux.HeadlinePluginInterface;
 
 namespace PocketLadioDeux
@@ -706,6 +707,7 @@ namespace PocketLadioDeux
         /// </summary>
         private void PlayStreaming()
         {
+            // エラー処理
             if (File.Exists(UserSettingAdapter.Setting.MediaPlayerPath) == false)
             {
                 string caption = messagesResource.GetString("Error");
@@ -724,10 +726,85 @@ namespace PocketLadioDeux
                 string message = messagesResource.GetString("PlayUrlIsEmpty");
                 MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
             }
+            // 再生処理
             else
             {
-                Process.Start(UserSettingAdapter.Setting.MediaPlayerPath, selectedChannel.PlayUrl.ToString());
+                // 放送URLの拡張子を取得
+                string extention = Path.GetExtension(selectedChannel.PlayUrl.AbsolutePath);
+
+                // 番組がプレイリストの場合にいったんプレイリストを保存する設定をしていた場合
+                if (UserSettingAdapter.Setting.PlaylistSave == true &&
+                    IsPlayListExtension(Path.GetExtension(extention)) == true)
+                {
+                    // ローカルに保存するプレイリストのパス
+                    string localPlaylistPath = PocketLadioDeuxInfo.GeneratePlayListFileName + extention;
+
+                    Stream st = null;
+                    StreamReader sr = null;
+                    StreamWriter sw = null;
+                    try
+                    {
+                        // ローカルのプレイリストを削除
+                        if (File.Exists(localPlaylistPath))
+                        {
+                            File.Delete(localPlaylistPath);
+                        }
+
+                        // プレイリストのダウンロード
+                        st = HeadlineManager.ConnectionSetting.CreateStream(selectedChannel.PlayUrl);
+                        sr = new StreamReader(st);
+                        sw = new StreamWriter(localPlaylistPath);
+                        sw.Write(sr.ReadToEnd());
+
+                        // 再生開始
+                        Process.Start(UserSettingAdapter.Setting.MediaPlayerPath, PocketLadioDeuxInfo.GeneratePlayListFileName + extention);
+                    }
+                    catch
+                    {
+                        string caption = messagesResource.GetString("Error");
+                        string message = messagesResource.GetString("CanNotDownloadPlaylist");
+                        MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    }
+                    finally
+                    {
+                        if (sw != null)
+                        {
+                            sw.Close();
+                        }
+                        if(sr !=null)
+                        {
+                            sr.Close();
+                        }
+                        if (st != null)
+                        {
+                            st.Close();
+                        }
+                    }
+                }
+                else
+                {
+                    Process.Start(UserSettingAdapter.Setting.MediaPlayerPath, selectedChannel.PlayUrl.ToString());
+                }
             }
+        }
+
+        /// <summary>
+        /// 拡張子がプレイリストかを判定する
+        /// </summary>
+        /// <param name="extension">拡張子</param>
+        /// <returns>プレイリストだった場合はtrue、そうでない場合はfalse</returns>
+        private bool IsPlayListExtension(string extension)
+        {
+            // プレイリストかを判定
+            foreach (string playListExtension in PocketLadioDeuxInfo.PlayListExtensions)
+            {
+                if (playListExtension == extension)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private void webButton_Click(object sender, EventArgs e)

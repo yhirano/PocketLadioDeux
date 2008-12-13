@@ -58,7 +58,7 @@ namespace PocketLadioDeux {
         }
         
         /// <summary>
-        ///   Headline &quot;{0}&quot; fetching was canceled. に類似しているローカライズされた文字列を検索します。
+        ///   The Headline &quot;{0}&quot; fetching was canceled. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string CancelFetchChannels {
             get {
@@ -76,7 +76,16 @@ namespace PocketLadioDeux {
         }
         
         /// <summary>
-        ///   Can&apos;t fetch headline &quot;{0}&quot;. に類似しているローカライズされた文字列を検索します。
+        ///   Can&apos;t download the playlist. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string CanNotDownloadPlaylist {
+            get {
+                return ResourceManager.GetString("CanNotDownloadPlaylist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Can&apos;t fetch the headline &quot;{0}&quot;. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string CanNotFetchChannels {
             get {
@@ -112,7 +121,7 @@ namespace PocketLadioDeux {
         }
         
         /// <summary>
-        ///   Can&apos;t parse xml of headline &quot;{0}&quot;. に類似しているローカライズされた文字列を検索します。
+        ///   Can&apos;t parse xml of the headline &quot;{0}&quot;. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ExceptXmlErrorFetchChannels {
             get {
@@ -121,7 +130,7 @@ namespace PocketLadioDeux {
         }
         
         /// <summary>
-        ///   Headline &quot;{0}&quot; URL is invalid. に類似しているローカライズされた文字列を検索します。
+        ///   The headline &quot;{0}&quot; URL is invalid. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string HeadlineUrlInvalid {
             get {
@@ -139,7 +148,7 @@ namespace PocketLadioDeux {
         }
         
         /// <summary>
-        ///   Media player is not found. に類似しているローカライズされた文字列を検索します。
+        ///   The media player is not found. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string MediaPlayerNotFound {
             get {
@@ -157,7 +166,7 @@ namespace PocketLadioDeux {
         }
         
         /// <summary>
-        ///   Please set media player and web browser file path. に類似しているローカライズされた文字列を検索します。
+        ///   Please set the media player and the web browser file path. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string PleaseSettingPath {
             get {
@@ -184,7 +193,7 @@ namespace PocketLadioDeux {
         }
         
         /// <summary>
-        ///   Web browser is not found. に類似しているローカライズされた文字列を検索します。
+        ///   The web browser is not found. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string WebBrowserNotFound {
             get {

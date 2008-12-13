@@ -165,4 +165,7 @@
   <data name="PleaseSettingPath" xml:space="preserve">
     <value>メディアプレーヤーのパスと、ブラウザのパスを設定してください。</value>
   </data>
+  <data name="CanNotDownloadPlaylist" xml:space="preserve">
+    <value>プレイリストをダウンロードできませんでした。</value>
+  </data>
 </root>

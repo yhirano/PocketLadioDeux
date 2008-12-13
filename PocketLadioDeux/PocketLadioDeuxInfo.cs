@@ -134,6 +134,31 @@ namespace PocketLadioDeux
             }
         }
 
+        /// <summary>
+        /// プレイリストと見なす拡張子
+        /// </summary>
+        private static string[] playListExtensions = { ".m3u", ".pls" };
+
+        /// <summary>
+        /// プレイリストと見なす拡張子を取得する
+        /// </summary>
+        public static string[] PlayListExtensions
+        {
+            get { return playListExtensions; }
+        }
+
+        /// <summary>
+        /// 番組がプレイリストだった場合に作成するファイル名（拡張子はつけない）
+        /// </summary>
+        public static string GeneratePlayListFileName
+        {
+            get
+            {
+                return Path.GetDirectoryName(AssemblyUtility.GetLocation(Assembly.GetExecutingAssembly()))
+                  + @"\" + "PocketLadioDeux_playlist";
+            }
+        }
+
         #endregion
     }
 }
