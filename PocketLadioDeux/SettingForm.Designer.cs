@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
             this.baseTabControl = new System.Windows.Forms.TabControl();
             this.generalTabPage = new System.Windows.Forms.TabPage();
-            this.playlistSaveLabel = new System.Windows.Forms.Label();
-            this.playlistSaveCheckBox = new System.Windows.Forms.CheckBox();
+            this.headlineAutomaticUpdateIntervalLabel = new System.Windows.Forms.Label();
+            this.hedlineAutomaticUpdatesIntervalNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.webBrowserPathReference = new System.Windows.Forms.Button();
             this.mediaPlayerPathReferenceButton = new System.Windows.Forms.Button();
             this.webBrowserPathTextBox2 = new OpenNETCF.Windows.Forms.TextBox2();
@@ -67,12 +67,16 @@
             this.proxyNoUseRadioButton = new System.Windows.Forms.RadioButton();
             this.proxyPortLabel = new System.Windows.Forms.Label();
             this.proxyServerLabel = new System.Windows.Forms.Label();
+            this.advancedTabPage = new System.Windows.Forms.TabPage();
+            this.playlistSaveLabel = new System.Windows.Forms.Label();
+            this.playlistSaveCheckBox = new System.Windows.Forms.CheckBox();
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.baseTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.viewTabPage.SuspendLayout();
             this.networkTabPage.SuspendLayout();
             this.proxySettingPanel.SuspendLayout();
+            this.advancedTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // baseTabControl
@@ -81,14 +85,15 @@
             this.baseTabControl.Controls.Add(this.generalTabPage);
             this.baseTabControl.Controls.Add(this.viewTabPage);
             this.baseTabControl.Controls.Add(this.networkTabPage);
+            this.baseTabControl.Controls.Add(this.advancedTabPage);
             this.baseTabControl.Name = "baseTabControl";
             this.baseTabControl.SelectedIndex = 0;
             // 
             // generalTabPage
             // 
             resources.ApplyResources(this.generalTabPage, "generalTabPage");
-            this.generalTabPage.Controls.Add(this.playlistSaveLabel);
-            this.generalTabPage.Controls.Add(this.playlistSaveCheckBox);
+            this.generalTabPage.Controls.Add(this.headlineAutomaticUpdateIntervalLabel);
+            this.generalTabPage.Controls.Add(this.hedlineAutomaticUpdatesIntervalNumericUpDown);
             this.generalTabPage.Controls.Add(this.webBrowserPathReference);
             this.generalTabPage.Controls.Add(this.mediaPlayerPathReferenceButton);
             this.generalTabPage.Controls.Add(this.webBrowserPathTextBox2);
@@ -97,15 +102,20 @@
             this.generalTabPage.Controls.Add(this.webBrowserPathLabel);
             this.generalTabPage.Name = "generalTabPage";
             // 
-            // playlistSaveLabel
+            // headlineAutomaticUpdateIntervalLabel
             // 
-            resources.ApplyResources(this.playlistSaveLabel, "playlistSaveLabel");
-            this.playlistSaveLabel.Name = "playlistSaveLabel";
+            resources.ApplyResources(this.headlineAutomaticUpdateIntervalLabel, "headlineAutomaticUpdateIntervalLabel");
+            this.headlineAutomaticUpdateIntervalLabel.Name = "headlineAutomaticUpdateIntervalLabel";
             // 
-            // playlistSaveCheckBox
+            // hedlineAutomaticUpdatesIntervalNumericUpDown
             // 
-            resources.ApplyResources(this.playlistSaveCheckBox, "playlistSaveCheckBox");
-            this.playlistSaveCheckBox.Name = "playlistSaveCheckBox";
+            resources.ApplyResources(this.hedlineAutomaticUpdatesIntervalNumericUpDown, "hedlineAutomaticUpdatesIntervalNumericUpDown");
+            this.hedlineAutomaticUpdatesIntervalNumericUpDown.Name = "hedlineAutomaticUpdatesIntervalNumericUpDown";
+            this.hedlineAutomaticUpdatesIntervalNumericUpDown.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
             // 
             // webBrowserPathReference
             // 
@@ -315,21 +325,41 @@
             resources.ApplyResources(this.proxyServerLabel, "proxyServerLabel");
             this.proxyServerLabel.Name = "proxyServerLabel";
             // 
+            // advancedTabPage
+            // 
+            resources.ApplyResources(this.advancedTabPage, "advancedTabPage");
+            this.advancedTabPage.Controls.Add(this.playlistSaveLabel);
+            this.advancedTabPage.Controls.Add(this.playlistSaveCheckBox);
+            this.advancedTabPage.Name = "advancedTabPage";
+            // 
+            // playlistSaveLabel
+            // 
+            resources.ApplyResources(this.playlistSaveLabel, "playlistSaveLabel");
+            this.playlistSaveLabel.Name = "playlistSaveLabel";
+            // 
+            // playlistSaveCheckBox
+            // 
+            resources.ApplyResources(this.playlistSaveCheckBox, "playlistSaveCheckBox");
+            this.playlistSaveCheckBox.Name = "playlistSaveCheckBox";
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.baseTabControl);
+            this.KeyPreview = true;
             this.Menu = this.mainMenu1;
             this.Name = "SettingForm";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.SettingForm_Closing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SettingForm_KeyDown);
             this.baseTabControl.ResumeLayout(false);
             this.generalTabPage.ResumeLayout(false);
             this.viewTabPage.ResumeLayout(false);
             this.networkTabPage.ResumeLayout(false);
             this.proxySettingPanel.ResumeLayout(false);
+            this.advancedTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -373,7 +403,10 @@
         private System.Windows.Forms.TabPage viewTabPage;
         private System.Windows.Forms.Label headlineListFontSizeLabel;
         private System.Windows.Forms.DomainUpDown headlineListFontSizeDomainUpDown;
-        private System.Windows.Forms.CheckBox playlistSaveCheckBox;
+        private System.Windows.Forms.TabPage advancedTabPage;
+        private System.Windows.Forms.Label headlineAutomaticUpdateIntervalLabel;
+        private System.Windows.Forms.NumericUpDown hedlineAutomaticUpdatesIntervalNumericUpDown;
         private System.Windows.Forms.Label playlistSaveLabel;
+        private System.Windows.Forms.CheckBox playlistSaveCheckBox;
     }
 }

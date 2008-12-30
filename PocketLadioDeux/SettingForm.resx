@@ -120,30 +120,36 @@
   <data name="mediaPlayerPathPasteMenuItem.Text" xml:space="preserve">
     <value>Paste</value>
   </data>
+  <data name="&gt;&gt;proxyPortCopyMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;mediaPlayerPathPasteMenuItem.Name" xml:space="preserve">
     <value>mediaPlayerPathPasteMenuItem</value>
+  </data>
+  <data name="mediaPlayerPathCutMenuItem.Text" xml:space="preserve">
+    <value>Cut</value>
   </data>
   <data name="&gt;&gt;webBrowserPathReference.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="webBrowserPathTextBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 77</value>
+  <data name="&gt;&gt;mediaPlayerPathPasteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="headlineListFontSizeLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 4</value>
   </data>
   <data name="&gt;&gt;headlineListFontSizeLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="hedlineAutomaticUpdatesIntervalNumericUpDown.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 129</value>
+  </data>
   <data name="&gt;&gt;autoDetectProxySettingRadioButton.Parent" xml:space="preserve">
     <value>proxySettingPanel</value>
   </data>
-  <data name="&gt;&gt;mediaPlayerPathLabel.Parent" xml:space="preserve">
-    <value>generalTabPage</value>
-  </data>
-  <data name="&gt;&gt;proxyServerCutMenuItem.Name" xml:space="preserve">
-    <value>proxyServerCutMenuItem</value>
+  <data name="baseTabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>240, 268</value>
   </data>
   <data name="mediaPlayerPathLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 20</value>
@@ -154,15 +160,6 @@
   <data name="proxyPortCopyMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
   </data>
-  <data name="&gt;&gt;networkTabPage.Parent" xml:space="preserve">
-    <value>baseTabControl</value>
-  </data>
-  <data name="&gt;&gt;generalTabPage.Name" xml:space="preserve">
-    <value>generalTabPage</value>
-  </data>
-  <data name="&gt;&gt;proxyServerCopyMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;mediaPlayerPathCopyMenuItem.Name" xml:space="preserve">
     <value>mediaPlayerPathCopyMenuItem</value>
   </data>
@@ -172,11 +169,11 @@
   <data name="headlineListFontSizeDomainUpDown.Items14" xml:space="preserve">
     <value>19 pt</value>
   </data>
-  <data name="&gt;&gt;mediaPlayerPathCutMenuItem.Name" xml:space="preserve">
-    <value>mediaPlayerPathCutMenuItem</value>
+  <data name="&gt;&gt;hedlineAutomaticUpdatesIntervalNumericUpDown.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="mediaPlayerPathCutMenuItem.Text" xml:space="preserve">
-    <value>Cut</value>
+  <data name="&gt;&gt;headlineAutomaticUpdateIntervalLabel.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
   </data>
   <data name="&gt;&gt;proxyServerContextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -190,8 +187,11 @@
   <data name="proxyServerCopyMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
   </data>
-  <data name="generalTabPage.Text" xml:space="preserve">
-    <value>General</value>
+  <data name="mediaPlayerPathReferenceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="&gt;&gt;proxyServerTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="viewTabPage.Text" xml:space="preserve">
     <value>View</value>
@@ -208,8 +208,8 @@
   <data name="&gt;&gt;viewTabPage.Name" xml:space="preserve">
     <value>viewTabPage</value>
   </data>
-  <data name="proxyServerPasteMenuItem.Text" xml:space="preserve">
-    <value>Paste</value>
+  <data name="webBrowserPathReference.Text" xml:space="preserve">
+    <value>Reference</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="playlistSaveCheckBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -218,30 +218,36 @@
   <data name="autoDetectProxySettingRadioButton.Text" xml:space="preserve">
     <value>Auto-detect proxy setting</value>
   </data>
+  <data name="&gt;&gt;mediaPlayerPathReferenceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="headlineListFontSizeDomainUpDown.Items3" xml:space="preserve">
+    <value>8 pt</value>
+  </data>
   <data name="&gt;&gt;generalTabPage.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="&gt;&gt;viewTabPage.Parent" xml:space="preserve">
     <value>baseTabControl</value>
   </data>
-  <data name="headlineListFontSizeDomainUpDown.Items10" xml:space="preserve">
-    <value>15 pt</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="proxyPortTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="webBrowserPathReference.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;proxySettingPanel.Name" xml:space="preserve">
-    <value>proxySettingPanel</value>
+  <data name="&gt;&gt;hedlineAutomaticUpdatesIntervalNumericUpDown.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
   </data>
-  <data name="proxyServerTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 97</value>
+  <data name="&gt;&gt;proxyServerPasteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;generalTabPage.Parent" xml:space="preserve">
     <value>baseTabControl</value>
   </data>
-  <data name="&gt;&gt;proxyNoUseRadioButton.Name" xml:space="preserve">
-    <value>proxyNoUseRadioButton</value>
+  <data name="hedlineAutomaticUpdatesIntervalNumericUpDown.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 22</value>
   </data>
   <data name="&gt;&gt;webBrowserPathTextBox2.Type" xml:space="preserve">
     <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -258,8 +264,8 @@
   <data name="&gt;&gt;proxyServerTextBox.Type" xml:space="preserve">
     <value>Microsoft.CompactFramework.Design.UnsafeControl, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="headlineListFontSizeDomainUpDown.Items6" xml:space="preserve">
-    <value>11 pt</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingForm</value>
   </data>
   <data name="&gt;&gt;proxyServerCutMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -270,7 +276,7 @@
   <data name="&gt;&gt;proxyPortCutMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="proxySettingPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="headlineAutomaticUpdateIntervalLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="&gt;&gt;headlineListFontSizeDomainUpDown.Parent" xml:space="preserve">
@@ -279,11 +285,14 @@
   <data name="&gt;&gt;proxyServerContextMenu.Name" xml:space="preserve">
     <value>proxyServerContextMenu</value>
   </data>
-  <data name="&gt;&gt;manualProxySettingRadioButton.Name" xml:space="preserve">
-    <value>manualProxySettingRadioButton</value>
+  <data name="&gt;&gt;proxyPortPasteMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;proxyPortTextBox.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="proxyServerPasteMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
   </data>
   <data name="&gt;&gt;headlineListFontSizeDomainUpDown.Type" xml:space="preserve">
     <value>System.Windows.Forms.DomainUpDown, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -336,8 +345,8 @@
   <data name="headlineListFontSizeDomainUpDown.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;webBrowserPathCutMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="advancedTabPage.Text" xml:space="preserve">
+    <value>Advanced</value>
   </data>
   <data name="proxyNoUseRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 20</value>
@@ -363,8 +372,8 @@
   <data name="baseTabControl.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="mediaPlayerPathReferenceButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 28</value>
+  <data name="proxyServerTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 97</value>
   </data>
   <data name="playlistSaveLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>212, 50</value>
@@ -375,8 +384,8 @@
   <data name="proxyServerTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="proxyPortTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 21</value>
+  <data name="&gt;&gt;generalTabPage.Name" xml:space="preserve">
+    <value>generalTabPage</value>
   </data>
   <data name="&gt;&gt;proxyPortLabel.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -384,11 +393,14 @@
   <data name="&gt;&gt;mediaPlayerPathCutMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;proxyPortPasteMenuItem.Name" xml:space="preserve">
-    <value>proxyPortPasteMenuItem</value>
+  <data name="&gt;&gt;mediaPlayerPathLabel.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
   </data>
   <data name="&gt;&gt;proxyPortCutMenuItem.Name" xml:space="preserve">
     <value>proxyPortCutMenuItem</value>
+  </data>
+  <data name="proxyPortLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 121</value>
   </data>
   <data name="&gt;&gt;webBrowserPathCopyMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -396,8 +408,14 @@
   <data name="&gt;&gt;proxySettingPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="headlineListFontSizeDomainUpDown.Items8" xml:space="preserve">
-    <value>13 pt</value>
+  <data name="autoDetectProxySettingRadioButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="webBrowserPathTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 77</value>
+  </data>
+  <data name="&gt;&gt;webBrowserPathCutMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;proxyServerCopyMenuItem.Name" xml:space="preserve">
     <value>proxyServerCopyMenuItem</value>
@@ -405,14 +423,11 @@
   <data name="proxyNoUseRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="&gt;&gt;mediaPlayerPathPasteMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;headlineAutomaticUpdateIntervalLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;autoDetectProxySettingRadioButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="webBrowserPathLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 54</value>
+  <data name="&gt;&gt;advancedTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="mediaPlayerPathTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -423,8 +438,14 @@
   <data name="autoDetectProxySettingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 29</value>
   </data>
-  <data name="headlineListFontSizeDomainUpDown.Items13" xml:space="preserve">
-    <value>18 pt</value>
+  <data name="advancedTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="mediaPlayerPathTextBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 27</value>
+  </data>
+  <data name="&gt;&gt;webBrowserPathLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="headlineListFontSizeDomainUpDown.Items9" xml:space="preserve">
     <value>14 pt</value>
@@ -435,38 +456,50 @@
   <data name="&gt;&gt;proxyServerTextBox.Parent" xml:space="preserve">
     <value>proxySettingPanel</value>
   </data>
-  <data name="&gt;&gt;proxyPortCopyMenuItem.Name" xml:space="preserve">
-    <value>proxyPortCopyMenuItem</value>
+  <data name="hedlineAutomaticUpdatesIntervalNumericUpDown.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="webBrowserPathLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="proxyPortLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 16</value>
+  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 242</value>
   </data>
   <data name="&gt;&gt;proxySettingPanel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="playlistSaveCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 104</value>
+    <value>3, 3</value>
   </data>
   <data name="mediaPlayerPathReferenceButton.Text" xml:space="preserve">
     <value>Reference</value>
   </data>
-  <data name="&gt;&gt;proxyServerPasteMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;headlineListFontSizeDomainUpDown.Name" xml:space="preserve">
+    <value>headlineListFontSizeDomainUpDown</value>
+  </data>
+  <data name="headlineAutomaticUpdateIntervalLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 20</value>
+  </data>
+  <data name="headlineAutomaticUpdateIntervalLabel.Text" xml:space="preserve">
+    <value>Headline Automatic Update Interval</value>
   </data>
   <data name="&gt;&gt;mediaPlayerPathLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>232, 242</value>
+  <data name="&gt;&gt;webBrowserPathReference.Parent" xml:space="preserve">
+    <value>generalTabPage</value>
   </data>
   <data name="autoDetectProxySettingRadioButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 20</value>
   </data>
+  <data name="proxyPortTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 21</value>
+  </data>
   <data name="&gt;&gt;proxyPortContextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="headlineAutomaticUpdateIntervalLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 106</value>
   </data>
   <data name="&gt;&gt;webBrowserPathTextBox2.Parent" xml:space="preserve">
     <value>generalTabPage</value>
@@ -480,8 +513,8 @@
   <data name="proxyPortLabel.Text" xml:space="preserve">
     <value>Port number (ex: 8080)</value>
   </data>
-  <data name="webBrowserPathTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="&gt;&gt;mediaPlayerPathCutMenuItem.Name" xml:space="preserve">
+    <value>mediaPlayerPathCutMenuItem</value>
   </data>
   <data name="&gt;&gt;mediaPlayerPathReferenceButton.Parent" xml:space="preserve">
     <value>generalTabPage</value>
@@ -489,11 +522,11 @@
   <data name="proxyPortPasteMenuItem.Text" xml:space="preserve">
     <value>Paste</value>
   </data>
-  <data name="&gt;&gt;proxyPortPasteMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;proxyPortPasteMenuItem.Name" xml:space="preserve">
+    <value>proxyPortPasteMenuItem</value>
   </data>
-  <data name="&gt;&gt;proxyPortCopyMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="advancedTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>232, 242</value>
   </data>
   <data name="proxyNoUseRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -507,11 +540,17 @@
   <data name="headlineListFontSizeDomainUpDown.Items4" xml:space="preserve">
     <value>9 pt</value>
   </data>
+  <data name="proxySettingPanel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
   <data name="&gt;&gt;baseTabControl.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;webBrowserPathLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="headlineListFontSizeDomainUpDown.Items13" xml:space="preserve">
+    <value>18 pt</value>
+  </data>
+  <data name="manualProxySettingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 55</value>
   </data>
   <data name="&gt;&gt;mediaPlayerPathTextBox2.Parent" xml:space="preserve">
     <value>generalTabPage</value>
@@ -519,8 +558,8 @@
   <data name="proxyServerCutMenuItem.Text" xml:space="preserve">
     <value>Cut</value>
   </data>
-  <data name="&gt;&gt;mediaPlayerPathContextMenu.Name" xml:space="preserve">
-    <value>mediaPlayerPathContextMenu</value>
+  <data name="&gt;&gt;advancedTabPage.Parent" xml:space="preserve">
+    <value>baseTabControl</value>
   </data>
   <data name="&gt;&gt;headlineListFontSizeLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -538,7 +577,7 @@
     <value>Top, Right</value>
   </data>
   <data name="playlistSaveCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="networkTabPage.Text" xml:space="preserve">
     <value>Network</value>
@@ -549,14 +588,8 @@
   <data name="webBrowserPathTextBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 21</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SettingForm</value>
-  </data>
   <data name="&gt;&gt;mediaPlayerPathReferenceButton.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="&gt;&gt;webBrowserPathContextMenu.Name" xml:space="preserve">
-    <value>webBrowserPathContextMenu</value>
   </data>
   <data name="&gt;&gt;webBrowserPathCopyMenuItem.Name" xml:space="preserve">
     <value>webBrowserPathCopyMenuItem</value>
@@ -564,8 +597,8 @@
   <data name="mediaPlayerPathTextBox2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;manualProxySettingRadioButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;webBrowserPathContextMenu.Name" xml:space="preserve">
+    <value>webBrowserPathContextMenu</value>
   </data>
   <data name="webBrowserPathCopyMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
@@ -573,23 +606,35 @@
   <data name="headlineListFontSizeLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 20</value>
   </data>
-  <data name="headlineListFontSizeDomainUpDown.Items3" xml:space="preserve">
-    <value>8 pt</value>
+  <data name="&gt;&gt;baseTabControl.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="playlistSaveLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 127</value>
+    <value>24, 26</value>
   </data>
   <data name="baseTabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="webBrowserPathLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 54</value>
+  </data>
   <data name="proxyServerTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>226, 21</value>
   </data>
-  <data name="&gt;&gt;webBrowserPathReference.Parent" xml:space="preserve">
-    <value>generalTabPage</value>
+  <data name="&gt;&gt;hedlineAutomaticUpdatesIntervalNumericUpDown.Name" xml:space="preserve">
+    <value>hedlineAutomaticUpdatesIntervalNumericUpDown</value>
+  </data>
+  <data name="&gt;&gt;manualProxySettingRadioButton.Name" xml:space="preserve">
+    <value>manualProxySettingRadioButton</value>
   </data>
   <data name="webBrowserPathReference.Size" type="System.Drawing.Size, System.Drawing">
     <value>80, 20</value>
+  </data>
+  <data name="&gt;&gt;headlineAutomaticUpdateIntervalLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;proxyNoUseRadioButton.Name" xml:space="preserve">
+    <value>proxyNoUseRadioButton</value>
   </data>
   <data name="&gt;&gt;webBrowserPathTextBox2.Name" xml:space="preserve">
     <value>webBrowserPathTextBox2</value>
@@ -600,8 +645,14 @@
   <data name="&gt;&gt;proxyPortTextBox.Parent" xml:space="preserve">
     <value>proxySettingPanel</value>
   </data>
+  <data name="proxyPortTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 140</value>
+  </data>
   <data name="&gt;&gt;networkTabPage.Name" xml:space="preserve">
     <value>networkTabPage</value>
+  </data>
+  <data name="&gt;&gt;advancedTabPage.Name" xml:space="preserve">
+    <value>advancedTabPage</value>
   </data>
   <data name="webBrowserPathLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>234, 20</value>
@@ -614,6 +665,9 @@
   </data>
   <data name="&gt;&gt;webBrowserPathLabel.Parent" xml:space="preserve">
     <value>generalTabPage</value>
+  </data>
+  <data name="webBrowserPathPasteMenuItem.Text" xml:space="preserve">
+    <value>Paste</value>
   </data>
   <data name="webBrowserPathLabel.Text" xml:space="preserve">
     <value>Web browser path</value>
@@ -646,10 +700,10 @@
     <value>proxyServerPasteMenuItem</value>
   </data>
   <data name="&gt;&gt;playlistSaveLabel.Parent" xml:space="preserve">
-    <value>generalTabPage</value>
+    <value>advancedTabPage</value>
   </data>
-  <data name="&gt;&gt;generalTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;proxyServerCopyMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;autoDetectProxySettingRadioButton.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -660,14 +714,14 @@
   <data name="&gt;&gt;mediaPlayerPathTextBox2.Name" xml:space="preserve">
     <value>mediaPlayerPathTextBox2</value>
   </data>
-  <data name="&gt;&gt;networkTabPage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="playlistSaveCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 20</value>
+    <value>226, 20</value>
   </data>
-  <data name="manualProxySettingRadioButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 55</value>
+  <data name="webBrowserPathTextBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="headlineListFontSizeDomainUpDown.Items10" xml:space="preserve">
+    <value>15 pt</value>
   </data>
   <data name="viewTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -681,17 +735,17 @@
   <data name="headlineListFontSizeDomainUpDown.Items" xml:space="preserve">
     <value>Default</value>
   </data>
-  <data name="mediaPlayerPathLabel.Text" xml:space="preserve">
-    <value>MediaPlayer path</value>
+  <data name="headlineListFontSizeDomainUpDown.Items8" xml:space="preserve">
+    <value>13 pt</value>
   </data>
-  <data name="headlineListFontSizeDomainUpDown.Items11" xml:space="preserve">
-    <value>16 pt</value>
+  <data name="&gt;&gt;baseTabControl.Name" xml:space="preserve">
+    <value>baseTabControl</value>
   </data>
   <data name="&gt;&gt;webBrowserPathPasteMenuItem.Name" xml:space="preserve">
     <value>webBrowserPathPasteMenuItem</value>
   </data>
-  <data name="webBrowserPathPasteMenuItem.Text" xml:space="preserve">
-    <value>Paste</value>
+  <data name="&gt;&gt;autoDetectProxySettingRadioButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;manualProxySettingRadioButton.Parent" xml:space="preserve">
     <value>proxySettingPanel</value>
@@ -702,17 +756,23 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>240, 268</value>
   </data>
-  <data name="proxyPortTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 140</value>
+  <data name="&gt;&gt;proxyPortCopyMenuItem.Name" xml:space="preserve">
+    <value>proxyPortCopyMenuItem</value>
   </data>
   <data name="&gt;&gt;headlineListFontSizeLabel.Parent" xml:space="preserve">
     <value>viewTabPage</value>
   </data>
-  <data name="baseTabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 268</value>
+  <data name="&gt;&gt;networkTabPage.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="mediaPlayerPathTextBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 27</value>
+  <data name="mediaPlayerPathLabel.Text" xml:space="preserve">
+    <value>MediaPlayer path</value>
+  </data>
+  <data name="&gt;&gt;headlineAutomaticUpdateIntervalLabel.Name" xml:space="preserve">
+    <value>headlineAutomaticUpdateIntervalLabel</value>
+  </data>
+  <data name="headlineListFontSizeDomainUpDown.Items6" xml:space="preserve">
+    <value>11 pt</value>
   </data>
   <data name="mediaPlayerPathCopyMenuItem.Text" xml:space="preserve">
     <value>Copy</value>
@@ -720,14 +780,17 @@
   <data name="&gt;&gt;webBrowserPathReference.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;proxyServerLabel.Parent" xml:space="preserve">
-    <value>proxySettingPanel</value>
+  <data name="&gt;&gt;baseTabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="webBrowserPathCutMenuItem.Text" xml:space="preserve">
     <value>Cut</value>
   </data>
-  <data name="&gt;&gt;headlineListFontSizeDomainUpDown.Name" xml:space="preserve">
-    <value>headlineListFontSizeDomainUpDown</value>
+  <data name="&gt;&gt;proxySettingPanel.Name" xml:space="preserve">
+    <value>proxySettingPanel</value>
+  </data>
+  <data name="generalTabPage.Text" xml:space="preserve">
+    <value>General</value>
   </data>
   <data name="&gt;&gt;viewTabPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -735,17 +798,14 @@
   <data name="proxyPortCutMenuItem.Text" xml:space="preserve">
     <value>Cut</value>
   </data>
-  <data name="&gt;&gt;baseTabControl.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="mediaPlayerPathReferenceButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 20</value>
+  <data name="&gt;&gt;proxyServerCutMenuItem.Name" xml:space="preserve">
+    <value>proxyServerCutMenuItem</value>
   </data>
   <data name="networkTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="autoDetectProxySettingRadioButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="mediaPlayerPathReferenceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>157, 28</value>
   </data>
   <data name="&gt;&gt;playlistSaveLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -753,29 +813,35 @@
   <data name="headlineListFontSizeDomainUpDown.Items7" xml:space="preserve">
     <value>12 pt</value>
   </data>
+  <data name="headlineListFontSizeDomainUpDown.Items11" xml:space="preserve">
+    <value>16 pt</value>
+  </data>
   <data name="manualProxySettingRadioButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;mediaPlayerPathReferenceButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;manualProxySettingRadioButton.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="proxyPortLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 121</value>
+  <data name="&gt;&gt;proxyServerLabel.Parent" xml:space="preserve">
+    <value>proxySettingPanel</value>
   </data>
-  <data name="&gt;&gt;baseTabControl.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;generalTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mediaPlayerPathContextMenu.Name" xml:space="preserve">
+    <value>mediaPlayerPathContextMenu</value>
   </data>
   <data name="mediaPlayerPathReferenceButton.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;mediaPlayerPathTextBox2.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="proxyPortLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 16</value>
   </data>
-  <data name="&gt;&gt;baseTabControl.Name" xml:space="preserve">
+  <data name="&gt;&gt;advancedTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;networkTabPage.Parent" xml:space="preserve">
     <value>baseTabControl</value>
-  </data>
-  <data name="&gt;&gt;proxyServerTextBox.Name" xml:space="preserve">
-    <value>proxyServerTextBox</value>
   </data>
   <data name="&gt;&gt;playlistSaveLabel.Name" xml:space="preserve">
     <value>playlistSaveLabel</value>
@@ -783,14 +849,8 @@
   <data name="&gt;&gt;proxyPortLabel.Parent" xml:space="preserve">
     <value>proxySettingPanel</value>
   </data>
-  <data name="&gt;&gt;proxyServerTextBox.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="proxyServerLabel.Text" xml:space="preserve">
     <value>Proxy server (ex: proxy.example.com)</value>
-  </data>
-  <data name="webBrowserPathReference.Text" xml:space="preserve">
-    <value>Reference</value>
   </data>
   <data name="baseTabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -798,20 +858,26 @@
   <data name="&gt;&gt;proxySettingPanel.Parent" xml:space="preserve">
     <value>networkTabPage</value>
   </data>
-  <data name="playlistSaveLabel.Text" xml:space="preserve">
-    <value>(The channel might be able to be played by checking here when the channel is not played.)</value>
-  </data>
   <data name="mediaPlayerPathLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
+  </data>
+  <data name="&gt;&gt;proxyServerTextBox.Name" xml:space="preserve">
+    <value>proxyServerTextBox</value>
+  </data>
+  <data name="&gt;&gt;mediaPlayerPathTextBox2.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="headlineListFontSizeDomainUpDown.Items1" xml:space="preserve">
     <value>6 pt</value>
   </data>
-  <data name="proxyPortTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="playlistSaveLabel.Text" xml:space="preserve">
+    <value>(The channel might be able to be played by checking here when the channel is not played.)</value>
   </data>
   <data name="&gt;&gt;webBrowserPathContextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hedlineAutomaticUpdatesIntervalNumericUpDown.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;proxyServerLabel.Name" xml:space="preserve">
     <value>proxyServerLabel</value>
@@ -823,14 +889,14 @@
   <data name="headlineListFontSizeLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="proxyPortContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>142, 17</value>
   </metadata>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC</value>
   </metadata>
-  <metadata name="proxyPortContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>142, 17</value>
+  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="proxyServerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -841,13 +907,10 @@
   <metadata name="mediaPlayerPathContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>313, 17</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>Japanese</value>
+  <metadata name="webBrowserPathContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>438, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="webBrowserPathContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>438, 17</value>
   </metadata>
 </root>

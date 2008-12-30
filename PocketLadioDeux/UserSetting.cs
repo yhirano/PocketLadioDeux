@@ -150,5 +150,47 @@ namespace PocketLadioDeux
             get { return playlistSave; }
             set { playlistSave = value; }
         }
+
+        /// <summary>
+        /// ヘッドラインの自動取得が有効か
+        /// </summary>
+        private bool headlineAutomaticUpdatesEnabled = false;
+
+        /// <summary>
+        /// ヘッドラインの自動取得が有効かを取得・設定する
+        /// </summary>
+        public bool HeadlineAutomaticUpdatesEnabled
+        {
+            get { return headlineAutomaticUpdatesEnabled; }
+            set { headlineAutomaticUpdatesEnabled = value; }
+        }
+
+        /// <summary>
+        /// ヘッドラインの自動取得間隔（ミリ秒）
+        /// </summary>
+        private int headlineAutomaticUpdatesInterval = 60000;
+
+        /// <summary>
+        /// ヘッドラインの自動取得間隔（ミリ秒）を取得・設定する
+        /// </summary>
+        public int HeadlineAutomaticUpdatesInterval
+        {
+            get { return headlineAutomaticUpdatesInterval; }
+            set
+            {
+                if (value < PocketLadioDeuxInfo.HeadlineAutomaticUpdatesIntervalMin)
+                {
+                    headlineAutomaticUpdatesInterval = PocketLadioDeuxInfo.HeadlineAutomaticUpdatesIntervalMin;
+                }
+                else if (value > PocketLadioDeuxInfo.HeadlineAutomaticUpdatesIntervalMax)
+                {
+                    headlineAutomaticUpdatesInterval = PocketLadioDeuxInfo.HeadlineAutomaticUpdatesIntervalMax;
+                }
+                else
+                {
+                    headlineAutomaticUpdatesInterval = value;
+                }
+            }
+        }
     }
 }

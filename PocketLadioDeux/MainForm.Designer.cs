@@ -34,6 +34,8 @@
             this.menuItem = new System.Windows.Forms.MenuItem();
             this.addRemoveHeadlineMenuItem = new System.Windows.Forms.MenuItem();
             this.headlineSettingMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuItem4 = new System.Windows.Forms.MenuItem();
+            this.headlineAutomaticUpdatesMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem2 = new System.Windows.Forms.MenuItem();
             this.settingMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
@@ -58,6 +60,7 @@
             this.playButton = new System.Windows.Forms.Button();
             this.mainSplitter = new System.Windows.Forms.Splitter();
             this.mainStatusBar = new System.Windows.Forms.StatusBar();
+            this.headlineAutomaticUpdatesTimer = new System.Windows.Forms.Timer();
             this.topPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,15 +71,17 @@
             // 
             // menuItem
             // 
+            resources.ApplyResources(this.menuItem, "menuItem");
             this.menuItem.MenuItems.Add(this.addRemoveHeadlineMenuItem);
             this.menuItem.MenuItems.Add(this.headlineSettingMenuItem);
+            this.menuItem.MenuItems.Add(this.menuItem4);
+            this.menuItem.MenuItems.Add(this.headlineAutomaticUpdatesMenuItem);
             this.menuItem.MenuItems.Add(this.menuItem2);
             this.menuItem.MenuItems.Add(this.settingMenuItem);
             this.menuItem.MenuItems.Add(this.menuItem3);
             this.menuItem.MenuItems.Add(this.aboutMenuItem);
             this.menuItem.MenuItems.Add(this.menuItem1);
             this.menuItem.MenuItems.Add(this.exitMenuItem);
-            resources.ApplyResources(this.menuItem, "menuItem");
             this.menuItem.Popup += new System.EventHandler(this.menuItem_Popup);
             // 
             // addRemoveHeadlineMenuItem
@@ -87,6 +92,15 @@
             // headlineSettingMenuItem
             // 
             resources.ApplyResources(this.headlineSettingMenuItem, "headlineSettingMenuItem");
+            // 
+            // menuItem4
+            // 
+            resources.ApplyResources(this.menuItem4, "menuItem4");
+            // 
+            // headlineAutomaticUpdatesMenuItem
+            // 
+            resources.ApplyResources(this.headlineAutomaticUpdatesMenuItem, "headlineAutomaticUpdatesMenuItem");
+            this.headlineAutomaticUpdatesMenuItem.Click += new System.EventHandler(this.headlineAutomaticUpdatesMenuItem_Click);
             // 
             // menuItem2
             // 
@@ -117,12 +131,12 @@
             // 
             // topPanel
             // 
+            resources.ApplyResources(this.topPanel, "topPanel");
             this.topPanel.Controls.Add(this.cancelButton);
             this.topPanel.Controls.Add(this.headlineListView);
             this.topPanel.Controls.Add(this.filterCheckBox);
             this.topPanel.Controls.Add(this.headlineListComboBox);
             this.topPanel.Controls.Add(this.updateButton);
-            resources.ApplyResources(this.topPanel, "topPanel");
             this.topPanel.Name = "topPanel";
             this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
@@ -187,11 +201,11 @@
             // 
             // bottomPanel
             // 
+            resources.ApplyResources(this.bottomPanel, "bottomPanel");
             this.bottomPanel.Controls.Add(this.infomationLabel);
             this.bottomPanel.Controls.Add(this.propertyButton);
             this.bottomPanel.Controls.Add(this.webButton);
             this.bottomPanel.Controls.Add(this.playButton);
-            resources.ApplyResources(this.bottomPanel, "bottomPanel");
             this.bottomPanel.Name = "bottomPanel";
             // 
             // infomationLabel
@@ -226,6 +240,11 @@
             // 
             resources.ApplyResources(this.mainStatusBar, "mainStatusBar");
             this.mainStatusBar.Name = "mainStatusBar";
+            // 
+            // headlineAutomaticUpdatesTimer
+            // 
+            this.headlineAutomaticUpdatesTimer.Interval = 60000;
+            this.headlineAutomaticUpdatesTimer.Tick += new System.EventHandler(this.headlineAutomaticUpdatesTimer_Tick);
             // 
             // MainForm
             // 
@@ -277,6 +296,9 @@
         private System.Windows.Forms.MenuItem webMenuItem;
         private System.Windows.Forms.MenuItem propertyMenuItem;
         private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.MenuItem menuItem4;
+        private System.Windows.Forms.MenuItem headlineAutomaticUpdatesMenuItem;
+        private System.Windows.Forms.Timer headlineAutomaticUpdatesTimer;
     }
 }
 

@@ -52,6 +52,22 @@ namespace PocketLadioDeux
         }
 
         /// <summary>
+        /// 番組表の自動取得間隔（ミリ秒）の最低値を取得する
+        /// </summary>
+        public static int HeadlineAutomaticUpdatesIntervalMin
+        {
+            get { return 30000; }
+        }
+
+        /// <summary>
+        /// 番組表の自動取得間隔（ミリ秒）の最大値を取得する
+        /// </summary>
+        public static int HeadlineAutomaticUpdatesIntervalMax
+        {
+            get { return 3600000; }
+        }
+
+        /// <summary>
         /// Headlineリストのデフォルトフォントサイズ
         /// </summary>
         public static int HeadlineListDefaultFontSize

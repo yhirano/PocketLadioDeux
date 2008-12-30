@@ -89,9 +89,23 @@ namespace PocketLadioDeux
         }
 
         /// <summary>
+        /// ヘッドラインの自動取得
+        /// </summary>
+        private bool headlineAutomaticUpdatesEnabled
+        {
+            get { return UserSettingAdapter.Setting.HeadlineAutomaticUpdatesEnabled; }
+            set
+            {
+                UserSettingAdapter.Setting.HeadlineAutomaticUpdatesEnabled = value;
+                headlineAutomaticUpdatesTimer.Enabled = value;
+                headlineAutomaticUpdatesMenuItem.Checked = value;
+            }
+        }
+
+        /// <summary>
         /// メッセージ表示用のリソース
         /// </summary>
-        ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.MessagesResource", Assembly.GetExecutingAssembly());
+        private ResourceManager messagesResource = new ResourceManager("PocketLadioDeux.MessagesResource", Assembly.GetExecutingAssembly());
 
         private delegate void UpdateHeadlineListDelegate();
         private delegate void UpdateButtonEnableDelegate();
@@ -288,6 +302,7 @@ namespace PocketLadioDeux
             topPanel.Height = UserSettingAdapter.Setting.TopPanelHeight;
             headlineListView.Columns[0].Width = UserSettingAdapter.Setting.HeadlineListViewChannelColumnWidth;
             filterCheckBox.Checked = UserSettingAdapter.Setting.FilterEnabled;
+            headlineAutomaticUpdatesEnabled = UserSettingAdapter.Setting.HeadlineAutomaticUpdatesEnabled;
         }
 
         /// <summary>
@@ -603,6 +618,12 @@ namespace PocketLadioDeux
         private void MainForm_Activated(object sender, EventArgs e)
         {
             UpdateHeadlineListComboBox();
+
+            // 番組の自動取得間隔を設定
+            if (headlineAutomaticUpdatesTimer.Interval != UserSettingAdapter.Setting.HeadlineAutomaticUpdatesInterval)
+            {
+                headlineAutomaticUpdatesTimer.Interval = UserSettingAdapter.Setting.HeadlineAutomaticUpdatesInterval;
+            }
         }
 
         /// <summary>
@@ -771,7 +792,7 @@ namespace PocketLadioDeux
                         {
                             sw.Close();
                         }
-                        if(sr !=null)
+                        if (sr != null)
                         {
                             sr.Close();
                         }
@@ -897,6 +918,21 @@ namespace PocketLadioDeux
                 {
                     headlineListView.Font = new Font(headlineListView.Font.Name, (int)UserSettingAdapter.Setting.HeadlineListFontSize, headlineListView.Font.Style);
                 }
+            }
+        }
+
+        private void headlineAutomaticUpdatesMenuItem_Click(object sender, EventArgs e)
+        {
+            // ヘッドラインの自動取得を切り替える
+            headlineAutomaticUpdatesEnabled = !headlineAutomaticUpdatesEnabled;
+        }
+
+        private void headlineAutomaticUpdatesTimer_Tick(object sender, EventArgs e)
+        {
+            // ヘッドラインを取得する
+            foreach (HeadlineBase headline in HeadlineManager.Headlines)
+            {
+                HeadlineManager.FetchChannelsAsync(headline);
             }
         }
     }

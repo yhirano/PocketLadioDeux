@@ -123,6 +123,9 @@
   <data name="headlineSettingMenuItem.Text" xml:space="preserve">
     <value>ヘッドラインの設定</value>
   </data>
+  <data name="headlineAutomaticUpdatesMenuItem.Text" xml:space="preserve">
+    <value>ヘッドラインの自動取得</value>
+  </data>
   <data name="settingMenuItem.Text" xml:space="preserve">
     <value>設定</value>
   </data>

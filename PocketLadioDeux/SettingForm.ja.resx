@@ -117,11 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="playlistSaveLabel.Text" xml:space="preserve">
-    <value>（番組が再生されない場合にチェックすると、番組を再生できることがあります）</value>
+  <data name="headlineAutomaticUpdateIntervalLabel.Text" xml:space="preserve">
+    <value>ヘッドラインの自動取得の間隔</value>
   </data>
-  <data name="playlistSaveCheckBox.Text" xml:space="preserve">
-    <value>プレイリストを一旦ローカルに保存する</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="hedlineAutomaticUpdatesIntervalNumericUpDown.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="webBrowserPathReference.Text" xml:space="preserve">
     <value>参照</value>
@@ -200,6 +201,15 @@
   </data>
   <data name="networkTabPage.Text" xml:space="preserve">
     <value>ネットワーク</value>
+  </data>
+  <data name="playlistSaveLabel.Text" xml:space="preserve">
+    <value>（番組が再生されない場合にチェックすると、番組を再生できることがあります）</value>
+  </data>
+  <data name="playlistSaveCheckBox.Text" xml:space="preserve">
+    <value>プレイリストを一旦ローカルに保存する</value>
+  </data>
+  <data name="advancedTabPage.Text" xml:space="preserve">
+    <value>高度</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>

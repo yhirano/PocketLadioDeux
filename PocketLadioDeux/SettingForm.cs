@@ -21,11 +21,15 @@ namespace PocketLadioDeux
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
+            hedlineAutomaticUpdatesIntervalNumericUpDown.Minimum = PocketLadioDeuxInfo.HeadlineAutomaticUpdatesIntervalMin / 1000;
+            hedlineAutomaticUpdatesIntervalNumericUpDown.Maximum = PocketLadioDeuxInfo.HeadlineAutomaticUpdatesIntervalMax / 1000;
+
             #region 設定の読み込み
 
             mediaPlayerPathTextBox2.Text = UserSettingAdapter.Setting.MediaPlayerPath;
             webBrowserPathTextBox2.Text = UserSettingAdapter.Setting.WebBrowserPath;
             playlistSaveCheckBox.Checked = UserSettingAdapter.Setting.PlaylistSave;
+            hedlineAutomaticUpdatesIntervalNumericUpDown.Value = UserSettingAdapter.Setting.HeadlineAutomaticUpdatesInterval / 1000;
 
             switch (UserSettingAdapter.Setting.HeadlineListFontSize)
             {
@@ -116,6 +120,7 @@ namespace PocketLadioDeux
             UserSettingAdapter.Setting.MediaPlayerPath = mediaPlayerPathTextBox2.Text.Trim();
             UserSettingAdapter.Setting.WebBrowserPath = webBrowserPathTextBox2.Text.Trim();
             UserSettingAdapter.Setting.PlaylistSave = playlistSaveCheckBox.Checked;
+            UserSettingAdapter.Setting.HeadlineAutomaticUpdatesInterval = (int)hedlineAutomaticUpdatesIntervalNumericUpDown.Value * 1000;
 
             switch (headlineListFontSizeDomainUpDown.SelectedIndex)
             {
@@ -299,6 +304,31 @@ namespace PocketLadioDeux
                 webBrowserPathTextBox2.Text = fd.FileName;
             }
             fd.Dispose();
+        }
+
+        private void SettingForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == System.Windows.Forms.Keys.Up))
+            {
+                // Up
+            }
+            if ((e.KeyCode == System.Windows.Forms.Keys.Down))
+            {
+                // Down
+            }
+            if ((e.KeyCode == System.Windows.Forms.Keys.Left))
+            {
+                // Left
+            }
+            if ((e.KeyCode == System.Windows.Forms.Keys.Right))
+            {
+                // Right
+            }
+            if ((e.KeyCode == System.Windows.Forms.Keys.Enter))
+            {
+                // Enter
+            }
+
         }
     }
 }
