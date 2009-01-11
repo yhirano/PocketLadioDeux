@@ -144,6 +144,12 @@ namespace PocketLadioDeux
         /// <param name="headline">ヘッドライン</param>
         public static void FetchChannelsAsync(HeadlineBase headline)
         {
+            // 指定のヘッドラインが取得処理中の場合は、何もせず終了
+            if (headline.IsFetching == true || fetchingChannelBackgroundWorkers.ContainsKey(headline) == true)
+            {
+                return;
+            }
+
             BackgroundWorker bg = new BackgroundWorker();
             bg.WorkerSupportsCancellation = true;
             EventHandler<ChannelAddedEventArgs> cancelEventHandler = null;

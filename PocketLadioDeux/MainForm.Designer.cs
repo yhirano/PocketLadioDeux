@@ -71,7 +71,6 @@
             // 
             // menuItem
             // 
-            resources.ApplyResources(this.menuItem, "menuItem");
             this.menuItem.MenuItems.Add(this.addRemoveHeadlineMenuItem);
             this.menuItem.MenuItems.Add(this.headlineSettingMenuItem);
             this.menuItem.MenuItems.Add(this.menuItem4);
@@ -82,6 +81,7 @@
             this.menuItem.MenuItems.Add(this.aboutMenuItem);
             this.menuItem.MenuItems.Add(this.menuItem1);
             this.menuItem.MenuItems.Add(this.exitMenuItem);
+            resources.ApplyResources(this.menuItem, "menuItem");
             this.menuItem.Popup += new System.EventHandler(this.menuItem_Popup);
             // 
             // addRemoveHeadlineMenuItem
@@ -131,12 +131,12 @@
             // 
             // topPanel
             // 
-            resources.ApplyResources(this.topPanel, "topPanel");
             this.topPanel.Controls.Add(this.cancelButton);
             this.topPanel.Controls.Add(this.headlineListView);
             this.topPanel.Controls.Add(this.filterCheckBox);
             this.topPanel.Controls.Add(this.headlineListComboBox);
             this.topPanel.Controls.Add(this.updateButton);
+            resources.ApplyResources(this.topPanel, "topPanel");
             this.topPanel.Name = "topPanel";
             this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.topPanel_Paint);
             // 
@@ -201,11 +201,11 @@
             // 
             // bottomPanel
             // 
-            resources.ApplyResources(this.bottomPanel, "bottomPanel");
             this.bottomPanel.Controls.Add(this.infomationLabel);
             this.bottomPanel.Controls.Add(this.propertyButton);
             this.bottomPanel.Controls.Add(this.webButton);
             this.bottomPanel.Controls.Add(this.playButton);
+            resources.ApplyResources(this.bottomPanel, "bottomPanel");
             this.bottomPanel.Name = "bottomPanel";
             // 
             // infomationLabel
