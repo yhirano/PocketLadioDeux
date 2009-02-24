@@ -929,10 +929,10 @@ namespace PocketLadioDeux
 
         private void headlineAutomaticUpdatesTimer_Tick(object sender, EventArgs e)
         {
-            // ヘッドラインを取得する
-            foreach (HeadlineBase headline in HeadlineManager.Headlines)
+            if (selectedHeadline != null)
             {
-                HeadlineManager.FetchChannelsAsync(headline);
+                // 選択されているヘッドラインを取得する
+                HeadlineManager.FetchChannelsAsync(selectedHeadline);
             }
         }
     }
