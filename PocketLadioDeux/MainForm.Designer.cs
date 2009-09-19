@@ -54,7 +54,7 @@
             this.headlineListComboBox = new System.Windows.Forms.ComboBox();
             this.updateButton = new System.Windows.Forms.Button();
             this.bottomPanel = new System.Windows.Forms.Panel();
-            this.infomationLabel = new System.Windows.Forms.Label();
+            this.informationLabel = new System.Windows.Forms.Label();
             this.propertyButton = new System.Windows.Forms.Button();
             this.webButton = new System.Windows.Forms.Button();
             this.playButton = new System.Windows.Forms.Button();
@@ -201,17 +201,17 @@
             // 
             // bottomPanel
             // 
-            this.bottomPanel.Controls.Add(this.infomationLabel);
+            this.bottomPanel.Controls.Add(this.informationLabel);
             this.bottomPanel.Controls.Add(this.propertyButton);
             this.bottomPanel.Controls.Add(this.webButton);
             this.bottomPanel.Controls.Add(this.playButton);
             resources.ApplyResources(this.bottomPanel, "bottomPanel");
             this.bottomPanel.Name = "bottomPanel";
             // 
-            // infomationLabel
+            // informationLabel
             // 
-            resources.ApplyResources(this.infomationLabel, "infomationLabel");
-            this.infomationLabel.Name = "infomationLabel";
+            resources.ApplyResources(this.informationLabel, "informationLabel");
+            this.informationLabel.Name = "informationLabel";
             // 
             // propertyButton
             // 
@@ -272,7 +272,7 @@
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Splitter mainSplitter;
-        private System.Windows.Forms.Label infomationLabel;
+        private System.Windows.Forms.Label informationLabel;
         private System.Windows.Forms.Button propertyButton;
         private System.Windows.Forms.Button webButton;
         private System.Windows.Forms.Button playButton;

@@ -362,12 +362,9 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
                             {
                                 try
                                 {
-                                    channel.WebSiteUrl = new Uri(clusterUrlMatch.Groups[1].Value);
+                                    channel.WebSiteUrl = new Uri(clusterUrlMatch.Groups[1].Value.Trim());
                                 }
-                                catch (UriFormatException)
-                                {
-                                    channel.WebSiteUrl = null;
-                                }
+                                catch (UriFormatException) { ; }
                                 break;
                             }
                         }

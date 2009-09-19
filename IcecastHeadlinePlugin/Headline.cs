@@ -230,7 +230,7 @@ namespace PocketLadioDeux.IcecastHeadlinePlugin
                             {
                                 try
                                 {
-                                    channel.ListenUrl = new Uri(reader.ReadString());
+                                    channel.ListenUrl = new Uri(reader.ReadString().Trim());
                                 }
                                 catch (UriFormatException) { ; }
                             } // End of listen_url

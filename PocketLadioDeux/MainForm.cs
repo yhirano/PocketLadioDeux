@@ -51,7 +51,7 @@ namespace PocketLadioDeux
                 _selectedChannel = value;
                 if (_selectedChannel != null)
                 {
-                    infomationLabel.Text = selectedChannel.Display;
+                    informationLabel.Text = selectedChannel.Display;
                     if (selectedChannel.PlayUrl != null)
                     {
                         playButton.Enabled = true;
@@ -77,7 +77,7 @@ namespace PocketLadioDeux
                 }
                 else
                 {
-                    infomationLabel.Text = string.Empty;
+                    informationLabel.Text = string.Empty;
                     playButton.Enabled = false;
                     playMenuItem.Enabled = false;
                     webButton.Enabled = false;

@@ -270,7 +270,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                                 {
                                     channel = new Channel();
                                 }
-                                channel.WebSiteUrl = new Uri(urlMatch.Groups[1].Value);
+                                channel.WebSiteUrl = new Uri(urlMatch.Groups[1].Value.Trim());
                             }
                         }
                         catch (UriFormatException) { ; }

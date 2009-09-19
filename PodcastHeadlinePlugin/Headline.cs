@@ -309,7 +309,7 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
                             {
                                 try
                                 {
-                                    channel.WebSiteUrl = new Uri(reader.ReadString());
+                                    channel.WebSiteUrl = new Uri(reader.ReadString().Trim());
                                 }
                                 catch (UriFormatException) { ; }
                             } // End of link

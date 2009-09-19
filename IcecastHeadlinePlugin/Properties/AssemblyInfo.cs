@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PocketLadio::Deux")]
-[assembly: AssemblyCopyright("Copyright ©  2008 Y.Hirano")]
+[assembly: AssemblyCopyright("Copyright ©  2008-2009 Y.Hirano")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // すべての値を指定するか、下のように '*' を使ってリビジョンおよびビルド番号を 
 // 既定値にすることができます:
-[assembly: AssemblyVersion("0.5.0.0")]
+[assembly: AssemblyVersion("0.6.0.0")]
 
