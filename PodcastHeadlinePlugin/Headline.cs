@@ -299,58 +299,86 @@ namespace PocketLadioDeux.PodcastHeadlinePlugin
                         {
                             if (reader.LocalName == "title")
                             {
-                                channel.Title = reader.ReadString();
+                                // "itunes::*"などで上書きされるのを防ぐ
+                                if (channel.Title == string.Empty || reader.Name == "title")
+                                {
+                                    channel.Title = reader.ReadString();
+                                }
                             } // End of title
                             else if (reader.LocalName == "description")
                             {
-                                channel.Description = reader.ReadString();
+                                // "itunes::*"などで上書きされるのを防ぐ
+                                if (channel.Description == string.Empty || reader.Name == "description")
+                                {
+                                    channel.Description = reader.ReadString();
+                                }
                             } // End of description
                             else if (reader.LocalName == "link")
                             {
-                                try
-                                {
-                                    channel.WebSiteUrl = new Uri(reader.ReadString().Trim());
-                                }
-                                catch (UriFormatException) { ; }
-                            } // End of link
-                            else if (reader.LocalName == "pubDate")
-                            {
-                                string dateString = reader.ReadString();
-                                try
-                                {
-                                    channel.Date = DateTime.ParseExact(dateString, "ddd, d MMM yyyy HH':'mm':'ss zzz",
-                                        System.Globalization.DateTimeFormatInfo.InvariantInfo,
-                                        System.Globalization.DateTimeStyles.None);
-                                }
-                                catch (FormatException)
+                                // "itunes::*"などで上書きされるのを防ぐ
+                                if (channel.WebSiteUrl == null || reader.Name == "link")
                                 {
                                     try
                                     {
-                                        channel.Date = DateTime.Parse(dateString,
+                                        channel.WebSiteUrl = new Uri(reader.ReadString().Trim());
+                                    }
+                                    catch (UriFormatException) { ; }
+                                }
+                            } // End of link
+                            else if (reader.LocalName == "pubDate")
+                            {
+                                // "itunes::*"などで上書きされるのを防ぐ
+                                if (channel.Date == null || reader.Name == "pubDate")
+                                {
+                                    string dateString = reader.ReadString();
+                                    try
+                                    {
+                                        channel.Date = DateTime.ParseExact(dateString, "ddd, d MMM yyyy HH':'mm':'ss zzz",
                                             System.Globalization.DateTimeFormatInfo.InvariantInfo,
                                             System.Globalization.DateTimeStyles.None);
                                     }
                                     catch (FormatException)
                                     {
-                                        channel.Date = DateTime.Now;
+                                        try
+                                        {
+                                            channel.Date = DateTime.Parse(dateString,
+                                                System.Globalization.DateTimeFormatInfo.InvariantInfo,
+                                                System.Globalization.DateTimeStyles.None);
+                                        }
+                                        catch (FormatException)
+                                        {
+                                            channel.Date = DateTime.Now;
+                                        }
                                     }
                                 }
                             } // End of pubDate
                             else if (reader.LocalName == "category")
                             {
-                                channel.Category = reader.ReadString();
+                                // "itunes::*"などで上書きされるのを防ぐ
+                                if (channel.Category == string.Empty || reader.Name == "category")
+                                {
+                                    channel.Category = reader.ReadString();
+                                }
                             } // End of category
                             else if (reader.LocalName == "author")
                             {
-                                channel.Author = reader.ReadString();
+                                // "itunes::*"などで上書きされるのを防ぐ
+                                if (channel.Author == string.Empty || reader.Name == "author")
+                                {
+                                    channel.Author = reader.ReadString();
+                                }
                             } // End of author
                             else if (reader.LocalName == "guid")
                             {
-                                try
+                                // "itunes::*"などで上書きされるのを防ぐ
+                                if (channel.WebSiteUrl == null || reader.Name == "guid")
                                 {
-                                    channel.WebSiteUrl = new Uri(reader.ReadString());
+                                    try
+                                    {
+                                        channel.WebSiteUrl = new Uri(reader.ReadString());
+                                    }
+                                    catch (UriFormatException) { ; }
                                 }
-                                catch (UriFormatException) { ; }
                             } // End of guid
                             else if (reader.LocalName == "enclosure")
                             {
