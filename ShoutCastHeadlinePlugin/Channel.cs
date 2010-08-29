@@ -31,14 +31,11 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             {
                 if (dislpayFormat != string.Empty)
                 {
-                    string result = dislpayFormat.Replace("[[RANK]]", Rank)
-                        .Replace("[[TITLE]]", Title)
-                        .Replace("[[PLAYING]]", Playing)
-                        .Replace("[[LISTENER]]", ((Listener != Channel.UNKNOWN_LISTENER_NUM) ? Listener.ToString() : "na"))
-                        .Replace("[[LISTENERTOTAL]]", ((ListenerTotal != Channel.UNKNOWN_LISTENER_NUM) ? ListenerTotal.ToString() : "na"))
-                        .Replace("[[CATEGORY]]", Category)
-                        .Replace("[[BIT]]", ((Bitrate != Channel.UNKNOWN_BITRATE) ? Bitrate.ToString() : "na"));
-
+                    string result = dislpayFormat.Replace("[[TITLE]]", this.Title)
+                        .Replace("[[DESCRIPTION]]", this.Description)
+                        .Replace("[[LISTENER]]", (this.Listener != -1) ? this.Listener.ToString() : "na")
+                        .Replace("[[CATEGORY]]", this.Category)
+                        .Replace("[[BIT]]", (this.Bitrate != -1) ? this.Bitrate.ToString() : "na");
                     return result;
                 }
                 else
@@ -62,48 +59,17 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         }
 
         /// <summary>
+        /// 番組の放送URL
+        /// </summary>
+        private Uri playUrl;
+
+        /// <summary>
         /// 番組の放送URLを取得・設定する
         /// </summary>
         public Uri PlayUrl
         {
-            get
-            {
-                try
-                {
-                    return new Uri(Headline.SHOUTCAST_URL + path);
-                }
-                catch (UriFormatException)
-                {
-                    return null;
-                }
-            }
-        }
-
-        /// <summary>
-        /// 再生URLへのパス
-        /// </summary>
-        private string path = string.Empty;
-
-        /// <summary>
-        /// 再生URLへのパス
-        /// </summary>
-        internal string Path
-        {
-            set { path = value; }
-        }
-
-        /// <summary>
-        /// ランク
-        /// </summary>
-        private string rank = string.Empty;
-
-        /// <summary>
-        /// ランク
-        /// </summary>
-        internal string Rank
-        {
-            get { return rank; }
-            set { rank = value; }
+            get { return playUrl; }
+            internal set { playUrl = value; }
         }
 
         /// <summary>
@@ -121,50 +87,17 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         }
 
         /// <summary>
-        /// 現在演奏中の曲
+        /// 番組の詳細
         /// </summary>
-        private string playing = string.Empty;
+        private string description = string.Empty;
 
         /// <summary>
-        /// 現在演奏中の曲
+        /// 番組の詳細
         /// </summary>
-        internal string Playing
+        internal string Description
         {
-            get { return playing; }
-            set { playing = value; }
-        }
-
-        /// <summary>
-        /// リスナ数
-        /// </summary>
-        private int listener = UNKNOWN_LISTENER_NUM;
-
-        /// <summary>
-        /// リスナ数
-        /// </summary>
-        internal int Listener
-        {
-            get { return listener; }
-            set { listener = value; }
-        }
-
-        /// <summary>
-        /// リスナ数が不明
-        /// </summary>
-        internal const int UNKNOWN_LISTENER_NUM = -1;
-
-        /// <summary>
-        /// 述べリスナ数
-        /// </summary>
-        private int listenerTotal = UNKNOWN_LISTENER_NUM;
-
-        /// <summary>
-        /// 述べリスナ数
-        /// </summary>
-        internal int ListenerTotal
-        {
-            get { return listenerTotal; }
-            set { listenerTotal = value; }
+            get { return description; }
+            set { description = (value != null) ? value : string.Empty; }
         }
 
         /// <summary>
@@ -180,6 +113,53 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             get { return category; }
             set { category = value; }
         }
+
+        /// <summary>
+        /// 番組の長さ
+        /// </summary>
+        private string length = string.Empty;
+
+        /// <summary>
+        /// 番組の長さ
+        /// </summary>
+        internal string Length
+        {
+            get { return length; }
+            set { length = (value != null) ? value : string.Empty; }
+        }
+
+        /// <summary>
+        /// 番組のタイプ
+        /// </summary>
+        private string type = string.Empty;
+
+        /// <summary>
+        /// 番組のタイプ
+        /// </summary>
+        internal string Type
+        {
+            get { return type; }
+            set { type = (value != null) ? value : string.Empty; }
+        }
+
+        /// <summary>
+        /// リスナー数
+        /// </summary>
+        private int listener = UNKNOWN_LISTENER_NUM;
+
+        /// <summary>
+        /// リスナー数を取得・設定する
+        /// </summary>
+        public int Listener
+        {
+            get { return listener; }
+            set { listener = value; }
+        }
+
+        /// <summary>
+        /// リスナー数が不明
+        /// </summary>
+        internal const int UNKNOWN_LISTENER_NUM = -1;
 
         /// <summary>
         /// ビットレート
@@ -208,14 +188,11 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         {
             get
             {
-                if (PlayUrl != null)
+                if (this.PlayUrl != null)
                 {
-                    return new string[] { Title, Category, PlayUrl.ToString() };
+                    return new string[] { Title, Description, Category, PlayUrl.ToString() };
                 }
-                else
-                {
-                    return new string[] { Title, Category };
-                }
+                return new string[] { Title, Description, Category };
             }
         }
 
@@ -234,6 +211,47 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             ChannelPropertyForm channelPropertyForm = new ChannelPropertyForm(this);
             channelPropertyForm.ShowDialog();
             channelPropertyForm.Dispose();
+        }
+
+        public object Clone()
+        {
+            Channel channel = new Channel();
+            channel.Title = (string)Title.Clone();
+            if (this.PlayUrl != null)
+            {
+                channel.PlayUrl = new Uri(PlayUrl.ToString());
+            }
+            else
+            {
+                channel.PlayUrl = null;
+            }
+            if (this.WebSiteUrl != null)
+            {
+                channel.WebSiteUrl = new Uri(WebSiteUrl.ToString());
+            }
+            else
+            {
+                channel.WebSiteUrl = null;
+            }
+            if (this.Description != null)
+            {
+                channel.Description = (string)Description.Clone();
+            }
+            if (this.Category != null)
+            {
+                channel.Category = (string)Category.Clone();
+            }
+            channel.Listener = Listener;
+            channel.Bitrate = Bitrate;
+            if (this.Length != null)
+            {
+                channel.Length = (string)Length.Clone();
+            }
+            if (this.Type != null)
+            {
+                channel.Type = (string)Type.Clone();
+            }
+            return channel;
         }
     }
 }

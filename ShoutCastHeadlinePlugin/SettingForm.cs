@@ -289,20 +289,6 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
                 .Insert(displayFormatTextBox2.SelectionStart, "[[BIT]]");
         }
 
-        private void playingFormatMenuItem_Click(object sender, EventArgs e)
-        {
-            displayFormatTextBox2.Text =
-                displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
-                .Insert(displayFormatTextBox2.SelectionStart, "[[PLAYING]]");
-        }
-
-        private void rankFormatMenuItem_Click(object sender, EventArgs e)
-        {
-            displayFormatTextBox2.Text =
-                displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
-                .Insert(displayFormatTextBox2.SelectionStart, "[[RANK]]");
-        }
-
         private void listenerFormatMenuItem_Click(object sender, EventArgs e)
         {
             displayFormatTextBox2.Text =
@@ -310,11 +296,11 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
                 .Insert(displayFormatTextBox2.SelectionStart, "[[LISTENER]]");
         }
 
-        private void listenerTotalFormatMenuItem_Click(object sender, EventArgs e)
+        private void descriptionFormatMenuItem_Click(object sender, EventArgs e)
         {
             displayFormatTextBox2.Text =
                 displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
-                .Insert(displayFormatTextBox2.SelectionStart, "[[LISTENERTOTAL]]");
+                .Insert(displayFormatTextBox2.SelectionStart, "[[DESCRIPTION]]");
         }
 
         private void removeMenuItem_Click(object sender, EventArgs e)

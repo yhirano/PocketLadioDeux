@@ -40,9 +40,7 @@
             this.pasteDisplayFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.insertMenuItem = new System.Windows.Forms.MenuItem();
-            this.rankFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.titleFormatMenuItem = new System.Windows.Forms.MenuItem();
-            this.playingFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.listenerFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.categoryFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.bitFormatMenuItem = new System.Windows.Forms.MenuItem();
@@ -90,7 +88,7 @@
             this.aboveBitrateNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.filteringBelowBitrateCheckBox = new System.Windows.Forms.CheckBox();
             this.filteringAboveBitrateCheckBox = new System.Windows.Forms.CheckBox();
-            this.listenerTotalFormatMenuItem = new System.Windows.Forms.MenuItem();
+            this.descriptionFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.baseTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.shoutCastTabPage.SuspendLayout();
@@ -153,29 +151,17 @@
             // 
             // insertMenuItem
             // 
-            this.insertMenuItem.MenuItems.Add(this.rankFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.titleFormatMenuItem);
-            this.insertMenuItem.MenuItems.Add(this.playingFormatMenuItem);
+            this.insertMenuItem.MenuItems.Add(this.descriptionFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.listenerFormatMenuItem);
-            this.insertMenuItem.MenuItems.Add(this.listenerTotalFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.categoryFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.bitFormatMenuItem);
             resources.ApplyResources(this.insertMenuItem, "insertMenuItem");
-            // 
-            // rankFormatMenuItem
-            // 
-            resources.ApplyResources(this.rankFormatMenuItem, "rankFormatMenuItem");
-            this.rankFormatMenuItem.Click += new System.EventHandler(this.rankFormatMenuItem_Click);
             // 
             // titleFormatMenuItem
             // 
             resources.ApplyResources(this.titleFormatMenuItem, "titleFormatMenuItem");
             this.titleFormatMenuItem.Click += new System.EventHandler(this.titleFormatMenuItem_Click);
-            // 
-            // playingFormatMenuItem
-            // 
-            resources.ApplyResources(this.playingFormatMenuItem, "playingFormatMenuItem");
-            this.playingFormatMenuItem.Click += new System.EventHandler(this.playingFormatMenuItem_Click);
             // 
             // listenerFormatMenuItem
             // 
@@ -468,10 +454,10 @@
             resources.ApplyResources(this.filteringAboveBitrateCheckBox, "filteringAboveBitrateCheckBox");
             this.filteringAboveBitrateCheckBox.Name = "filteringAboveBitrateCheckBox";
             // 
-            // listenerTotalFormatMenuItem
+            // descriptionFormatMenuItem
             // 
-            resources.ApplyResources(this.listenerTotalFormatMenuItem, "listenerTotalFormatMenuItem");
-            this.listenerTotalFormatMenuItem.Click += new System.EventHandler(this.listenerTotalFormatMenuItem_Click);
+            resources.ApplyResources(this.descriptionFormatMenuItem, "descriptionFormatMenuItem");
+            this.descriptionFormatMenuItem.Click += new System.EventHandler(this.descriptionFormatMenuItem_Click);
             // 
             // SettingForm
             // 
@@ -536,7 +522,6 @@
         private System.Windows.Forms.MenuItem copyDisplayFormatMenuItem;
         private System.Windows.Forms.MenuItem pasteDisplayFormatMenuItem;
         private System.Windows.Forms.MenuItem insertMenuItem;
-        private System.Windows.Forms.MenuItem playingFormatMenuItem;
         private System.Windows.Forms.MenuItem categoryFormatMenuItem;
         private System.Windows.Forms.MenuItem listenerFormatMenuItem;
         private System.Windows.Forms.MenuItem titleFormatMenuItem;
@@ -553,7 +538,6 @@
         private System.Windows.Forms.MenuItem pasteSearchWordMenuItem;
         private System.Windows.Forms.ComboBox numOfFetchComboBox;
         private System.Windows.Forms.Label numOfFetchLabel;
-        private System.Windows.Forms.MenuItem rankFormatMenuItem;
-        private System.Windows.Forms.MenuItem listenerTotalFormatMenuItem;
+        private System.Windows.Forms.MenuItem descriptionFormatMenuItem;
     }
 }

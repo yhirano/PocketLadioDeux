@@ -1,9 +1,9 @@
 ﻿using System;
-
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Xml;
 using System.Xml.Serialization;
 using MiscPocketCompactLibrary2.Net;
 using PocketLadioDeux.HeadlinePluginInterface;
@@ -15,7 +15,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
         /// <summary>
         /// SHOUTcastのURL
         /// </summary>
-        internal const string SHOUTCAST_URL = "http://classic.shoutcast.com/";
+        internal const string SHOUTCAST_URL = "http://yp.shoutcast.com/sbin/newxml.phtml";
 
         /// <summary>
         /// 設定
@@ -191,81 +191,35 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             Setting = new UserSetting();
         }
 
-        #region HTML解析用正規表現
+        #region 解析用正規表現
 
         /// <summary>
-        /// HTML解析用正規表現。
-        /// Path解析用。
+        /// Listener解析用正規表現
         /// </summary>
-        private readonly static Regex pathRegex =
-            new Regex(@"<a\s+[^>]*href=""(.*playlist\.pls[^""]*)""[^>]*>", RegexOptions.None);
+        private readonly static Regex listenerRegex = new Regex(@"\[Listeners:(\s*)(\d+)\]", RegexOptions.None);
 
         /// <summary>
-        /// HTML解析用正規表現。
-        /// Rank解析用。
+        /// Bitrate解析用正規表現
         /// </summary>
-        private readonly static Regex rankRegex =
-            new Regex(@"(\d+)</b>", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// Category解析用。
-        /// </summary>
-        private readonly static Regex categoryRegex =
-            new Regex(@"^.*(\[.+?\])", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// ClusterUrl解析用。
-        /// </summary>
-        private readonly static Regex clusterUrlRegex =
-            new Regex(@"<a\s+[^>]*href=""([^""]*)""[^>]*>", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// Title解析用。
-        /// Willcom高速化サービス用。
-        /// </summary>
-        private readonly static Regex titleRegex =
-            new Regex(@"(.+?)</a>", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// Listener解析用。
-        /// </summary>
-        private readonly static Regex listenerRegex =
-            new Regex(@"(\d+)/(\d+)</font>", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// Playing解析用1。
-        /// </summary>
-        private readonly static Regex playingNowRegex =
-            new Regex(@"Now Playing:</font>(.*)", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// Playing解析用2。
-        /// </summary>
-        private readonly static Regex playingRegex =
-            new Regex(@"\s*(.+?)</font.*$", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// BitRate解析用。
-        /// Willcom高速化サービス用。
-        /// </summary>
-        private readonly static Regex bitRateRegex =
-            new Regex(@"(\d+)</font>", RegexOptions.None);
-
-        /// <summary>
-        /// HTML解析用正規表現。
-        /// Rankらしき行の解析用。
-        /// </summary>
-        private readonly static Regex maybeRankLineRegex =
-            new Regex(@"^.*</b>", RegexOptions.None);
+        private readonly static Regex bitRateRegex = 
+            new Regex(@"\[Bitrate:(\s*)(\d+)\]", RegexOptions.None);
 
         #endregion
+
+        /// <summary>
+        /// ヘッドラインのフォーマット種類
+        /// </summary>
+        private enum FetchHeadlineFormats
+        {
+            StationList,
+            Rss,
+            None
+        }
+
+        /// <summary>
+        /// ヘッドラインのフォーマット種類
+        /// </summary>
+        private FetchHeadlineFormats fetchHeadlineFormatStatus = FetchHeadlineFormats.None;
 
         protected override void FetchHeadline()
         {
@@ -273,214 +227,196 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             // フィルターのクリア
             channelsMatchesToFilterCache = null;
             channelsUnmatchesToFilterCache = null;
+            this.fetchHeadlineFormatStatus = FetchHeadlineFormats.None;
 
-            Stream st = null;
-            StreamReader sr = null;
+            // ヘッドラインが取得できない場合は取得を3回繰り返す。
+            // RSSタイプのヘッドラインが取得できないことがある。
+            for (int i = 0; (i < 3) && (fetchHeadlineFormatStatus != FetchHeadlineFormats.Rss); ++i)
+            {
+                fetchHeadline();
+            }
+        }
+
+        /// <summary>
+        /// ヘッドラインを取得する
+        /// </summary>
+        private void fetchHeadline()
+        {
+            fetchHeadlineFormatStatus = FetchHeadlineFormats.None;
+
+            Stream input = null;
+            XmlReader reader = null;
+
             try
             {
-                string searchWord = ((Setting.SearchWord != string.Empty) ? "&s=" + Setting.SearchWord : string.Empty);
-                // 半角スペースと全角スペースを+に置き換える SHOUTcast上のURLでAND検索のスペースが+に置き換えられるため
-                searchWord = searchWord.Replace(' ', '+').Replace("　", "+");
-
-                string perView = ((Setting.PerView.ToString() != string.Empty) ? "&numresult=" + Setting.PerView : string.Empty);
-                Uri url = new Uri(Headline.SHOUTCAST_URL + "/?" + searchWord + perView);
-
-                st = connectionSetting.CreateStream(url);
-                sr = new StreamReader(st, Encoding.GetEncoding("Windows-1252"));
-
+                // 番組
                 Channel channel = null;
-                string text = sr.ReadToEnd();
 
-                // タグの後に改行を入れる（Willcom高速化サービス対応のため）
-                text = text.Replace(">", ">\n");
+                // Itemタグの中にいるか
+                bool inItenFlag = false;
+                // Enclosureの一時リスト
+                List<Enclosure> list = new List<Enclosure>();
 
-                string[] lines = text.Split('\n', '\r');
-
-                #region HTML解析
-
-                // 順位らしき行
-                string maybeRankLine = string.Empty;
-
-                // 1～200行目まではHTMLを解析しない
-                int analyzeHtmlFirstTo = 200;
-                // 終端から250行前～終端まではHTMLを解析しない
-                int analyzeHtmlLast = lines.Length - 250;
-
-                // HTML解析
-                for (int lineNumber = analyzeHtmlFirstTo; lineNumber < analyzeHtmlLast && lineNumber < lines.Length; ++lineNumber)
+                // URLを生成
+                string searchStr;
+                if (Setting.SearchWord != string.Empty)
                 {
-                    if (fetchCancel == true)
+                    searchStr = "&search=" + Uri.EscapeUriString(Setting.SearchWord.Replace(' ', '+').Replace("　", "+"));
+                }
+                // 検索単語が空の場合はサーバからヘッドラインが返ってこないので、"Top 40"ジャンルのヘッドラインを取得してごまかす
+                else
+                {
+                    searchStr = "&genre=" + Uri.EscapeUriString("Top 40");
+                }
+                string limitStr = (Setting.PerView.ToString() != string.Empty) ? ("&limit=" + this.Setting.PerView) : string.Empty;
+                Uri uri = new Uri(SHOUTCAST_URL + "?rss=1" + searchStr + limitStr);
+
+                input = connectionSetting.CreateStream(uri);
+                reader = new XmlTextReader(input);
+
+                while (reader.Read())
+                {
+                    if ((fetchCancel == true) || (fetchHeadlineFormatStatus == FetchHeadlineFormats.StationList))
                     {
                         return;
                     }
 
-                    /*** playlist.plsを検索 ***/
-                    Match pathMatch = pathRegex.Match(lines[lineNumber]);
-
-                    // playlist.plsが見つかった場合
-                    if (pathMatch.Success)
+                    if (reader.NodeType == XmlNodeType.Element)
                     {
-                        channel = new Channel();
-
-                        channel.Path = pathMatch.Groups[1].Value;
-
-                        /*** Rankを検索 ***/
-                        Match rankMatch = rankRegex.Match(maybeRankLine);
-
-                        // Rankが見つかった場合
-                        if (rankMatch.Success)
+                        if ((fetchHeadlineFormatStatus == FetchHeadlineFormats.None) && (reader.LocalName == "rss"))
                         {
-                            channel.Rank = rankMatch.Groups[1].Value;
+                            fetchHeadlineFormatStatus = FetchHeadlineFormats.Rss;
                         }
-
-                        /*** Categoryを検索 ***/
-                        Match categoryMatch;
-
-                        // Categoryが見つからない場合は行を読み飛ばして検索する
-                        for (++lineNumber; lineNumber < analyzeHtmlLast; ++lineNumber)
+                        else if ((fetchHeadlineFormatStatus == FetchHeadlineFormats.None) && (reader.LocalName == "stationlist"))
                         {
-                            categoryMatch = categoryRegex.Match(lines[lineNumber]);
-
-                            // Categoryが見つかった場合
-                            if (categoryMatch.Success)
-                            {
-                                channel.Category = categoryMatch.Groups[1].Value;
-                                break;
-                            }
+                            fetchHeadlineFormatStatus = FetchHeadlineFormats.StationList;
                         }
-
-                        /*** ClusterUrlを検索 ***/
-                        Match clusterUrlMatch;
-
-                        // ClusterUrlが見つからない場合は行を読み飛ばして検索する
-                        for (; lineNumber < analyzeHtmlLast; ++lineNumber)
+                        else if (reader.LocalName == "item")
                         {
-                            clusterUrlMatch = clusterUrlRegex.Match(lines[lineNumber]);
-
-                            // Categoryが見つかった場合
-                            if (clusterUrlMatch.Success)
+                            inItenFlag = true;
+                            channel = new Channel();
+                        } // End of item
+                        // itemタグの中にいる場合
+                        else if (inItenFlag)
+                        {
+                            if (reader.LocalName == "title")
                             {
+                                channel.Title = reader.ReadString();
+                            } // End of title
+                            else if (reader.LocalName == "description")
+                            {
+                                channel.Description = reader.ReadString();
+                                Match match = listenerRegex.Match(channel.Description);
+                                if (match.Success == true)
+                                {
+                                    try
+                                    {
+                                        channel.Listener = int.Parse(match.Groups[2].Value);
+                                    }
+                                    catch (ArgumentException) { ; }
+                                    catch (FormatException) { ; }
+                                    catch (OverflowException) { ; }
+                                }
+                                Match match2 = bitRateRegex.Match(channel.Description);
+                                if (match2.Success == true)
+                                {
+                                    try
+                                    {
+                                        channel.Bitrate = int.Parse(match2.Groups[2].Value);
+                                    }
+                                    catch (ArgumentException) { ; }
+                                    catch (FormatException) { ; }
+                                    catch (OverflowException) { ; }
+                                }
+                            } // End of description
+                            else if (reader.LocalName == "category")
+                            {
+                                if (channel.Category == string.Empty)
+                                {
+                                    channel.Category = reader.ReadString();
+                                }
+                                else
+                                {
+                                    channel.Category = channel.Category + "," + reader.ReadString();
+                                }
+                            } // End of category
+                            else if (reader.LocalName == "enclosure")
+                            {
+                                Uri url = null;
+                                string length = string.Empty;
+                                string type = string.Empty;
                                 try
                                 {
-                                    channel.WebSiteUrl = new Uri(clusterUrlMatch.Groups[1].Value.Trim());
+                                    if (reader.MoveToFirstAttribute())
+                                    {
+                                        url = new Uri(reader.GetAttribute("url"));
+                                        length = reader.GetAttribute("length");
+                                        type = reader.GetAttribute("type");
+                                    }
+                                    if (length == null)
+                                    {
+                                        length = string.Empty;
+                                    }
+                                    if (type == null)
+                                    {
+                                        type = string.Empty;
+                                    }
+
+                                    // Enclosureタグの数だけ、 Enclosure一時リストにEnclosureの内容を追加していく
+                                    Enclosure item = new Enclosure(url, length, type);
+                                    if (item.IsPodcast())
+                                    {
+                                        list.Add(item);
+                                    }
                                 }
                                 catch (UriFormatException) { ; }
-                                break;
-                            }
+                            } // End of enclosure
                         }
-
-                        /*** Titleを検索 ***/
-                        Match titleMatch;
-
-                        // Titleが見つからない場合は行を読み飛ばして検索する
-                        for (; lineNumber < analyzeHtmlLast; ++lineNumber)
-                        {
-                            titleMatch = titleRegex.Match(lines[lineNumber]);
-
-                            // Titleが見つかった場合
-                            if (titleMatch.Success)
-                            {
-                                channel.Title = titleMatch.Groups[1].Value;
-                                break;
-                            }
-                        }
-
-                        /*** Listenerを検索 ***/
-                        Match listenerMatch = listenerRegex.Match(lines[lineNumber]);
-                        for (; lineNumber < analyzeHtmlLast; ++lineNumber)
-                        {
-                            listenerMatch = listenerRegex.Match(lines[lineNumber]);
-
-                            if (listenerMatch.Success)
-                            {
-                                break;
-                            }
-
-                            // Now Playing:は存在しない場合があるのでリスナー数検出の中でチェックを行う
-                            Match playingNowMatch = playingNowRegex.Match(lines[lineNumber]);
-                            if (playingNowMatch.Success)
-                            {
-                                Match playingMatch = playingRegex.Match(lines[lineNumber + 1]);
-                                if (playingMatch.Success)
-                                {
-                                    channel.Playing = playingMatch.Groups[1].Value;
-                                }
-                            }
-
-                        }
-                        try
-                        {
-                            channel.Listener = int.Parse(listenerMatch.Groups[1].Value);
-                            channel.ListenerTotal = int.Parse(listenerMatch.Groups[2].Value);
-                        }
-                        catch (ArgumentException) { ; }
-                        catch (FormatException) { ; }
-                        catch (OverflowException) { ; }
-
-                        /*** Bitrateを検索 ***/
-                        Match bitrateMatch;
-
-                        // Bitrateが見つからない場合は行を読み飛ばして検索する
-                        for (++lineNumber; lineNumber < analyzeHtmlLast; ++lineNumber)
-                        {
-                            bitrateMatch = bitRateRegex.Match(lines[lineNumber]);
-
-                            // Bitrateが見つかった場合
-                            if (bitrateMatch.Success)
-                            {
-                                try
-                                {
-                                    channel.Bitrate = int.Parse(bitrateMatch.Groups[1].Value);
-                                    break;
-                                }
-                                catch (ArgumentException) { ; }
-                                catch (FormatException) { ; }
-                                catch (OverflowException) { ; }
-                            }
-                        }
-
+                    }
+                    else if ((reader.NodeType == XmlNodeType.EndElement) && (reader.LocalName == "item"))
+                    {
+                        inItenFlag = false;
                         if (channel != null)
                         {
-                            channel.DislpayFormat = Setting.DisplayFormat;
-                            channels.Add(channel);
-                            OnChannelAdded(channel);
-                            channel = null;
+                            channel.DislpayFormat = this.Setting.DisplayFormat;
+
+                            // Enclosureの要素の数だけ、Channelの複製を作る
+                            if (list.Count != 0)
+                            {
+                                foreach (Enclosure enclosure in list)
+                                {
+                                    Channel channel2 = (Channel)channel.Clone();
+                                    channel2.PlayUrl = enclosure.Url;
+                                    channel2.Length = enclosure.Length;
+                                    channel2.Type = enclosure.Type;
+                                    channels.Add(channel2);
+                                    OnChannelAdded(channel2);
+                                }
+                            }
                         }
+
+                        // Enclosure一時リストをクリア
+                        list.Clear();
+
+                        channel = null;
                     }
-
-                    /*** Rankらしき行を保存する ***/
-                    Match maybeRankLineMatch = maybeRankLineRegex.Match(lines[lineNumber]);
-
-                    if (maybeRankLineMatch.Success)
-                    {
-                        maybeRankLine = lines[lineNumber];
-
-                    }
-                }
-
-                #endregion
+                } // End of itemタグの中にいる場合
             }
             finally
             {
-                // フィルターのクリア
-                /* 
-                 * 本メソッドの先頭でもフィルターキャッシュをクリアしているが、本メソッドの実行中にフィルターを
-                 * 使用した場合に、フィルターキャッシュの整合性がとれなくなるため、本メソッドの終了時に
-                 * フィルターのキャッシュを削除してしまう。
-                 */
                 channelsMatchesToFilterCache = null;
                 channelsUnmatchesToFilterCache = null;
-
-                if (sr != null)
+                if (reader != null)
                 {
-                    sr.Close();
+                    reader.Close();
                 }
-                if (st != null)
+                if (input != null)
                 {
-                    st.Close();
+                    input.Close();
                 }
             }
         }
+
 
         public override bool IsMatchToFilter(IChannel channel)
         {
@@ -626,6 +562,89 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             if (setting != null)
             {
                 Setting = setting;
+            }
+        }
+
+        /// <summary>
+        /// RSSのEnclosure要素
+        /// </summary>
+        private class Enclosure
+        {
+            Uri url;
+
+            public Uri Url
+            {
+                get { return url; }
+            }
+
+            string length;
+
+            public string Length
+            {
+                get { return length; }
+            }
+
+            string type;
+
+            public string Type
+            {
+                get { return type; }
+            }
+
+            public Enclosure(Uri url, string length, string type)
+            {
+                this.url = url;
+                this.length = length;
+                this.type = type;
+            }
+
+            /// <summary>
+            /// 再生可能と思われるPodcastのタイプ
+            /// </summary>
+            private readonly string[] podcastTypes = new string[]
+            {
+                "audio/mpeg",
+                "audio/mp3",
+                "audio/mpg",
+                "audio/x-mpeg",
+                "audio/mpeg3",
+                "audio/x-mpeg3",
+                "audio/ogg",
+                "application/ogg",
+                "application/x-ogg",
+                "audio/x-ms-wma",
+                "video/mp4",
+                "video/x-m4v",
+                "video/x-ms-wmv",
+                "application/x-ms-wmv",
+                "application/x-mplayer2",
+                "video/x-ms-asf",
+                "video/x-ms-wm",
+                "video/x-ms-asf-plugin",
+                "video/mpeg",
+                "video/mpg",
+                "video/x-mpeg",
+                "video/avi",
+                "video/msvideo",
+                "video/x-msvideo",
+                "application/octet-stream",
+                "application/x-drm-v2",
+                "audio/wav",
+                "audio/x-wav"
+            };
+
+            /// <summary>
+            /// このEnclosure要素は再生可能なPodcastかを判断する
+            /// </summary>
+            /// <returns>このEnclosure要素は再生可能なPodcastが再生可能な場合はtrue、それ以外はfalse</returns>
+            internal bool IsPodcast()
+            {
+                if (type == null || type == string.Empty)
+                {
+                    return false;
+                }
+
+                return (Array.IndexOf<string>(podcastTypes, type) != -1);
             }
         }
     }

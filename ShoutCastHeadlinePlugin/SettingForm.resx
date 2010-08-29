@@ -139,20 +139,14 @@
   <data name="menuItem1.Text" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="rankFormatMenuItem.Text" xml:space="preserve">
-    <value>[[RANK]]</value>
-  </data>
   <data name="titleFormatMenuItem.Text" xml:space="preserve">
     <value>[[TITLE]]</value>
   </data>
-  <data name="playingFormatMenuItem.Text" xml:space="preserve">
-    <value>[[PLAYING]]</value>
+  <data name="descriptionFormatMenuItem.Text" xml:space="preserve">
+    <value>[[DESCRIPTION]]</value>
   </data>
   <data name="listenerFormatMenuItem.Text" xml:space="preserve">
     <value>[[LISTENER]]</value>
-  </data>
-  <data name="listenerTotalFormatMenuItem.Text" xml:space="preserve">
-    <value>[[LISTENERTOTAL]]</value>
   </data>
   <data name="categoryFormatMenuItem.Text" xml:space="preserve">
     <value>[[CATEGORY]]</value>
@@ -1026,22 +1020,10 @@
   <data name="&gt;&gt;insertMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;rankFormatMenuItem.Name" xml:space="preserve">
-    <value>rankFormatMenuItem</value>
-  </data>
-  <data name="&gt;&gt;rankFormatMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;titleFormatMenuItem.Name" xml:space="preserve">
     <value>titleFormatMenuItem</value>
   </data>
   <data name="&gt;&gt;titleFormatMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;playingFormatMenuItem.Name" xml:space="preserve">
-    <value>playingFormatMenuItem</value>
-  </data>
-  <data name="&gt;&gt;playingFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listenerFormatMenuItem.Name" xml:space="preserve">
@@ -1158,10 +1140,10 @@
   <data name="&gt;&gt;pasteAddFilterMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listenerTotalFormatMenuItem.Name" xml:space="preserve">
-    <value>listenerTotalFormatMenuItem</value>
+  <data name="&gt;&gt;descriptionFormatMenuItem.Name" xml:space="preserve">
+    <value>descriptionFormatMenuItem</value>
   </data>
-  <data name="&gt;&gt;listenerTotalFormatMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;descriptionFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
