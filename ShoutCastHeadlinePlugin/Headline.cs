@@ -227,7 +227,7 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
             // フィルターのクリア
             channelsMatchesToFilterCache = null;
             channelsUnmatchesToFilterCache = null;
-            this.fetchHeadlineFormatStatus = FetchHeadlineFormats.None;
+            fetchHeadlineFormatStatus = FetchHeadlineFormats.None;
 
             // ヘッドラインが取得できない場合は取得を3回繰り返す。
             // RSSタイプのヘッドラインが取得できないことがある。
@@ -258,18 +258,18 @@ namespace PocketLadioDeux.ShoutCastHeadlinePlugin
                 List<Enclosure> list = new List<Enclosure>();
 
                 // URLを生成
-                string searchStr;
+                string seachWord;
                 if (Setting.SearchWord != string.Empty)
                 {
-                    searchStr = "&search=" + Uri.EscapeUriString(Setting.SearchWord.Replace(' ', '+').Replace("　", "+"));
+                    seachWord = "&search=" + Uri.EscapeUriString(Setting.SearchWord.Replace(' ', '+').Replace("　", "+"));
                 }
                 // 検索単語が空の場合はサーバからヘッドラインが返ってこないので、"Top 40"ジャンルのヘッドラインを取得してごまかす
                 else
                 {
-                    searchStr = "&genre=" + Uri.EscapeUriString("Top 40");
+                    seachWord = "&genre=" + Uri.EscapeUriString("Top 40");
                 }
                 string limitStr = (Setting.PerView.ToString() != string.Empty) ? ("&limit=" + this.Setting.PerView) : string.Empty;
-                Uri uri = new Uri(SHOUTCAST_URL + "?rss=1" + searchStr + limitStr);
+                Uri uri = new Uri(SHOUTCAST_URL + "?rss=1" + seachWord + limitStr);
 
                 input = connectionSetting.CreateStream(uri);
                 reader = new XmlTextReader(input);
