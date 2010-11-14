@@ -4,14 +4,17 @@ PocketLadio::Deux
 
 【主な機能】
 PocketLadio::DeuxはMicrosoft Windows Mobile 5.0 Pocket PC上で動作する「ねとらじ」
-「Podcast」「SHOUTcast」「Icecast」のヘッドラインをインターネットより取得、表示
-するツールです。
+「Podcast」「SHOUTcast」「SHOUTcast.net」「Icecast」のヘッドラインをインターネッ
+トより取得、表示するツールです。
 
 ねとらじ
 http://live.ladio.livedoor.com/
 
 SHOUTcast
 http://www.shoutcast.com/
+
+SHOUTcast.net
+http://shoutcast.net/
 
 Icecast
 http://dir.xiph.org/index.php
@@ -97,6 +100,21 @@ Filterチェックボックスであらかじめ設定したフィルター条件に一致する番組のみを表
 [[CATEGORY]]    - 番組のカテゴリ
 [[BIT]]         - ビットレート
 
+・SHOUTcast.net設定
+トップ画面から[メニュー]->[ヘッドラインの設定]->[(ヘッドライン名) - SHOUTcast.ne
+t]を選択すると、SHOUTcast.netの設定を行うことができます。
+[表示フォーマット]はトップ画面での番組の表示方法を設定します。
+[検索ワード]はSHOUTcast.netの番組の検索キーワードを指定します。
+
+・SHOUTcast.net設定 表示フォーマット
+[[RANK]]          - ランク
+[[TITLE]]         - 番組のタイトル
+[[PLAYING]]       - 現在演奏中の曲
+[[LISTENER]]      - リスナ数
+[[LISTENERTOTAL]] - 述べリスナ数
+[[CATEGORY]]      - 番組のカテゴリ
+[[BIT]]           - ビットレート
+
 ・Icecast設定
 トップ画面から[メニュー]->[ヘッドラインの設定]->[(ヘッドライン名) - Icecast]を
 選択すると、Icecastの設定を行うことができます。
@@ -117,6 +135,9 @@ Filterチェックボックスであらかじめ設定したフィルター条件に一致する番組のみを表
 
 
 【バージョン履歴】
+Version 0.14
+・[SHOUTcast.net] SHOUTcast.netに対応
+
 Version 0.13
 ・[SHOUTcast] 検索ワードが空の場合に番組が取得できなかったのを修正
 

@@ -150,10 +150,10 @@
     <value>Top, Right</value>
   </data>
   <data name="kindComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 27</value>
+    <value>133, 27</value>
   </data>
   <data name="kindComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 22</value>
+    <value>104, 22</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="kindComboBox.TabIndex" type="System.Int32, mscorlib">
@@ -289,7 +289,7 @@
     <value>3, 27</value>
   </data>
   <data name="nameTextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 21</value>
+    <value>124, 21</value>
   </data>
   <data name="nameTextBox2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
