@@ -123,6 +123,12 @@
   <data name="Cln" xml:space="preserve">
     <value>Listeners(Present/Total)</value>
   </data>
+  <data name="Desc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Dj" xml:space="preserve">
+    <value>DJ</value>
+  </data>
   <data name="Exclude" xml:space="preserve">
     <value>Exclude</value>
   </data>
@@ -138,8 +144,17 @@
   <data name="NetLadio" xml:space="preserve">
     <value>NetLadio</value>
   </data>
+  <data name="Smpl" xml:space="preserve">
+    <value>Sample rate</value>
+  </data>
+  <data name="Surl" xml:space="preserve">
+    <value>SURL</value>
+  </data>
   <data name="Tims" xml:space="preserve">
     <value>Start time</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
   </data>
   <data name="Url" xml:space="preserve">
     <value>URL</value>

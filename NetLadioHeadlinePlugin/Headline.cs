@@ -209,15 +209,29 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
 
         #region dat v2解析用正規表現
 
-        private static readonly Regex urlRegex = new Regex("^URL=(.*)", RegexOptions.None);
+        private static readonly Regex surlRegex = new Regex("^SURL=(.*)", RegexOptions.None);
 
-        private static readonly Regex gnlRegex = new Regex("^GNL=(.*)", RegexOptions.None);
+        private static readonly Regex timsRegex = new Regex("^TIMS=(.*)", RegexOptions.None);
 
-        private static readonly Regex namRegex = new Regex("^NAM=(.*)", RegexOptions.None);
+        private static readonly Regex srvRegex = new Regex("^SRV=(.*)", RegexOptions.None);
+
+        private static readonly Regex prtRegex = new Regex("^PRT=(.*)", RegexOptions.None);
 
         private static readonly Regex mntRegex = new Regex("^MNT=(.*)", RegexOptions.None);
 
-        private static readonly Regex timsRegex = new Regex("^TIMS=(.*)", RegexOptions.None);
+        private static readonly Regex typeRegex = new Regex("^TYPE=(.*)", RegexOptions.None);
+
+        private static readonly Regex namRegex = new Regex("^NAM=(.*)", RegexOptions.None);
+
+        private static readonly Regex gnlRegex = new Regex("^GNL=(.*)", RegexOptions.None);
+
+        private static readonly Regex descRegex = new Regex("^DESC=(.*)", RegexOptions.None);
+
+        private static readonly Regex djRegex = new Regex("^DJ=(.*)", RegexOptions.None);
+
+        private static readonly Regex songRegex = new Regex("^SONG=(.*)", RegexOptions.None);
+
+        private static readonly Regex urlRegex = new Regex("^URL=(.*)", RegexOptions.None);
 
         private static readonly Regex clnRegex = new Regex(@"^CLN=(\d+)", RegexOptions.None);
 
@@ -225,13 +239,11 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
 
         private static readonly Regex maxRegex = new Regex(@"^MNT=(\d+)", RegexOptions.None);
 
-        private static readonly Regex srvRegex = new Regex("^SRV=(.*)", RegexOptions.None);
-
-        private static readonly Regex prtRegex = new Regex("^PRT=(.*)", RegexOptions.None);
-
         private static readonly Regex bitRegex = new Regex(@"^BIT=(\d+)", RegexOptions.None);
 
-        private static readonly Regex songRegex = new Regex("^SONG=(.*)", RegexOptions.None);
+        private static readonly Regex smplRegex = new Regex(@"^SMPL=(\d+)", RegexOptions.None);
+
+        private static readonly Regex chsRegex = new Regex(@"^CHS=(\d+)", RegexOptions.None);
 
         #endregion // dat v2解析用正規表現
 
@@ -258,19 +270,19 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         return;
                     }
 
-                    // Url取得
-                    Match urlMatch = urlRegex.Match(line);
-                    if (urlMatch.Success)
+                    // Surl取得
+                    Match surlMatch = surlRegex.Match(line);
+                    if (surlMatch.Success)
                     {
                         try
                         {
-                            if (urlMatch.Groups[1].Value != string.Empty)
+                            if (surlMatch.Groups[1].Value != string.Empty)
                             {
                                 if (channel == null)
                                 {
                                     channel = new Channel();
                                 }
-                                channel.WebSiteUrl = new Uri(urlMatch.Groups[1].Value.Trim());
+                                channel.Surl = new Uri(surlMatch.Groups[1].Value.Trim());
                             }
                         }
                         catch (UriFormatException) { ; }
@@ -278,43 +290,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         continue;
                     }
 
-                    // Gnl取得
-                    Match gnlMatch = gnlRegex.Match(line);
-                    if (gnlMatch.Success)
-                    {
-                        if (channel == null)
-                        {
-                            channel = new Channel();
-                        }
-                        channel.Gnl = gnlMatch.Groups[1].Value;
-
-                        continue;
-                    }
-
-                    Match namMatch = namRegex.Match(line);
-                    if (namMatch.Success)
-                    {
-                        if (channel == null)
-                        {
-                            channel = new Channel();
-                        }
-                        channel.Nam = namMatch.Groups[1].Value;
-
-                        continue;
-                    }
-
-                    Match mntMatch = mntRegex.Match(line);
-                    if (mntMatch.Success)
-                    {
-                        if (channel == null)
-                        {
-                            channel = new Channel();
-                        }
-                        channel.Mnt = mntMatch.Groups[1].Value;
-
-                        continue;
-                    }
-
+                    // Tims取得
                     Match timsMatch = timsRegex.Match(line);
                     if (timsMatch.Success)
                     {
@@ -333,6 +309,143 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         {
                             channel.Tims = DateTime.Now;
                         }
+
+                        continue;
+                    }
+
+                    // Srv取得
+                    Match srvMatch = srvRegex.Match(line);
+                    if (srvMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Srv = srvMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Prt取得
+                    Match prtMatch = prtRegex.Match(line);
+                    if (prtMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Prt = prtMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Mnt取得
+                    Match mntMatch = mntRegex.Match(line);
+                    if (mntMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Mnt = mntMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Type取得
+                    Match typeMatch = typeRegex.Match(line);
+                    if (typeMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Type = typeMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Nam取得
+                    Match namMatch = namRegex.Match(line);
+                    if (namMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Nam = namMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Gnl取得
+                    Match gnlMatch = gnlRegex.Match(line);
+                    if (gnlMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Gnl = gnlMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Desc取得
+                    Match descMatch = descRegex.Match(line);
+                    if (descMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Desc = descMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Dj取得
+                    Match djMatch = djRegex.Match(line);
+                    if (djMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Dj = djMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Song取得
+                    Match songMatch = songRegex.Match(line);
+                    if (prtMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+                        channel.Tit = songMatch.Groups[1].Value;
+
+                        continue;
+                    }
+
+                    // Url取得
+                    Match urlMatch = urlRegex.Match(line);
+                    if (urlMatch.Success)
+                    {
+                        try
+                        {
+                            if (urlMatch.Groups[1].Value != string.Empty)
+                            {
+                                if (channel == null)
+                                {
+                                    channel = new Channel();
+                                }
+                                channel.WebSiteUrl = new Uri(urlMatch.Groups[1].Value.Trim());
+                            }
+                        }
+                        catch (UriFormatException) { ; }
 
                         continue;
                     }
@@ -377,6 +490,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         continue;
                     }
 
+                    // Max取得
                     Match maxMatch = maxRegex.Match(line);
                     if (maxMatch.Success)
                     {
@@ -388,30 +502,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         continue;
                     }
 
-                    Match srvMatch = srvRegex.Match(line);
-                    if (srvMatch.Success)
-                    {
-                        if (channel == null)
-                        {
-                            channel = new Channel();
-                        }
-                        channel.Srv = srvMatch.Groups[1].Value;
-
-                        continue;
-                    }
-
-                    Match prtMatch = prtRegex.Match(line);
-                    if (prtMatch.Success)
-                    {
-                        if (channel == null)
-                        {
-                            channel = new Channel();
-                        }
-                        channel.Prt = prtMatch.Groups[1].Value;
-
-                        continue;
-                    }
-
+                    // Bit取得
                     Match bitMatch = bitRegex.Match(line);
                     if (bitMatch.Success)
                     {
@@ -431,14 +522,42 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                         continue;
                     }
 
-                    Match songMatch = songRegex.Match(line);
-                    if (prtMatch.Success)
+                    // Smpl取得
+                    Match smplMatch = smplRegex.Match(line);
+                    if (smplMatch.Success)
                     {
                         if (channel == null)
                         {
                             channel = new Channel();
                         }
-                        channel.Tit = songMatch.Groups[1].Value;
+
+                        try
+                        {
+                            channel.Smpl = int.Parse(smplMatch.Groups[1].Value);
+                        }
+                        catch (ArgumentException) { ; }
+                        catch (FormatException) { ; }
+                        catch (OverflowException) { ; }
+
+                        continue;
+                    }
+
+                    // Chs取得
+                    Match chsMatch = chsRegex.Match(line);
+                    if (chsMatch.Success)
+                    {
+                        if (channel == null)
+                        {
+                            channel = new Channel();
+                        }
+
+                        try
+                        {
+                            channel.Chs = int.Parse(chsMatch.Groups[1].Value);
+                        }
+                        catch (ArgumentException) { ; }
+                        catch (FormatException) { ; }
+                        catch (OverflowException) { ; }
 
                         continue;
                     }

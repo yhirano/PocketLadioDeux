@@ -4,17 +4,14 @@ PocketLadio::Deux
 
 【主な機能】
 PocketLadio::DeuxはMicrosoft Windows Mobile 5.0 Pocket PC上で動作する「ねとらじ」
-「Podcast」「SHOUTcast」「SHOUTcast.net」「Icecast」のヘッドラインをインターネッ
-トより取得、表示するツールです。
+「Podcast」「SHOUTcast」「Icecast」のヘッドラインをインターネットより取得、表示
+するツールです。
 
 ねとらじ
 http://live.ladio.livedoor.com/
 
 SHOUTcast
 http://www.shoutcast.com/
-
-SHOUTcast.net
-http://shoutcast.net/
 
 Icecast
 http://dir.xiph.org/index.php
@@ -69,6 +66,8 @@ Filterチェックボックスであらかじめ設定したフィルター条件に一致する番組のみを表
 ・ねとらじ設定 表示フォーマット
 [[NAME]]    - ヘッドライン名
 [[GENRE]]   - 番組のジャンル
+[[DJ]]      - DJ
+[[DESC]]    - 番組の内容
 [[CLN]]     - 現リスナ数
 [[CLNS]]    - 延べリスナ数
 [[TITLE]]   - 現在の曲名情報
@@ -135,6 +134,10 @@ t]を選択すると、SHOUTcast.netの設定を行うことができます。
 
 
 【バージョン履歴】
+Version 0.15
+・[ねとらじ] DJや番組の内容を取得するように変更
+・[SHOUTcast.net] SHOUTcast.netの対応を取りやめ
+
 Version 0.14
 ・[SHOUTcast.net] SHOUTcast.netに対応
 

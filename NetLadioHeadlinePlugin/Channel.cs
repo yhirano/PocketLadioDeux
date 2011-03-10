@@ -33,6 +33,8 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                 {
                     string result = dislpayFormat.Replace("[[NAME]]", Nam)
                         .Replace("[[GENRE]]", Gnl)
+                        .Replace("[[DJ]]", dj)
+                        .Replace("[[DESC]]", Desc)
                         .Replace("[[CLN]]", ((Cln >= 0) ? Cln.ToString() : "na"))
                         .Replace("[[CLNS]]", ((Clns >= 0) ? Clns.ToString() : "na"))
                         .Replace("[[TITLE]]", Tit)
@@ -104,6 +106,21 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             set { tit = (value != null) ? value : string.Empty; }
         }
 
+        private string desc = string.Empty;
+
+        internal string Desc {
+            get { return desc; }
+            set { desc = value; }
+        }
+
+        private string dj = string.Empty;
+
+        internal string Dj
+        {
+            get { return dj; }
+            set { dj = value; }
+        }
+
         /// <summary>
         /// マウントポイント
         /// </summary>
@@ -115,6 +132,13 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         internal string Mnt
         {
             set { mnt = (value != null) ? value : string.Empty; }
+        }
+
+        private Uri surl;
+
+        internal Uri Surl {
+            get { return surl; }
+            set { surl = value; }
         }
 
         /// <summary>
@@ -162,7 +186,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// リスナ数が不明
         /// </summary>
-        public const int UNKNOWN_LISTENER_NUM = -1;
+        internal const int UNKNOWN_LISTENER_NUM = -1;
 
         /// <summary>
         /// 延べリスナ数
@@ -204,18 +228,12 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             set { prt = (value != null) ? value : string.Empty; }
         }
 
-        /// <summary>
-        /// 配信サーバの種類
-        /// </summary>
-        private string typ = string.Empty;
+        private string type = string.Empty;
 
-        /// <summary>
-        /// 配信サーバの種類を取得・設定する
-        /// </summary>
-        internal string Typ
+        internal string Type
         {
-            get { return typ; }
-            set { typ = (value != null) ? value : string.Empty; }
+            get { return type; }
+            set { type = value; }
         }
 
         /// <summary>
@@ -235,7 +253,27 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ビットレートが不明
         /// </summary>
-        public const int UNKNOWN_BITRATE = -1;
+        internal const int UNKNOWN_BITRATE = -1;
+
+        private int smpl = UNKNOWN_SMPL;
+
+        internal int Smpl
+        {
+            get { return smpl; }
+            set { smpl = value; }
+        }
+
+        internal const int UNKNOWN_SMPL = -1;
+
+        private int chs = UNKNOWN_CHS;
+
+        internal int Chs
+        {
+            get { return chs; }
+            set { chs = value; }
+        }
+
+        internal const int UNKNOWN_CHS = -1;
 
         /// <summary>
         /// 番組の放送URLを取得する

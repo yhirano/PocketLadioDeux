@@ -279,6 +279,20 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
                 .Insert(displayFormatTextBox2.SelectionStart, "[[GENRE]]");
         }
 
+        private void djFormatMenuItem_Click(object sender, EventArgs e)
+        {
+            displayFormatTextBox2.Text =
+                displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
+                .Insert(displayFormatTextBox2.SelectionStart, "[[DJ]]");
+        }
+
+        private void descFormatMenuItem_Click(object sender, EventArgs e)
+        {
+            displayFormatTextBox2.Text =
+                displayFormatTextBox2.Text.Remove(displayFormatTextBox2.SelectionStart, displayFormatTextBox2.SelectionLength)
+                .Insert(displayFormatTextBox2.SelectionStart, "[[DESC]]");
+        }
+
         private void clnFormatMenuItem_Click(object sender, EventArgs e)
         {
             displayFormatTextBox2.Text =

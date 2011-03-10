@@ -145,6 +145,12 @@
   <data name="genreFormatMenuItem.Text" xml:space="preserve">
     <value>[[GENRE]]</value>
   </data>
+  <data name="djFormatMenuItem.Text" xml:space="preserve">
+    <value>[[DJ]]</value>
+  </data>
+  <data name="descFormatMenuItem.Text" xml:space="preserve">
+    <value>[[DESC]]</value>
+  </data>
   <data name="clnFormatMenuItem.Text" xml:space="preserve">
     <value>[[CLN]]</value>
   </data>
@@ -301,7 +307,7 @@
     <value>False</value>
   </data>
   <data name="removeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 222</value>
+    <value>157, 219</value>
   </data>
   <data name="removeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -349,7 +355,7 @@
     <value>3, 100</value>
   </data>
   <data name="filterListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 116</value>
+    <value>226, 113</value>
   </data>
   <data name="filterListView.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -394,7 +400,7 @@
     <value>False</value>
   </data>
   <data name="excludeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 54</value>
+    <value>157, 54</value>
   </data>
   <data name="excludeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -424,7 +430,7 @@
     <value>False</value>
   </data>
   <data name="includeButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>87, 54</value>
+    <value>79, 54</value>
   </data>
   <data name="includeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 20</value>
@@ -466,7 +472,7 @@
     <value>3, 27</value>
   </data>
   <data name="addFilterTextBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 21</value>
+    <value>226, 21</value>
   </data>
   <data name="addFilterTextBox2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -490,7 +496,7 @@
     <value>3, 4</value>
   </data>
   <data name="addFilterLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 20</value>
+    <value>226, 20</value>
   </data>
   <data name="addFilterLabel.Text" xml:space="preserve">
     <value>Add filter</value>
@@ -511,7 +517,7 @@
     <value>0, 0</value>
   </data>
   <data name="filter1TabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 245</value>
+    <value>232, 242</value>
   </data>
   <data name="filter1TabPage.Text" xml:space="preserve">
     <value>Filter1</value>
@@ -963,16 +969,16 @@
   <data name="&gt;&gt;pasteNameMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;typeColumnHeader.Name" xml:space="preserve">
-    <value>typeColumnHeader</value>
-  </data>
-  <data name="&gt;&gt;typeColumnHeader.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;wordColumnHeader.Name" xml:space="preserve">
     <value>wordColumnHeader</value>
   </data>
   <data name="&gt;&gt;wordColumnHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;typeColumnHeader.Name" xml:space="preserve">
+    <value>typeColumnHeader</value>
+  </data>
+  <data name="&gt;&gt;typeColumnHeader.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;filterListContextMenu.Name" xml:space="preserve">
@@ -1009,6 +1015,18 @@
     <value>pasteAddFilterMenuItem</value>
   </data>
   <data name="&gt;&gt;pasteAddFilterMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;djFormatMenuItem.Name" xml:space="preserve">
+    <value>djFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;djFormatMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;descFormatMenuItem.Name" xml:space="preserve">
+    <value>descFormatMenuItem</value>
+  </data>
+  <data name="&gt;&gt;descFormatMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

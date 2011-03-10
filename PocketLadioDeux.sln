@@ -7,7 +7,6 @@ Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "PocketLadioDeuxCab", "Pocke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocketLadioDeux", "PocketLadioDeux\PocketLadioDeux.csproj", "{724323CE-3378-4915-ADD8-418B9A799BE0}"
 	ProjectSection(ProjectDependencies) = postProject
-		{0FFFC310-D274-4E37-A4C9-4D0E2DC388D6} = {0FFFC310-D274-4E37-A4C9-4D0E2DC388D6}
 		{F3EB0E15-01C6-46DA-AA37-1C51A55AF120} = {F3EB0E15-01C6-46DA-AA37-1C51A55AF120}
 	EndProjectSection
 EndProject
@@ -20,8 +19,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IcecastHeadlinePlugin", "IcecastHeadlinePlugin\IcecastHeadlinePlugin.csproj", "{B617F701-D4B9-4FB6-BB30-F915E5DDFE97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PodcastHeadlinePlugin", "PodcastHeadlinePlugin\PodcastHeadlinePlugin.csproj", "{1B0D7917-799F-481B-9883-4723007D97E2}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoutCastNetHeadlinePlugin", "ShoutCastNetHeadlinePlugin\ShoutCastNetHeadlinePlugin.csproj", "{0FFFC310-D274-4E37-A4C9-4D0E2DC388D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,10 +58,6 @@ Global
 		{1B0D7917-799F-481B-9883-4723007D97E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B0D7917-799F-481B-9883-4723007D97E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B0D7917-799F-481B-9883-4723007D97E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FFFC310-D274-4E37-A4C9-4D0E2DC388D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FFFC310-D274-4E37-A4C9-4D0E2DC388D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FFFC310-D274-4E37-A4C9-4D0E2DC388D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FFFC310-D274-4E37-A4C9-4D0E2DC388D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

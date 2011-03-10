@@ -39,8 +39,12 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         {
             string[] namPorperty = { messagesResource.GetString("Nam"), channel.Nam.Trim() };
             string[] gnlPorperty = { messagesResource.GetString("Gnl"), channel.Gnl.Trim() };
+            string[] djPorperty = { messagesResource.GetString("Dj"), channel.Dj.Trim() };
+            string[] descPorperty = { messagesResource.GetString("Desc"), channel.Desc.Trim() };
             string[] urlPorperty = { messagesResource.GetString("Url"), ((channel.WebSiteUrl != null) ? channel.WebSiteUrl.ToString().Trim() : string.Empty) };
+            string[] surlPorperty = { messagesResource.GetString("Surl"), ((channel.Surl != null) ? channel.Surl.ToString().Trim() : string.Empty) };
             string[] timsPorperty = { messagesResource.GetString("Tims"), channel.Tims.ToString().Trim() };
+            string[] typePorperty = { messagesResource.GetString("Type"), channel.Type.ToString().Trim() };
 
             // リスナ数表示格納文字列
             string cln = string.Empty;
@@ -61,12 +65,42 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
             }
             string[] bitPorperty = { messagesResource.GetString("Bit"), bit };
 
+            string smpl = string.Empty;
+            if (channel.Smpl != Channel.UNKNOWN_SMPL)
+            {
+                smpl = channel.Smpl.ToString() + " Hz";
+            }
+            string[] smplPorperty = { messagesResource.GetString("Smpl"), smpl };
+
+            string chs = string.Empty;
+            if (channel.Chs != Channel.UNKNOWN_CHS)
+            {
+                switch (channel.Chs) {
+                    case 1:
+                        chs = messagesResource.GetString("Mono");
+                        break;
+                    case 2:
+                        chs = messagesResource.GetString("Stereo");
+                        break;
+                    default:
+                        chs = channel.Chs.ToString();
+                        break;
+                }
+            }
+            string[] chsPorperty = { messagesResource.GetString("Chs"), chs };
+
             propertyListView.Items.Add(new ListViewItem(namPorperty));
             propertyListView.Items.Add(new ListViewItem(gnlPorperty));
+            propertyListView.Items.Add(new ListViewItem(djPorperty));
+            propertyListView.Items.Add(new ListViewItem(descPorperty));
             propertyListView.Items.Add(new ListViewItem(urlPorperty));
+            propertyListView.Items.Add(new ListViewItem(surlPorperty));
             propertyListView.Items.Add(new ListViewItem(timsPorperty));
+            propertyListView.Items.Add(new ListViewItem(typePorperty));
             propertyListView.Items.Add(new ListViewItem(clnPorperty));
             propertyListView.Items.Add(new ListViewItem(bitPorperty));
+            propertyListView.Items.Add(new ListViewItem(smplPorperty));
+            propertyListView.Items.Add(new ListViewItem(chsPorperty));
 
             // プロパティフォームの各カラムの幅を適正な値にする
             foreach (ColumnHeader ch in propertyListView.Columns)

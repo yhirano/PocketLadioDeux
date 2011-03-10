@@ -123,6 +123,9 @@
   <data name="Cln" xml:space="preserve">
     <value>リスナ数（現在/述べ）</value>
   </data>
+  <data name="Desc" xml:space="preserve">
+    <value>内容</value>
+  </data>
   <data name="Exclude" xml:space="preserve">
     <value>除外</value>
   </data>
@@ -138,8 +141,14 @@
   <data name="NetLadio" xml:space="preserve">
     <value>ねとらじ</value>
   </data>
+  <data name="Smpl" xml:space="preserve">
+    <value>サンプリングレート</value>
+  </data>
   <data name="Tims" xml:space="preserve">
     <value>放送開始時刻</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>タイプ</value>
   </data>
   <data name="Url" xml:space="preserve">
     <value>URL</value>

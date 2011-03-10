@@ -58,8 +58,8 @@
             this.filter1TabPage = new System.Windows.Forms.TabPage();
             this.removeButton = new System.Windows.Forms.Button();
             this.filterListView = new System.Windows.Forms.ListView();
-            this.typeColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.wordColumnHeader = new System.Windows.Forms.ColumnHeader();
+            this.typeColumnHeader = new System.Windows.Forms.ColumnHeader();
             this.filterListContextMenu = new System.Windows.Forms.ContextMenu();
             this.removeMenuItem = new System.Windows.Forms.MenuItem();
             this.filterListLabel = new System.Windows.Forms.Label();
@@ -83,6 +83,8 @@
             this.aboveBitrateNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.filteringBelowBitrateCheckBox = new System.Windows.Forms.CheckBox();
             this.filteringAboveBitrateCheckBox = new System.Windows.Forms.CheckBox();
+            this.djFormatMenuItem = new System.Windows.Forms.MenuItem();
+            this.descFormatMenuItem = new System.Windows.Forms.MenuItem();
             this.baseTabControl.SuspendLayout();
             this.generalTabPage.SuspendLayout();
             this.filter1TabPage.SuspendLayout();
@@ -145,6 +147,8 @@
             // 
             this.insertMenuItem.MenuItems.Add(this.nameFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.genreFormatMenuItem);
+            this.insertMenuItem.MenuItems.Add(this.djFormatMenuItem);
+            this.insertMenuItem.MenuItems.Add(this.descFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.clnFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.clnsFormatMenuItem);
             this.insertMenuItem.MenuItems.Add(this.titleFormatMenuItem);
@@ -258,13 +262,13 @@
             this.filterListView.View = System.Windows.Forms.View.Details;
             this.filterListView.SelectedIndexChanged += new System.EventHandler(this.filterListView_SelectedIndexChanged);
             // 
-            // typeColumnHeader
-            // 
-            resources.ApplyResources(this.typeColumnHeader, "typeColumnHeader");
-            // 
             // wordColumnHeader
             // 
             resources.ApplyResources(this.wordColumnHeader, "wordColumnHeader");
+            // 
+            // typeColumnHeader
+            // 
+            resources.ApplyResources(this.typeColumnHeader, "typeColumnHeader");
             // 
             // filterListContextMenu
             // 
@@ -414,6 +418,16 @@
             resources.ApplyResources(this.filteringAboveBitrateCheckBox, "filteringAboveBitrateCheckBox");
             this.filteringAboveBitrateCheckBox.Name = "filteringAboveBitrateCheckBox";
             // 
+            // djFormatMenuItem
+            // 
+            resources.ApplyResources(this.djFormatMenuItem, "djFormatMenuItem");
+            this.djFormatMenuItem.Click += new System.EventHandler(this.djFormatMenuItem_Click);
+            // 
+            // descFormatMenuItem
+            // 
+            resources.ApplyResources(this.descFormatMenuItem, "descFormatMenuItem");
+            this.descFormatMenuItem.Click += new System.EventHandler(this.descFormatMenuItem_Click);
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -487,5 +501,7 @@
         private System.Windows.Forms.ContextMenu filterListContextMenu;
         private System.Windows.Forms.MenuItem removeMenuItem;
         private System.Windows.Forms.MenuItem menuItem1;
+        private System.Windows.Forms.MenuItem djFormatMenuItem;
+        private System.Windows.Forms.MenuItem descFormatMenuItem;
     }
 }

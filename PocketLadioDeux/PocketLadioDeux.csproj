@@ -181,10 +181,6 @@
       <Project>{EA759359-F44F-48B6-B03E-7A9F59410C13}</Project>
       <Name>ShoutCastHeadlinePlugin</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ShoutCastNetHeadlinePlugin\ShoutCastNetHeadlinePlugin.csproj">
-      <Project>{0FFFC310-D274-4E37-A4C9-4D0E2DC388D6}</Project>
-      <Name>ShoutCastNetHeadlinePlugin</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PocketLadioDeuxIcon.ico" />
