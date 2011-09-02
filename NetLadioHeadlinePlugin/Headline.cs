@@ -18,7 +18,7 @@ namespace PocketLadioDeux.NetLadioHeadlinePlugin
         /// <summary>
         /// ねとらじのヘッドラインのURL DAT v2
         /// </summary>
-        private const string NETLADIO_HEADLINE_DAT_V2_URL = "http://yp.ladio.livedoor.jp/stats/list.v2.dat";
+        private const string NETLADIO_HEADLINE_DAT_V2_URL = "http://yp.ladio.net/stats/list.v2.dat";
 
         /// <summary>
         /// メッセージ表示用のリソース
